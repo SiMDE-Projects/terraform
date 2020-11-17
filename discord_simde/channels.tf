@@ -1,0 +1,41 @@
+module general {
+  source      = "./channels"
+  name        = "général"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  permissions = local.permissions
+  roles       = local.roles
+}
+
+module private-treso {
+  source      = "./channels"
+  name        = "private-flairsou"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.general.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
+module private-payutc {
+  source      = "./channels"
+  name        = "private-payutc"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-treso.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
+module private-admin {
+  source      = "./channels"
+  name        = "private-admin"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-payutc.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}

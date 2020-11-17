@@ -166,11 +166,8 @@ resource github_branch_protection jeffreyApi_master {
   }
 
   required_status_checks {
-    contexts = [
-      "Check i18next keys in fr-FR",
-      "Travis CI - Pull Request",
-    ]
-    strict = true
+    contexts = []
+    strict   = true
   }
 }
 
