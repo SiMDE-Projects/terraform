@@ -32,10 +32,8 @@ resource github_branch_protection terraform_main {
   }
 
   required_status_checks {
-    contexts = [
-      "Travis CI - Pull Request",
-    ]
-    strict = true
+    contexts = []
+    strict   = true
   }
 }
 
