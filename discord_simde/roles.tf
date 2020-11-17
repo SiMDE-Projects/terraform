@@ -1,0 +1,62 @@
+locals {
+  roles = {
+    admin    = discord_role.admin
+    member   = discord_role.member
+    treso    = discord_role.treso
+    payutc   = discord_role.payutc
+    everyone = discord_role_everyone.everyone
+  }
+}
+
+data discord_color admin {
+  hex = "#872205"
+}
+
+data discord_color treso {
+  hex = "#E0E000"
+}
+
+data discord_color payutc {
+  hex = "#E0E000"
+}
+
+data discord_color member {
+  hex = "#4287f5"
+}
+
+resource discord_role admin {
+  server_id   = discord_server.server.id
+  name        = "Saint administrateur"
+  permissions = data.discord_permission.admin.allow_bits
+  position    = discord_role.payutc.position + 1
+  color       = data.discord_color.admin.dec
+}
+
+resource discord_role payutc {
+  server_id   = discord_server.server.id
+  name        = "Tim Pay'UTC"
+  position    = discord_role.treso.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.payutc.dec
+}
+
+resource discord_role treso {
+  server_id   = discord_server.server.id
+  name        = "Projet Flairsou"
+  position    = discord_role.member.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.treso.dec
+}
+
+resource discord_role member {
+  server_id   = discord_server.server.id
+  name        = "Vénéré membre"
+  position    = 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.member.dec
+}
+
+resource discord_role_everyone everyone {
+  server_id   = discord_server.server.id
+  permissions = data.discord_permission.base_permissions.allow_bits
+}
