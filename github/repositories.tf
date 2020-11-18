@@ -8,12 +8,14 @@ resource github_repository terraform {
   auto_init              = false
   default_branch         = "main"
   delete_branch_on_merge = true
-  description            = "Définition IAAC du SiMDE"
+  description            = "Définition IAC du SiMDE"
   has_downloads          = false
   has_issues             = false
   has_projects           = false
   has_wiki               = false
-
+  topics = [
+    "infrastructure-as-code"
+  ]
   is_template          = false
   name                 = "terraform"
   visibility           = "public"
@@ -31,10 +33,10 @@ resource github_branch_protection terraform_main {
     required_approving_review_count = 1
   }
 
-  required_status_checks {
-    contexts = []
-    strict   = true
-  }
+//  required_status_checks {
+//    contexts = []
+//    strict   = true
+//  }
 }
 
 resource github_issue_label terraform_toApply {
@@ -69,7 +71,6 @@ resource github_repository jeffrey {
   is_template  = false
   name         = "jeffrey"
   topics = [
-    "hacktoberfest",
     "front"
   ]
   visibility           = "public"
@@ -145,7 +146,6 @@ resource github_repository jeffreyApi {
   is_template            = false
   name                   = "jeffrey-api"
   topics = [
-    "hacktoberfest",
     "api"
   ]
   visibility           = "public"
@@ -163,10 +163,10 @@ resource github_branch_protection jeffreyApi_master {
     required_approving_review_count = 1
   }
 
-  required_status_checks {
-    contexts = []
-    strict   = true
-  }
+//  required_status_checks {
+//    contexts = []
+//    strict   = true
+//  }
 }
 
 resource github_repository_project jeffreyApi_main {

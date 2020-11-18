@@ -25,17 +25,6 @@ module "maxime-vaillant" {
   }
 }
 
-module "romanedauge" {
-  source   = "./users"
-  username = "romanedauge"
-  teams = {
-    "jeffrey" = {
-      team = github_team.jeffrey.id,
-      role = "member"
-    }
-  }
-}
-
 module "anto2oo" {
   source   = "./users"
   username = "anto2oo"
@@ -83,3 +72,14 @@ module "matthieudecaux" {
     }
   }
 }
+
+//module "romanedauge" {
+//  source   = "./users"
+//  username = "romanedauge"
+//  teams = {
+//    "jeffrey" = {
+//      team = github_team.jeffrey.id,
+//      role = "member"
+//    }
+//  }
+//}
