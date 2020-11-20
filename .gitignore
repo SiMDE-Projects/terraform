@@ -1,3 +1,6 @@
+
+#intelliJ project dir
+.idea
 #  Local .terraform directories
 **/.terraform/*
 
