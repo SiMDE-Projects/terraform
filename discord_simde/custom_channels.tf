@@ -13,5 +13,5 @@ resource discord_text_channel games {
   server_id                = discord_server.server.id
   category                 = module.general.category.id
   position                 = 3
-  sync_perms_with_category = false
+  sync_perms_with_category = true
 }
