@@ -4,6 +4,7 @@ locals {
     member   = discord_role.member
     treso    = discord_role.treso
     payutc   = discord_role.payutc
+    respinfo = discord_role.respinfo
     everyone = discord_role_everyone.everyone
   }
 }
@@ -51,6 +52,14 @@ resource discord_role treso {
 resource discord_role member {
   server_id   = discord_server.server.id
   name        = "Vénéré membre"
+  position    = discord_role.respinfo.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.member.dec
+}
+
+resource discord_role respinfo {
+  server_id   = discord_server.server.id
+  name        = "Elegant Resp Info"
   position    = 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.member.dec
