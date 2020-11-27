@@ -36,8 +36,8 @@ resource discord_channel_permission respinfo {
   channel_id   = discord_category_channel.category.id
   type         = "role"
   overwrite_id = var.roles.everyone.id
-  allow        = var.permissions.respinfo.allow_bits
-  deny         = var.permissions.respinfo.deny_bits
+  allow        = var.permissions.member.allow_bits
+  deny         = var.permissions.member.deny_bits
 }
 
 resource discord_channel_permission respinfo_denied {
