@@ -104,3 +104,13 @@ module matthieu_decaux {
   }
 }
 
+module lucas_richard {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "GalaxyHearth"
+  discriminator = 9097
+  roles = {
+    (discord_role.respinfo.id) = true
+  }
+}
