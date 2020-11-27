@@ -33,10 +33,10 @@ resource github_branch_protection terraform_main {
     required_approving_review_count = 1
   }
 
-//  required_status_checks {
-//    contexts = []
-//    strict   = true
-//  }
+  //  required_status_checks {
+  //    contexts = []
+  //    strict   = true
+  //  }
 }
 
 resource github_issue_label terraform_toApply {
@@ -136,7 +136,7 @@ resource github_repository jeffreyApi {
   allow_squash_merge     = true
   archived               = false
   auto_init              = false
-  default_branch         = "main"
+  default_branch         = "master"
   delete_branch_on_merge = true
   description            = "Backend de jeffrey"
   has_downloads          = false
@@ -154,7 +154,7 @@ resource github_repository jeffreyApi {
 
 resource github_branch_protection jeffreyApi_master {
   repository_id     = github_repository.jeffreyApi.node_id
-  pattern           = "m*"
+  pattern           = "master"
   push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
     dismiss_stale_reviews           = true
@@ -163,10 +163,10 @@ resource github_branch_protection jeffreyApi_master {
     required_approving_review_count = 1
   }
 
-//  required_status_checks {
-//    contexts = []
-//    strict   = true
-//  }
+  //  required_status_checks {
+  //    contexts = []
+  //    strict   = true
+  //  }
 }
 
 resource github_repository_project jeffreyApi_main {

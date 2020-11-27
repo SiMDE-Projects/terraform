@@ -58,3 +58,12 @@ resource discord_channel_permission member_notifications {
   allow        = local.permissions.readonly.allow_bits
   deny         = local.permissions.readonly.deny_bits
 }
+
+### Games
+resource discord_channel_permission games_member {
+  channel_id   = discord_text_channel.games.id
+  type         = "role"
+  overwrite_id = local.roles.everyone.id
+  allow        = local.permissions.member.allow_bits
+  deny         = local.permissions.member.deny_bits
+}
