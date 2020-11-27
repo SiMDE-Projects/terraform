@@ -27,26 +27,7 @@ resource discord_channel_permission member_denied {
   channel_id   = discord_category_channel.category.id
   type         = "role"
   overwrite_id = var.roles.member.id
-  #allow        = var.permissions.deny.allow_bits
-  deny = var.permissions.deny.deny_bits
-}
-
-resource discord_channel_permission respinfo {
-  count        = var.restricted ? 0 : 1
-  channel_id   = discord_category_channel.category.id
-  type         = "role"
-  overwrite_id = var.roles.everyone.id
-  allow        = var.permissions.respinfo.allow_bits
-  deny         = var.permissions.respinfo.deny_bits
-}
-
-resource discord_channel_permission respinfo_denied {
-  count        = var.restricted ? 1 : 0
-  channel_id   = discord_category_channel.category.id
-  type         = "role"
-  overwrite_id = var.roles.respinfo.id
-  #allow        = var.permissions.deny.allow_bits
-  deny = var.permissions.deny.deny_bits
+  deny         = var.permissions.deny.deny_bits
 }
 
 resource discord_text_channel text {
