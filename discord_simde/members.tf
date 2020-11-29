@@ -42,7 +42,8 @@ module maxime_vaillant {
   username      = "Maxime"
   discriminator = 6059
   roles = {
-    (discord_role.member.id) = true
+    (discord_role.member.id)  = true
+    (discord_role.jeffrey.id) = true
   }
 }
 
@@ -65,7 +66,8 @@ module anton42 {
   username      = "anton42"
   discriminator = 2714
   roles = {
-    (discord_role.member.id) = true
+    (discord_role.member.id)  = true
+    (discord_role.jeffrey.id) = true
   }
 }
 
