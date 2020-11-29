@@ -29,12 +29,23 @@ module private-payutc {
   roles       = local.roles
 }
 
+module private-jeffrey {
+  source      = "./channels"
+  name        = "private-jeffrey"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-payutc.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module private-admin {
   source      = "./channels"
   name        = "private-admin"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-payutc.position + 1
+  position    = module.private-jeffrey.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles

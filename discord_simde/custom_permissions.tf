@@ -24,6 +24,22 @@ resource discord_channel_permission payutc_payutc {
   deny         = local.permissions.allow.deny_bits
 }
 
+### Jeffrey
+resource discord_channel_permission jeffrey_general {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.jeffrey.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource discord_channel_permission jeffrey_jeffrey {
+  channel_id   = module.private-jeffrey.category.id
+  type         = "role"
+  overwrite_id = local.roles.jeffrey.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
 
 ### Treso
 resource discord_channel_permission treso_general {
