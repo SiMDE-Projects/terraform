@@ -114,3 +114,14 @@ module lucas_richard {
     (discord_role.respinfo.id) = true
   }
 }
+
+module armand_ribault {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "armrib"
+  discriminator = 7676
+  roles = {
+    (discord_role.member.id) = true
+  }
+}
