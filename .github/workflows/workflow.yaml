@@ -9,21 +9,51 @@ jobs:
   validate:
     name: Validate
     runs-on: ubuntu-latest
-    env:
-      DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
     steps:
-      - name: Check out code
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
 
-      - name: Run a Terraform init
-        uses: docker://hashicorp/terraform:0.12.11
+      - name: Terraform fmt
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
+
+      - name: Terraform Init
+        id: init
+        run: terraform init -var 'discord_token=${{ secrets.DISCORD_TOKEN }}'
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color  -var 'discord_token=${{ secrets.DISCORD_TOKEN }}'
+        continue-on-error: true
+
+      - uses: actions/github-script@0.9.0
+        if: github.event_name == 'pull_request'
         env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
-          entrypoint: terraform
-          args: init
-      # - name: Run a Terraform validate
-      #   uses: docker://hashicorp/terraform:0.12.11
-      #   with:
-      #     entrypoint: terraform
-      #     args: validate
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
+            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
+            #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
+            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+
+            <details><summary>Show Plan</summary>
+
+            \`\`\`${process.env.PLAN}\`\`\`
+
+            </details>
+
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
+              
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
