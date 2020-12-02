@@ -15,18 +15,18 @@ resource github_repository terraform {
   topics = [
     "infrastructure-as-code"
   ]
-  is_template = false
-  name        = "terraform"
-  visibility  = "public"
-  #vulnerability_alerts = true
+  is_template          = false
+  name                 = "terraform"
+  visibility           = "public"
+  vulnerability_alerts = true
 }
 
-data "github_branch" "terraform_main" {
+data github_branch terraform_main {
   repository = "terraform"
   branch     = "main"
 }
 
-resource "github_branch_default" "terraform" {
+resource github_branch_default terraform {
   repository = github_repository.terraform.name
   branch     = data.github_branch.terraform_main.branch
 }
@@ -42,10 +42,10 @@ resource github_branch_protection terraform_main {
     required_approving_review_count = 1
   }
 
-  //  required_status_checks {
-  //    contexts = []
-  //    strict   = true
-  //  }
+  required_status_checks {
+    contexts = ["Terraform CI / Terraform Plan (pull_request)"]
+    strict   = true
+  }
 }
 
 resource github_issue_label terraform_toApply {
@@ -81,8 +81,8 @@ resource github_repository jeffrey {
   topics = [
     "front"
   ]
-  visibility = "public"
-  #vulnerability_alerts = true
+  visibility           = "public"
+  vulnerability_alerts = true
 }
 
 data "github_branch" "jeffrey_master" {
@@ -90,7 +90,7 @@ data "github_branch" "jeffrey_master" {
   branch     = "master"
 }
 
-resource "github_branch_default" "jeffrey" {
+resource github_branch_default jeffrey {
   repository = github_repository.jeffrey.name
   branch     = data.github_branch.jeffrey_master.branch
 }
@@ -165,8 +165,8 @@ resource github_repository jeffreyApi {
   topics = [
     "api"
   ]
-  visibility = "public"
-  #vulnerability_alerts = true
+  visibility           = "public"
+  vulnerability_alerts = true
 }
 
 data "github_branch" "jeffreyApi_master" {
@@ -174,7 +174,7 @@ data "github_branch" "jeffreyApi_master" {
   branch     = "master"
 }
 
-resource "github_branch_default" "jeffreyApi" {
+resource github_branch_default jeffreyApi {
   repository = github_repository.jeffreyApi.name
   branch     = data.github_branch.jeffreyApi_master.branch
 }
