@@ -45,7 +45,6 @@ resource github_branch_protection terraform_main {
   required_status_checks {
     contexts = [
       "Terraform Plan",
-      "Validate",
     ]
     strict = true
   }
