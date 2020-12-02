@@ -15,7 +15,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
       TF_VAR_discord_token: ${{ secrets.DISCORD_TOKEN }}
       TF_VAR_github_organization: "SiMDE-Projects"
-      TF_VAR_github_token: ${{ secrets.GITHUB_TOKEN }}
+      TF_VAR_github_token: ${{ secrets.CESAR_GHTOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1

@@ -15,10 +15,10 @@ resource github_repository terraform {
   topics = [
     "infrastructure-as-code"
   ]
-  is_template          = false
-  name                 = "terraform"
-  visibility           = "public"
-  vulnerability_alerts = true
+  is_template = false
+  name        = "terraform"
+  visibility  = "public"
+  #vulnerability_alerts = true
 }
 
 data "github_branch" "terraform_main" {
@@ -81,8 +81,8 @@ resource github_repository jeffrey {
   topics = [
     "front"
   ]
-  visibility           = "public"
-  vulnerability_alerts = true
+  visibility = "public"
+  #vulnerability_alerts = true
 }
 
 data "github_branch" "jeffrey_master" {
@@ -165,8 +165,8 @@ resource github_repository jeffreyApi {
   topics = [
     "api"
   ]
-  visibility           = "public"
-  vulnerability_alerts = true
+  visibility = "public"
+  #vulnerability_alerts = true
 }
 
 data "github_branch" "jeffreyApi_master" {
