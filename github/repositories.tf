@@ -43,8 +43,11 @@ resource github_branch_protection terraform_main {
   }
 
   required_status_checks {
-    contexts = ["Terraform CI / Terraform Plan (pull_request)"]
-    strict   = true
+    contexts = [
+      "Terraform Plan",
+      "Validate",
+    ]
+    strict = true
   }
 }
 
