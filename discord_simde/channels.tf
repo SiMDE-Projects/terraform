@@ -40,12 +40,23 @@ module private-jeffrey {
   roles       = local.roles
 }
 
+module private-woolly {
+  source      = "./channels"
+  name        = "private-woolly"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-jeffrey.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module private-admin {
   source      = "./channels"
   name        = "private-admin"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-jeffrey.position + 1
+  position    = module.private-woolly.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles

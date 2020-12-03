@@ -6,7 +6,6 @@ resource github_repository terraform {
   allow_squash_merge     = true
   archived               = false
   auto_init              = false
-  default_branch         = "main"
   delete_branch_on_merge = true
   description            = "Définition IAC du SiMDE"
   has_downloads          = false
@@ -22,6 +21,16 @@ resource github_repository terraform {
   vulnerability_alerts = true
 }
 
+data github_branch terraform_main {
+  repository = "terraform"
+  branch     = "main"
+}
+
+resource github_branch_default terraform {
+  repository = github_repository.terraform.name
+  branch     = data.github_branch.terraform_main.branch
+}
+
 resource github_branch_protection terraform_main {
   repository_id     = github_repository.terraform.node_id
   pattern           = "main"
@@ -33,10 +42,12 @@ resource github_branch_protection terraform_main {
     required_approving_review_count = 1
   }
 
-  //  required_status_checks {
-  //    contexts = []
-  //    strict   = true
-  //  }
+  required_status_checks {
+    contexts = [
+      "Terraform Plan",
+    ]
+    strict = true
+  }
 }
 
 resource github_issue_label terraform_toApply {
@@ -59,7 +70,6 @@ resource github_repository jeffrey {
   allow_squash_merge     = true
   archived               = false
   auto_init              = false
-  default_branch         = "master"
   delete_branch_on_merge = true
   description            = "Service de click&delivery associatif (et drole)"
   has_downloads          = false
@@ -75,6 +85,16 @@ resource github_repository jeffrey {
   ]
   visibility           = "public"
   vulnerability_alerts = true
+}
+
+data "github_branch" "jeffrey_master" {
+  repository = "jeffrey"
+  branch     = "master"
+}
+
+resource github_branch_default jeffrey {
+  repository = github_repository.jeffrey.name
+  branch     = data.github_branch.jeffrey_master.branch
 }
 
 resource github_branch_protection jeffrey_master {
@@ -136,7 +156,6 @@ resource github_repository jeffreyApi {
   allow_squash_merge     = true
   archived               = false
   auto_init              = false
-  default_branch         = "master"
   delete_branch_on_merge = true
   description            = "Backend de jeffrey"
   has_downloads          = false
@@ -150,6 +169,16 @@ resource github_repository jeffreyApi {
   ]
   visibility           = "public"
   vulnerability_alerts = true
+}
+
+data "github_branch" "jeffreyApi_master" {
+  repository = "jeffrey-api"
+  branch     = "master"
+}
+
+resource github_branch_default jeffreyApi {
+  repository = github_repository.jeffreyApi.name
+  branch     = data.github_branch.jeffreyApi_master.branch
 }
 
 resource github_branch_protection jeffreyApi_master {
