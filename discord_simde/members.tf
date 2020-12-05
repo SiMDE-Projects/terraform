@@ -125,5 +125,6 @@ module armand_ribault {
   discriminator = 7676
   roles = {
     (discord_role.member.id) = true
+    (discord_role.woolly.id) = true
   }
 }
