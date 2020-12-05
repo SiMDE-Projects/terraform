@@ -5,6 +5,7 @@ locals {
     treso    = discord_role.treso
     payutc   = discord_role.payutc
     jeffrey  = discord_role.jeffrey
+    woolly   = discord_role.woolly
     respinfo = discord_role.respinfo
     everyone = discord_role_everyone.everyone
   }
@@ -23,6 +24,10 @@ data discord_color payutc {
 }
 
 data discord_color jeffrey {
+  hex = "#E0E000"
+}
+
+data discord_color woolly {
   hex = "#E0E000"
 }
 
@@ -63,9 +68,18 @@ resource discord_role treso {
 resource discord_role jeffrey {
   server_id   = discord_server.server.id
   name        = "Projet Jeffrey"
-  position    = discord_role.member.position + 1
+  position    = discord_role.woolly.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.jeffrey.dec
+  mentionable = true
+}
+
+resource discord_role woolly {
+  server_id   = discord_server.server.id
+  name        = "Woolly"
+  position    = discord_role.member.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.woolly.dec
   mentionable = true
 }
 
