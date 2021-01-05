@@ -43,8 +43,15 @@ resource discord_role admin {
   server_id   = discord_server.server.id
   name        = "Saint administrateur"
   permissions = data.discord_permission.admin.allow_bits
-  position    = discord_role.payutc.position + 1
+  position    = discord_role.zapier.position + 1
   color       = data.discord_color.admin.dec
+}
+
+resource discord_role zapier {
+  server_id   = discord_server.server.id
+  name        = "Zapier"
+  permissions = data.discord_permission.bot.allow_bits
+  position    = discord_role.payutc.position + 1
 }
 
 resource discord_role payutc {

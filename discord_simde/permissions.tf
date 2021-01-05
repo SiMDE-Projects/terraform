@@ -1,6 +1,7 @@
 locals {
   permissions = {
     admin            = data.discord_permission.admin
+    bot              = data.discord_permission.bot
     member           = data.discord_permission.member
     deny             = data.discord_permission.deny
     allow            = data.discord_permission.allow
@@ -13,6 +14,12 @@ data discord_permission admin {
   allow_extends = data.discord_permission.base_permissions.allow_bits
   deny_extends  = data.discord_permission.base_permissions.deny_bits
   administrator = "allow"
+}
+
+data discord_permission bot {
+  allow_extends   = data.discord_permission.base_permissions.allow_bits
+  deny_extends    = data.discord_permission.base_permissions.deny_bits
+  manage_webhooks = "allow"
 }
 
 data discord_permission member {
@@ -43,10 +50,10 @@ data discord_permission allow {
 }
 
 data discord_permission readonly {
-  allow_extends = data.discord_permission.base_permissions.allow_bits
-  deny_extends = data.discord_permission.base_permissions.deny_bits
-  view_channel = "allow"
-  send_messages = "deny"
+  allow_extends        = data.discord_permission.base_permissions.allow_bits
+  deny_extends         = data.discord_permission.base_permissions.deny_bits
+  view_channel         = "allow"
+  send_messages        = "deny"
   read_message_history = "allow"
 }
 
