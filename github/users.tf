@@ -73,6 +73,11 @@ module "matthieudecaux" {
   }
 }
 
+module "romain_maliachauguste" {
+  source   = "./users"
+  username = "R0one"
+}
+
 //module "romanedauge" {
 //  source   = "./users"
 //  username = "romanedauge"

@@ -140,3 +140,14 @@ module alexandre_brasseur {
     (discord_role.woolly.id) = true
   }
 }
+
+module romain_maliachauguste {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "r01"
+  discriminator = 3937
+  roles = {
+    (discord_role.member.id) = true
+  }
+}

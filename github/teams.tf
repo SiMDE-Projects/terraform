@@ -29,7 +29,7 @@ resource github_team flairsou {
 resource github_team_repository flairsou {
   team_id    = github_team.flairsou.id
   repository = github_repository.flairsou.name
-  permission = "push"
+  permission = "maintain"
 }
 
 ### SiMDE admins
