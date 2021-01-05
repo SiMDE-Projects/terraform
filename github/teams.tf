@@ -63,3 +63,65 @@ resource github_team_repository simde_terraform {
   repository = github_repository.terraform.name
   permission = "maintain"
 }
+
+###############################
+###   ORIGINAL ORGANIZATION ###
+###############################
+
+### Application UTC/BDE
+resource github_team application_utcbde {
+  provider    = github.old
+  name        = "Application UTC/BDE"
+  description = "Developpeurs de l'application UTC/BDE"
+  privacy     = "closed"
+}
+
+resource github_team cloud {
+  provider    = github.old
+  name        = "Cloud"
+  description = "Développer un cloud avec Nextcloud"
+  privacy     = "closed"
+}
+
+resource github_team covoit_utc {
+  provider    = github.old
+  name        = "Covoit'UTC"
+  description = "Développer l'application de Covoiturage"
+  privacy     = "closed"
+}
+resource github_team gesasso {
+  provider    = github.old
+  name        = "Gesasso"
+  description = "Développer le gestionnaire des associations"
+  privacy     = "closed"
+}
+resource github_team locky {
+  provider    = github.old
+  name        = "Locky"
+  description = ""
+  privacy     = "closed"
+}
+resource github_team payutc {
+  provider    = github.old
+  name        = "PayUTC"
+  description = "Développer les outils et les APIs PayUTC"
+  privacy     = "closed"
+}
+resource github_team planner {
+  provider    = github.old
+  name        = "Planner"
+  description = "Développer le plannificateur de permanences"
+  privacy     = "closed"
+}
+resource github_team portail {
+  provider    = github.old
+  name        = "Portail"
+  description = "Développer le Portail"
+  privacy     = "closed"
+}
+resource github_team woolly {
+  provider    = github.old
+  name        = "Woolly"
+  description = "Développer la nouvelle billetterie UTC"
+  privacy     = "closed"
+}
