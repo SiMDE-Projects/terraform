@@ -92,12 +92,6 @@ resource github_issue_label repository {
   color      = "0000FF"
 }
 
-resource github_issue_label outputs {
-  repository = github_repository.terraform.name
-  name       = "outputs"
-  color      = "0000FF"
-}
-
 resource github_issue_label channels {
   repository = github_repository.terraform.name
   name       = "channels"

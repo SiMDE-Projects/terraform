@@ -6,8 +6,6 @@ github_user: github/users.tf
 
 repository: github/repo*.tf
 
-outputs: */outputs.tf
-
 channels: */**/*channels.tf
 discord_permissions: */**/*permissions.tf
 

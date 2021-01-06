@@ -9,3 +9,7 @@ variable github_token {
 variable github_organization {
   type = string
 }
+
+variable github_old_rganization {
+  type = string
+}
