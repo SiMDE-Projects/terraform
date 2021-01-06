@@ -62,6 +62,91 @@ resource github_issue_label terraform_applied {
   color      = "00FF00"
 }
 
+resource github_issue_label github {
+  repository = github_repository.terraform.name
+  name       = "github"
+  color      = "0000FF"
+}
+
+resource github_issue_label discord {
+  repository = github_repository.terraform.name
+  name       = "discord"
+  color      = "0000FF"
+}
+
+resource github_issue_label discord_member {
+  repository = github_repository.terraform.name
+  name       = "discord_member"
+  color      = "0000FF"
+}
+
+resource github_issue_label github_user {
+  repository = github_repository.terraform.name
+  name       = "github_user"
+  color      = "0000FF"
+}
+
+resource github_issue_label repository {
+  repository = github_repository.terraform.name
+  name       = "repository"
+  color      = "0000FF"
+}
+
+resource github_issue_label outputs {
+  repository = github_repository.terraform.name
+  name       = "outputs"
+  color      = "0000FF"
+}
+
+resource github_issue_label channels {
+  repository = github_repository.terraform.name
+  name       = "channels"
+  color      = "0000FF"
+}
+
+resource github_issue_label discord_permissions {
+  repository = github_repository.terraform.name
+  name       = "discord_permissions"
+  color      = "0000FF"
+}
+
+resource github_issue_label roles {
+  repository = github_repository.terraform.name
+  name       = "roles"
+  color      = "0000FF"
+}
+
+resource github_issue_label discord_server {
+  repository = github_repository.terraform.name
+  name       = "discord_server"
+  color      = "0000FF"
+}
+
+resource github_issue_label variables {
+  repository = github_repository.terraform.name
+  name       = "variables"
+  color      = "0000FF"
+}
+
+resource github_issue_label teams {
+  repository = github_repository.terraform.name
+  name       = "teams"
+  color      = "0000FF"
+}
+
+resource github_issue_label invites {
+  repository = github_repository.terraform.name
+  name       = "invites"
+  color      = "0000FF"
+}
+
+resource github_issue_label modules {
+  repository = github_repository.terraform.name
+  name       = "modules"
+  color      = "0000FF"
+}
+
+
 ### jeffrey
 
 resource github_repository jeffrey {

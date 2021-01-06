@@ -4,9 +4,10 @@ module discord_simde {
 }
 
 module github {
-  source       = "./github/"
-  token        = var.github_token
-  organization = var.github_organization
+  source           = "./github/"
+  token            = var.github_token
+  organization     = var.github_organization
+  old_organization = var.github_organization
 }
 
 output discord {

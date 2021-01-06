@@ -15,5 +15,5 @@ provider github {
 provider github {
   alias        = "old"
   token        = var.token
-  organization = "simde-utc"
+  organization = var.old_organization
 }

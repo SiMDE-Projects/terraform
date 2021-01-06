@@ -1,0 +1,24 @@
+github: github/**/*
+discord: discord/**/*
+
+discord_member: discord_simde/members.tf
+github_user: github/users.tf
+
+repository: github/repo*.tf
+
+outputs: */outputs.tf
+
+channels: */**/*channels.tf
+discord_permissions: */**/*permissions.tf
+
+roles: discord_simde/roles.tf
+
+discord_server: discord_simde/server.tf
+
+variables: */variables.tf
+
+teams: github/teams.tf
+
+invites: */invites.tf
+
+modules: */**/*.tf 
