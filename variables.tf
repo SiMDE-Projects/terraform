@@ -10,6 +10,6 @@ variable github_organization {
   type = string
 }
 
-variable github_old_rganization {
+variable github_old_organization {
   type = string
 }
