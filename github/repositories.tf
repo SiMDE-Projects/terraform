@@ -392,21 +392,8 @@ resource github_repository gesassos2_old {
   has_wiki               = true
   name                   = "gesassos2_old"
   visibility             = "public"
-  vulnerability_alerts   = true
+  vulnerability_alerts   = false
 }
-
-data github_branch gesassos2_old_master {
-  provider   = github.old
-  repository = "gesassos2_old"
-  branch     = "master"
-}
-
-resource github_branch_default gesassos2_old {
-  provider   = github.old
-  repository = github_repository.gesassos2_old.name
-  branch     = data.github_branch.gesassos2_old_master.branch
-}
-
 
 ### faux-ginger
 
@@ -508,21 +495,8 @@ resource github_repository paymoi {
   has_wiki               = true
   name                   = "paymoi"
   visibility             = "public"
-  vulnerability_alerts   = true
+  vulnerability_alerts   = false
 }
-
-data github_branch paymoi_master {
-  provider   = github.old
-  repository = "paymoi"
-  branch     = "master"
-}
-
-resource github_branch_default paymoi {
-  provider   = github.old
-  repository = github_repository.paymoi.name
-  branch     = data.github_branch.paymoi_master.branch
-}
-
 
 ### woolly-api
 
@@ -566,21 +540,8 @@ resource github_repository woolly_ui {
   has_wiki               = true
   name                   = "woolly-ui"
   visibility             = "public"
-  vulnerability_alerts   = true
+  vulnerability_alerts   = false
 }
-
-data github_branch woolly_ui_master {
-  provider   = github.old
-  repository = "woolly-ui"
-  branch     = "master"
-}
-
-resource github_branch_default woolly_ui {
-  provider   = github.old
-  repository = github_repository.woolly_ui.name
-  branch     = data.github_branch.woolly_ui_master.branch
-}
-
 
 ### gesassos-web
 
