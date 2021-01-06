@@ -298,7 +298,7 @@ resource github_repository koala {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = "null"
+  description            = ""
   has_downloads          = true
   has_issues             = true
   has_projects           = true
@@ -443,7 +443,7 @@ resource github_repository python_hosting {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = "null"
+  description            = ""
   has_downloads          = true
   has_issues             = true
   has_projects           = true
@@ -617,7 +617,7 @@ resource github_repository ginger2 {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = "null"
+  description            = ""
   has_downloads          = true
   has_issues             = true
   has_projects           = true
@@ -733,7 +733,7 @@ resource github_repository jessy_api {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = "null"
+  description            = ""
   has_downloads          = true
   has_issues             = true
   has_projects           = true
@@ -770,6 +770,16 @@ resource github_repository portail {
   name                   = "portail"
   visibility             = "public"
   vulnerability_alerts   = true
+  topics = [
+    "api",
+    "assos",
+    "laravel",
+    "php",
+    "portail",
+    "student-project",
+    "students",
+    "utc"
+  ]
 }
 
 data github_branch portail_develop {
@@ -849,7 +859,7 @@ resource github_repository hackathon_covoit {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = "null"
+  description            = ""
   has_downloads          = true
   has_issues             = true
   has_projects           = true
@@ -886,6 +896,14 @@ resource github_repository utc_mobile {
   name                   = "utc-mobile"
   visibility             = "public"
   vulnerability_alerts   = true
+  topics = [
+    "android",
+    "app",
+    "ios",
+    "phone",
+    "react-native",
+    "student-project"
+  ]
 }
 
 data github_branch utc_mobile_develop {
@@ -915,6 +933,9 @@ resource github_repository gesasso2 {
   name                   = "gesasso2"
   visibility             = "public"
   vulnerability_alerts   = true
+  topics = [
+    "api-client"
+  ]
 }
 
 data github_branch gesasso2_master {
@@ -1052,7 +1073,7 @@ resource github_repository payback {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = "null"
+  description            = ""
   has_downloads          = true
   has_issues             = true
   has_projects           = true
