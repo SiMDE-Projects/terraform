@@ -6,17 +6,17 @@ github_user: github/users.tf
 
 repository: github/repo*.tf
 
-channels: */**/*channels.tf
-discord_permissions: */**/*permissions.tf
+channels: ./**/*channels.tf
+discord_permissions: ./**/*permissions.tf
 
 roles: discord_simde/roles.tf
 
 discord_server: discord_simde/server.tf
 
-variables: */variables.tf
+variables: ./*/variables.tf
 
 teams: github/teams.tf
 
-invites: */invites.tf
+invites: ./*/invites.tf
 
-modules: */**/*.tf 
+modules: ./*/**/*
