@@ -1176,7 +1176,7 @@ resource github_repository locky {
   has_projects           = true
   has_wiki               = true
   name                   = "locky"
-  visibility             = "public"
+  visibility             = "private"
   vulnerability_alerts   = true
 }
 
@@ -1198,7 +1198,7 @@ resource github_repository terraform_jda {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = ""
+  description            = "Le discord de la JDA déployable avec terraform"
   has_downloads          = true
   has_issues             = true
   has_projects           = true
