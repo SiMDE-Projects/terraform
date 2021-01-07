@@ -88,6 +88,16 @@ module "old_aarrtthhuurr" {
   }
   source   = "./users"
   username = "aarrtthhuurr"
+  teams = {
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+    "application_utcbde" = {
+      team = github_team.application_utcbde.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_abrasseu" {
@@ -96,6 +106,12 @@ module "old_abrasseu" {
   }
   source   = "./users"
   username = "abrasseu"
+  teams = {
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_acharann" {
@@ -104,6 +120,12 @@ module "old_acharann" {
   }
   source   = "./users"
   username = "acharann"
+  teams = {
+    "application_utcbde" = {
+      team = github_team.application_utcbde.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_artemisart" {
@@ -112,6 +134,12 @@ module "old_artemisart" {
   }
   source   = "./users"
   username = "artemisart"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_BaguetteEater" {
@@ -120,6 +148,12 @@ module "old_BaguetteEater" {
   }
   source   = "./users"
   username = "BaguetteEater"
+  teams = {
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_bonnetst" {
@@ -136,6 +170,20 @@ module "old_Cathaiste" {
   }
   source   = "./users"
   username = "Cathaiste"
+  teams = {
+    "woolly" = {
+      team = github_team.woolly.id,
+      role = "member"
+    }
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+    "locky" = {
+      team = github_team.locky.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_cesar-richard" {
@@ -145,6 +193,20 @@ module "old_cesar-richard" {
   source   = "./users"
   username = "cesar-richard"
   role     = "admin"
+  teams = {
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "maintainer"
+    }
+    "locky" = {
+      team = github_team.locky.id,
+      role = "maintainer"
+    }
+    "gesasso" = {
+      team = github_team.gesasso.id,
+      role = "maintainer"
+    }
+  }
 }
 
 module "old_courentin" {
@@ -153,6 +215,12 @@ module "old_courentin" {
   }
   source   = "./users"
   username = "courentin"
+  teams = {
+    "planner" = {
+      team = github_team.planner.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_danousna" {
@@ -161,6 +229,12 @@ module "old_danousna" {
   }
   source   = "./users"
   username = "danousna"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_Eliaccess" {
@@ -177,6 +251,16 @@ module "old_jpennors" {
   }
   source   = "./users"
   username = "jpennors"
+  teams = {
+    "woolly" = {
+      team = github_team.woolly.id,
+      role = "member"
+    }
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_jsmrcaga" {
@@ -193,6 +277,12 @@ module "old_jumelloic" {
   }
   source   = "./users"
   username = "jumelloic"
+  teams = {
+    "gesasso" = {
+      team = github_team.gesasso.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_lafondoc" {
@@ -201,6 +291,12 @@ module "old_lafondoc" {
   }
   source   = "./users"
   username = "lafondoc"
+  teams = {
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_lvaroqui" {
@@ -209,6 +305,16 @@ module "old_lvaroqui" {
   }
   source   = "./users"
   username = "lvaroqui"
+  teams = {
+    "woolly" = {
+      team = github_team.woolly.id,
+      role = "member"
+    }
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_MercierCorentin" {
@@ -217,6 +323,20 @@ module "old_MercierCorentin" {
   }
   source   = "./users"
   username = "MercierCorentin"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+    "cloud" = {
+      team = github_team.cloud.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_mglorion" {
@@ -225,6 +345,12 @@ module "old_mglorion" {
   }
   source   = "./users"
   username = "mglorion"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_NastuzziSamy" {
@@ -233,6 +359,44 @@ module "old_NastuzziSamy" {
   }
   source   = "./users"
   username = "NastuzziSamy"
+  teams = {
+    "woolly" = {
+      team = github_team.woolly.id,
+      role = "member"
+    }
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+    "planner" = {
+      team = github_team.planner.id,
+      role = "member"
+    }
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+    "locky" = {
+      team = github_team.locky.id,
+      role = "member"
+    }
+    "gesasso" = {
+      team = github_team.gesasso.id,
+      role = "member"
+    }
+    "covoit-utc" = {
+      team = github_team.covoit_utc.id,
+      role = "member"
+    }
+    "cloud" = {
+      team = github_team.cloud.id,
+      role = "member"
+    }
+    "application_utcbde" = {
+      team = github_team.application_utcbde.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_noeamiot" {
@@ -242,6 +406,12 @@ module "old_noeamiot" {
   source   = "./users"
   username = "noeamiot"
   role     = "admin"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "maintainer"
+    }
+  }
 }
 
 module "old_obledaym" {
@@ -250,6 +420,16 @@ module "old_obledaym" {
   }
   source   = "./users"
   username = "obledaym"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_Pangoraw" {
@@ -258,6 +438,12 @@ module "old_Pangoraw" {
   }
   source   = "./users"
   username = "Pangoraw"
+  teams = {
+    "woolly" = {
+      team = github_team.woolly.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_picardthibault" {
@@ -266,6 +452,12 @@ module "old_picardthibault" {
   }
   source   = "./users"
   username = "picardthibault"
+  teams = {
+    "application_utcbde" = {
+      team = github_team.application_utcbde.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_pierrickdes59" {
@@ -274,6 +466,12 @@ module "old_pierrickdes59" {
   }
   source   = "./users"
   username = "pierrickdes59"
+  teams = {
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_pineaulo" {
@@ -282,6 +480,12 @@ module "old_pineaulo" {
   }
   source   = "./users"
   username = "pineaulo"
+  teams = {
+    "application_utcbde" = {
+      team = github_team.application_utcbde.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_R0one" {
@@ -290,6 +494,16 @@ module "old_R0one" {
   }
   source   = "./users"
   username = "R0one"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+    "application_utcbde" = {
+      team = github_team.application_utcbde.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_RevenMyst" {
@@ -298,6 +512,12 @@ module "old_RevenMyst" {
   }
   source   = "./users"
   username = "RevenMyst"
+  teams = {
+    "portail" = {
+      team = github_team.portail.id,
+      role = "member"
+    }
+  }
 }
 
 module "old_rurod" {
@@ -314,4 +534,10 @@ module "old_yElSaadany" {
   }
   source   = "./users"
   username = "yElSaadany"
+  teams = {
+    "covoit-utc" = {
+      team = github_team.covoit_utc.id,
+      role = "member"
+    }
+  }
 }
