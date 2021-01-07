@@ -1163,3 +1163,59 @@ resource github_branch_default textes_donnees_personnelles {
   repository = github_repository.textes_donnees_personnelles.name
   branch     = data.github_branch.textes_donnees_personnelles_master.branch
 }
+
+### locky
+
+resource github_repository locky {
+  provider               = github.old
+  archived               = false
+  delete_branch_on_merge = true
+  description            = ""
+  has_downloads          = true
+  has_issues             = true
+  has_projects           = true
+  has_wiki               = true
+  name                   = "locky"
+  visibility             = "public"
+  vulnerability_alerts   = true
+}
+
+data github_branch locky_master {
+  provider   = github.old
+  repository = "locky"
+  branch     = "master"
+}
+
+resource github_branch_default locky {
+  provider   = github.old
+  repository = github_repository.locky.name
+  branch     = data.github_branch.locky.branch
+}
+
+### terraform_jda
+
+resource github_repository terraform_jda {
+  provider               = github.old
+  archived               = false
+  delete_branch_on_merge = true
+  description            = ""
+  has_downloads          = true
+  has_issues             = true
+  has_projects           = true
+  has_wiki               = true
+  name                   = "terraform_jda"
+  visibility             = "private"
+  vulnerability_alerts   = true
+}
+
+data github_branch terraform_jda_master {
+  provider   = github.old
+  repository = "terraform_jda"
+  branch     = "master"
+}
+
+resource github_branch_default terraform_jda {
+  provider   = github.old
+  repository = github_repository.terraform_jda.name
+  branch     = data.github_branch.terraform_jda.branch
+}

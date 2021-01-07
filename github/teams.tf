@@ -94,17 +94,17 @@ resource github_team cloud {
 
 ### Covoit-Utc
 
-resource github_team covoit_utc {
+resource github_team covoitutc {
   provider    = github.old
   name        = "Covoit'UTC"
   description = "Développer l'application de Covoiturage"
   privacy     = "closed"
 }
 
-resource github_team_repository covoit_utc {
+resource github_team_repository covoitutc_covoitutc {
   provider   = github.old
-  team_id    = github_team.covoit_utc.id
-  repository = github_repository.covoit_utc.name
+  team_id    = github_team.covoitutc.id
+  repository = github_repository.covoitutc.name
   permission = "push"
 }
 
@@ -246,7 +246,7 @@ resource github_team_repository portail_portail {
 resource github_team_repository portail_portail_old {
   provider   = github.old
   team_id    = github_team.portail.id
-  repository = github_repository.portail_portail_old.name
+  repository = github_repository.portail_old.name
   permission = "push"
 }
 
