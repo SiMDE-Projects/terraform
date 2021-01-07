@@ -1182,14 +1182,14 @@ resource github_repository locky {
 
 data github_branch locky_master {
   provider   = github.old
-  repository = "locky"
+  repository = github_repository.locky.name
   branch     = "master"
 }
 
 resource github_branch_default locky {
   provider   = github.old
   repository = github_repository.locky.name
-  branch     = data.github_branch.locky.branch
+  branch     = data.github_branch.locky_master.branch
 }
 
 ### terraform_jda
@@ -1210,12 +1210,12 @@ resource github_repository terraform_jda {
 
 data github_branch terraform_jda_master {
   provider   = github.old
-  repository = "terraform_jda"
+  repository = github_repository.terraform_jda.name
   branch     = "master"
 }
 
 resource github_branch_default terraform_jda {
   provider   = github.old
   repository = github_repository.terraform_jda.name
-  branch     = data.github_branch.terraform_jda.branch
+  branch     = data.github_branch.terraform_jda_master.branch
 }
