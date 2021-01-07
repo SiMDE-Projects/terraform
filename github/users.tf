@@ -111,6 +111,10 @@ module "old_abrasseu" {
       team = github_team.payutc.id,
       role = "member"
     }
+    "woolly" = {
+      team = github_team.woolly.id,
+      role = "member"
+    }
   }
 }
 
