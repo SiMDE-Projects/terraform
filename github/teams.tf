@@ -94,7 +94,7 @@ resource github_team cloud {
 
 ### Covoit-Utc
 
-resource github_team covoitutc {
+resource github_team covoit_utc {
   provider    = github.old
   name        = "Covoit'UTC"
   description = "Développer l'application de Covoiturage"
@@ -103,7 +103,7 @@ resource github_team covoitutc {
 
 resource github_team_repository covoitutc_covoitutc {
   provider   = github.old
-  team_id    = github_team.covoitutc.id
+  team_id    = github_team.covoit_utc.id
   repository = github_repository.covoitutc.name
   permission = "push"
 }

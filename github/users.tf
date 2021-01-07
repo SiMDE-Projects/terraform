@@ -388,8 +388,8 @@ module "old_NastuzziSamy" {
       team = github_team.gesasso.id,
       role = "member"
     }
-    "covoitutc" = {
-      team = github_team.covoitutc.id,
+    "covoit_utc" = {
+      team = github_team.covoit_utc.id,
       role = "member"
     }
     "cloud" = {
@@ -539,8 +539,8 @@ module "old_yElSaadany" {
   source   = "./users"
   username = "yElSaadany"
   teams = {
-    "covoitutc" = {
-      team = github_team.covoitutc.id,
+    "covoit_utc" = {
+      team = github_team.covoit_utc.id,
       role = "member"
     }
   }
