@@ -63,3 +63,219 @@ resource github_team_repository simde_terraform {
   repository = github_repository.terraform.name
   permission = "maintain"
 }
+
+###############################
+###   ORIGINAL ORGANIZATION ###
+###############################
+
+### Application UTC/BDE
+resource github_team application_utcbde {
+  provider    = github.old
+  name        = "Application UTC/BDE"
+  description = "Developpeurs de l'application UTC/BDE"
+  privacy     = "closed"
+}
+
+resource github_team_repository application_utcbde_utc_mobile {
+  provider   = github.old
+  team_id    = github_team.application_utcbde.id
+  repository = github_repository.utc_mobile.name
+  permission = "push"
+}
+
+### Cloud
+
+resource github_team cloud {
+  provider    = github.old
+  name        = "Cloud"
+  description = "Développer un cloud avec Nextcloud"
+  privacy     = "closed"
+}
+
+### Covoit-Utc
+
+resource github_team covoit_utc {
+  provider    = github.old
+  name        = "Covoit'UTC"
+  description = "Développer l'application de Covoiturage"
+  privacy     = "closed"
+}
+
+resource github_team_repository covoitutc_covoitutc {
+  provider   = github.old
+  team_id    = github_team.covoit_utc.id
+  repository = github_repository.covoitutc.name
+  permission = "push"
+}
+
+### Gesasso
+
+resource github_team gesasso {
+  provider    = github.old
+  name        = "Gesasso"
+  description = "Développer le gestionnaire des associations"
+  privacy     = "closed"
+}
+
+resource github_team_repository gesasso_gesasso2 {
+  provider   = github.old
+  team_id    = github_team.gesasso.id
+  repository = github_repository.gesasso2.name
+  permission = "push"
+}
+
+### Locky
+
+resource github_team locky {
+  provider    = github.old
+  name        = "Locky"
+  description = ""
+  privacy     = "closed"
+}
+
+resource github_team_repository locky_locky {
+  provider   = github.old
+  team_id    = github_team.locky.id
+  repository = github_repository.locky.name
+  permission = "push"
+}
+
+# PayUTC
+resource github_team payutc {
+  provider    = github.old
+  name        = "PayUTC"
+  description = "Développer les outils et les APIs PayUTC"
+  privacy     = "closed"
+}
+
+resource github_team_repository payutc_bdecotiz {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.bdecotiz.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_jessy {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.jessy.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_jessy_api {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.jessy_api.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_payback {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.payback.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_paymoi {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.paymoi.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_payutc_mobile {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.payutc_mobile.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_woolly_api {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.woolly_api.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_woolly_front {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.woolly_front.name
+  permission = "push"
+}
+
+resource github_team_repository payutc_woolly_ui {
+  provider   = github.old
+  team_id    = github_team.payutc.id
+  repository = github_repository.woolly_ui.name
+  permission = "push"
+}
+
+# Planner
+
+resource github_team planner {
+  provider    = github.old
+  name        = "Planner"
+  description = "Développer le plannificateur de permanences"
+  privacy     = "closed"
+}
+
+resource github_team_repository planner_planner {
+  provider   = github.old
+  team_id    = github_team.planner.id
+  repository = github_repository.planner.name
+  permission = "push"
+}
+
+### Portail
+
+resource github_team portail {
+  provider    = github.old
+  name        = "Portail"
+  description = "Développer le Portail"
+  privacy     = "closed"
+}
+
+resource github_team_repository portail_portail {
+  provider   = github.old
+  team_id    = github_team.portail.id
+  repository = github_repository.portail.name
+  permission = "push"
+}
+
+resource github_team_repository portail_portail_old {
+  provider   = github.old
+  team_id    = github_team.portail.id
+  repository = github_repository.portail_old.name
+  permission = "push"
+}
+
+resource github_team_repository portail_utc_mobile {
+  provider   = github.old
+  team_id    = github_team.portail.id
+  repository = github_repository.utc_mobile.name
+  permission = "push"
+}
+
+### Woolly
+
+resource github_team woolly {
+  provider    = github.old
+  name        = "Woolly"
+  description = "Développer la nouvelle billetterie UTC"
+  privacy     = "closed"
+}
+
+resource github_team_repository woolly_woolly_api {
+  provider   = github.old
+  team_id    = github_team.woolly.id
+  repository = github_repository.woolly_api.name
+  permission = "push"
+}
+
+resource github_team_repository woolly_woolly_ui {
+  provider   = github.old
+  team_id    = github_team.woolly.id
+  repository = github_repository.woolly_ui.name
+  permission = "push"
+}

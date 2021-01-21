@@ -11,3 +11,9 @@ provider github {
   token        = var.token
   organization = var.organization
 }
+
+provider github {
+  alias        = "old"
+  token        = var.token
+  organization = var.old_organization
+}
