@@ -10,7 +10,7 @@ variable "position" {
   type    = number
 }
 variable "permissions" {
-  # type = map
+  #  type = map
 }
 variable "roles" {
   #  type = map
