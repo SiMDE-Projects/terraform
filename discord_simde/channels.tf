@@ -29,9 +29,9 @@ module private-payutc {
   roles       = local.roles
 }
 
-module private-jeffrey {
+module private-integ {
   source      = "./channels"
-  name        = "private-jeffrey"
+  name        = "private-integ"
   api_token   = var.api_token
   server_id   = discord_server.server.id
   position    = module.private-payutc.position + 1
@@ -40,20 +40,20 @@ module private-jeffrey {
   roles       = local.roles
 }
 
-module private-woolly {
+module private-jeffrey {
   source      = "./channels"
-  name        = "private-woolly"
+  name        = "private-jeffrey"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-jeffrey.position + 1
+  position    = module.private-integ.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
 }
 
-module private-integ {
+module private-woolly {
   source      = "./channels"
-  name        = "private-integ"
+  name        = "private-woolly"
   api_token   = var.api_token
   server_id   = discord_server.server.id
   position    = module.private-jeffrey.position + 1
