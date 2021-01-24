@@ -44,6 +44,7 @@ module maxime_vaillant {
   roles = {
     (discord_role.member.id)  = true
     (discord_role.jeffrey.id) = true
+    (discord_role.payutc.id) = true
     (discord_role.integ.id) = true
   }
 }
@@ -55,7 +56,7 @@ module antoine_cet {
   username      = "kinshasa"
   discriminator = 6035
   roles = {
-    (discord_role.member.id) = true
+    (discord_role.respinfo.id) = true
   }
 }
 
@@ -79,7 +80,7 @@ module BWRCat {
   username      = "BWRCat"
   discriminator = 1078
   roles = {
-    (discord_role.member.id) = true
+    (discord_role.respinfo.id) = true
   }
 }
 
@@ -160,7 +161,7 @@ module pierre_adorni {
   username      = "DRJonshon"
   discriminator = 6339
   roles = {
-    (discord_role.member.id) = true
     (discord_role.integ.id) = true
+    (discord_role.respinfo.id) = true
   }
 }
