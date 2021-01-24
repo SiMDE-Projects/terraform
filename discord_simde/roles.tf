@@ -4,6 +4,7 @@ locals {
     member   = discord_role.member
     treso    = discord_role.treso
     payutc   = discord_role.payutc
+    integ    = discord_role.integ
     jeffrey  = discord_role.jeffrey
     woolly   = discord_role.woolly
     respinfo = discord_role.respinfo
@@ -20,6 +21,10 @@ data discord_color treso {
 }
 
 data discord_color payutc {
+  hex = "#E0E000"
+}
+
+data discord_color integ {
   hex = "#E0E000"
 }
 
@@ -66,7 +71,7 @@ resource discord_role payutc {
 resource discord_role treso {
   server_id   = discord_server.server.id
   name        = "Projet Flairsou"
-  position    = discord_role.jeffrey.position + 1
+  position    = discord_role.integ.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.treso.dec
   mentionable = true
@@ -78,6 +83,15 @@ resource discord_role jeffrey {
   position    = discord_role.woolly.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.jeffrey.dec
+  mentionable = true
+}
+
+resource discord_role integ {
+  server_id   = discord_server.server.id
+  name        = "Integ"
+  position    = discord_role.jeffrey.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.integ.dec
   mentionable = true
 }
 
