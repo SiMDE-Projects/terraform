@@ -151,3 +151,14 @@ module romain_maliachauguste {
     (discord_role.member.id) = true
   }
 }
+
+module pierre_adorni {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "DRJonshon"
+  discriminator = 6339
+  roles = {
+    (discord_role.member.id) = true
+  }
+}
