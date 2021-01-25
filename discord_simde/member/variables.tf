@@ -3,6 +3,6 @@ variable "server_id" { type = number }
 variable "username" { type = string }
 variable "discriminator" { type = string }
 variable "roles" {
-  type    = map
+  type    = map(bool)
   default = {}
 }
