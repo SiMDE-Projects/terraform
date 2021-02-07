@@ -165,3 +165,14 @@ module pierre_adorni {
     (discord_role.respinfo.id) = true
   }
 }
+
+module mathis_deroubaix {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Mathias Deroubaix"
+  discriminator = 0269
+  roles = {
+    (discord_role.member.id) = true
+  }
+}
