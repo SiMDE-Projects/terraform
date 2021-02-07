@@ -171,7 +171,7 @@ module mathis_deroubaix {
   api_token     = var.api_token
   server_id     = discord_server.server.id
   username      = "Mathias Deroubaix"
-  discriminator = 0269
+  discriminator = "0269"
   roles = {
     (discord_role.member.id) = true
   }
