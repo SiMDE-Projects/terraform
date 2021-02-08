@@ -44,8 +44,8 @@ module maxime_vaillant {
   roles = {
     (discord_role.member.id)  = true
     (discord_role.jeffrey.id) = true
-    (discord_role.payutc.id) = true
-    (discord_role.integ.id) = true
+    (discord_role.payutc.id)  = true
+    (discord_role.integ.id)   = true
   }
 }
 
@@ -161,7 +161,7 @@ module pierre_adorni {
   username      = "DRJonshon"
   discriminator = 6339
   roles = {
-    (discord_role.integ.id) = true
+    (discord_role.integ.id)    = true
     (discord_role.respinfo.id) = true
   }
 }
@@ -174,5 +174,16 @@ module mathis_deroubaix {
   discriminator = "0269"
   roles = {
     (discord_role.member.id) = true
+  }
+}
+
+module rayan_doudech {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Rayan"
+  discriminator = 7690
+  roles = {
+    (discord_role.respinfo.id) = true
   }
 }
