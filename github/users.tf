@@ -39,6 +39,7 @@ module "anto2oo" {
 module "noeamiot" {
   source   = "./users"
   username = "noeamiot"
+  role     = "admin"
   teams = {
     "jeffrey" = {
       team = github_team.jeffrey.id,
