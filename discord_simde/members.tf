@@ -166,7 +166,7 @@ module pierre_adorni {
   }
 }
 
-module mathis_deroubaix {
+module mathias_deroubaix {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
