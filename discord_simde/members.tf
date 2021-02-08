@@ -176,3 +176,14 @@ module mathis_deroubaix {
     (discord_role.member.id) = true
   }
 }
+
+module rayan_doudech {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Rayan"
+  discriminator = 7690
+  roles = {
+    (discord_role.respinfo.id) = true
+  }
+}
