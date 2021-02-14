@@ -187,3 +187,14 @@ module rayan_doudech {
     (discord_role.respinfo.id) = true
   }
 }
+
+module pascal_quach {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Strike"
+  discriminator = 5158
+  roles = {
+    (discord_role.member.id) = true
+  }
+}
