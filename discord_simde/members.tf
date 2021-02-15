@@ -198,3 +198,14 @@ module pascal_quach {
     (discord_role.member.id) = true
   }
 }
+
+module pierre_pouliquen {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Afailature"
+  discriminator = 7381
+  roles = {
+    (discord_role.member.id) = true
+  }
+}
