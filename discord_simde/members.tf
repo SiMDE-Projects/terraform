@@ -46,6 +46,7 @@ module maxime_vaillant {
     (discord_role.jeffrey.id) = true
     (discord_role.payutc.id)  = true
     (discord_role.integ.id)   = true
+    (discord_role.bde.id)     = true
   }
 }
 
