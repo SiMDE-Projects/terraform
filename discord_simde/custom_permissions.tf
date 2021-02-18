@@ -7,6 +7,15 @@ resource discord_channel_permission respinfo_general {
   deny         = local.permissions.allow.deny_bits
 }
 
+### Honorable Curieux
+resource discord_channel_permission curieux_general {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.curieux.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
 ### Payutc
 resource discord_channel_permission payutc_general {
   channel_id   = module.general.category.id
