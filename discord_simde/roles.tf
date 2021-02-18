@@ -9,6 +9,7 @@ locals {
     woolly   = discord_role.woolly
     bde      = discord_role.bde
     respinfo = discord_role.respinfo
+    curieux  = discord_role.curieux
     everyone = discord_role_everyone.everyone
   }
 }
@@ -42,11 +43,15 @@ data discord_color bde {
 }
 
 data discord_color member {
-  hex = "#4287f5"
+  hex = "#4070F0"
 }
 
 data discord_color respinfo {
-  hex = "#4287f5"
+  hex = "#4070F0"
+}
+
+data discord_color curieux {
+  hex = "#79ACFF"
 }
 
 resource discord_role admin {
@@ -129,9 +134,17 @@ resource discord_role member {
 resource discord_role respinfo {
   server_id   = discord_server.server.id
   name        = "Elegant Resp Info"
-  position    = 1
+  position    = discord_role.curieux.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.respinfo.dec
+}
+
+resource discord_role curieux {
+  server_id   = discord_server.server.id
+  name        = "Honorable curieux"
+  position    = 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.curieux.dec
 }
 
 resource discord_role_everyone everyone {
