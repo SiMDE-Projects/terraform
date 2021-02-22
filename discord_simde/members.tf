@@ -210,3 +210,91 @@ module pierre_pouliquen {
     (discord_role.member.id) = true
   }
 }
+
+module neil {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "new-uno"
+  discriminator = 8213
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
+
+module mael_belval {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Maraiste"
+  discriminator = 8972
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
+
+module romain_leclere {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Ossan"
+  discriminator = 6694
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
+
+module ThreeNias {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "ThreeNias"
+  discriminator = 3036
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
+
+module arthur_wacquez {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Outlow"
+  discriminator = 5834
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
+
+module victor_tondolo {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Koppp"
+  discriminator = 7389
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
+
+module victor_mignot {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Dala"
+  discriminator = 1597
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
+
+module felix {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "felixpp"
+  discriminator = 5673
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
