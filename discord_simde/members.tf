@@ -263,6 +263,7 @@ module arthur_wacquez {
   discriminator = 5834
   roles = {
     (discord_role.curieux.id) = true
+    (discord_role.emploidut.id) = true
   }
 }
 
@@ -274,6 +275,7 @@ module victor_tondolo {
   discriminator = 7389
   roles = {
     (discord_role.curieux.id) = true
+    (discord_role.emploidut.id) = true
   }
 }
 
