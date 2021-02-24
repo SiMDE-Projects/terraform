@@ -8,6 +8,7 @@ locals {
     jeffrey  = discord_role.jeffrey
     woolly   = discord_role.woolly
     bde      = discord_role.bde
+    emploidut= discord_role.emploidut
     respinfo = discord_role.respinfo
     curieux  = discord_role.curieux
     everyone = discord_role_everyone.everyone
@@ -39,6 +40,10 @@ data discord_color woolly {
 }
 
 data discord_color bde {
+  hex = "#E0E000"
+}
+
+data discord_color emploidut {
   hex = "#E0E000"
 }
 
@@ -117,9 +122,18 @@ resource discord_role woolly {
 resource discord_role bde {
   server_id   = discord_server.server.id
   name        = "BDE"
-  position    = discord_role.member.position + 1
+  position    = discord_role.emploidut.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.bde.dec
+  mentionable = true
+}
+
+resource discord_role emploidut {
+  server_id   = discord_server.server.id
+  name        = "EmploiDuTemps"
+  position    = discord_role.member.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.emploidut.dec
   mentionable = true
 }
 
