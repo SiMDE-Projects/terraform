@@ -1,17 +1,17 @@
 locals {
   roles = {
-    admin    = discord_role.admin
-    member   = discord_role.member
-    treso    = discord_role.treso
-    payutc   = discord_role.payutc
-    integ    = discord_role.integ
-    jeffrey  = discord_role.jeffrey
-    woolly   = discord_role.woolly
-    bde      = discord_role.bde
-    emploidut= discord_role.emploidut
-    respinfo = discord_role.respinfo
-    curieux  = discord_role.curieux
-    everyone = discord_role_everyone.everyone
+    admin     = discord_role.admin
+    member    = discord_role.member
+    treso     = discord_role.treso
+    payutc    = discord_role.payutc
+    integ     = discord_role.integ
+    jeffrey   = discord_role.jeffrey
+    woolly    = discord_role.woolly
+    bde       = discord_role.bde
+    emploidut = discord_role.emploidut
+    respinfo  = discord_role.respinfo
+    curieux   = discord_role.curieux
+    everyone  = discord_role_everyone.everyone
   }
 }
 
@@ -130,7 +130,7 @@ resource discord_role bde {
 
 resource discord_role emploidut {
   server_id   = discord_server.server.id
-  name        = "EmploiDuTemps"
+  name        = "Emploi du temps"
   position    = discord_role.member.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.emploidut.dec
