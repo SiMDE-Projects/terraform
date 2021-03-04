@@ -25,6 +25,11 @@ module "maxime-vaillant" {
   }
 }
 
+module victor_moreliere {
+  source   = "./users"
+  username = "GalliusJulius"
+}
+
 module "anto2oo" {
   source   = "./users"
   username = "anto2oo"

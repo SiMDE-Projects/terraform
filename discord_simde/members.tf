@@ -262,7 +262,7 @@ module arthur_wacquez {
   username      = "Outlow"
   discriminator = 5834
   roles = {
-    (discord_role.curieux.id) = true
+    (discord_role.curieux.id)   = true
     (discord_role.emploidut.id) = true
   }
 }
@@ -274,7 +274,7 @@ module victor_tondolo {
   username      = "Koppp"
   discriminator = 7389
   roles = {
-    (discord_role.curieux.id) = true
+    (discord_role.curieux.id)   = true
     (discord_role.emploidut.id) = true
   }
 }
@@ -287,6 +287,18 @@ module victor_mignot {
   discriminator = 1597
   roles = {
     (discord_role.curieux.id) = true
+  }
+}
+
+module victor_moreliere {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Totor"
+  discriminator = 5934
+  roles = {
+    (discord_role.curieux.id)  = true
+    (discord_role.respinfo.id) = true
   }
 }
 
