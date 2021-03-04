@@ -7,6 +7,14 @@ resource discord_channel_permission respinfo_general {
   deny         = local.permissions.allow.deny_bits
 }
 
+resource discord_channel_permission respinfo_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.respinfo.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
 ### Honorable Curieux
 resource discord_channel_permission curieux_general {
   channel_id   = module.general.category.id
@@ -14,6 +22,22 @@ resource discord_channel_permission curieux_general {
   overwrite_id = local.roles.curieux.id
   allow        = local.permissions.allow.allow_bits
   deny         = local.permissions.allow.deny_bits
+}
+
+resource discord_channel_permission curieux_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.curieux.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
+resource discord_channel_permission curieux_spam {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.curieux.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
 }
 
 ### Payutc
@@ -33,6 +57,14 @@ resource discord_channel_permission payutc_payutc {
   deny         = local.permissions.allow.deny_bits
 }
 
+resource discord_channel_permission payutc_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.payutc.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
 ### Woolly
 resource discord_channel_permission woolly_general {
   channel_id   = module.general.category.id
@@ -48,6 +80,14 @@ resource discord_channel_permission woolly_woolly {
   overwrite_id = local.roles.woolly.id
   allow        = local.permissions.allow.allow_bits
   deny         = local.permissions.allow.deny_bits
+}
+
+resource discord_channel_permission woolly_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.woolly.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
 }
 
 ### Jeffrey
@@ -67,6 +107,14 @@ resource discord_channel_permission jeffrey_jeffrey {
   deny         = local.permissions.allow.deny_bits
 }
 
+resource discord_channel_permission jeffrey_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.jeffrey.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
 ### Integ
 resource discord_channel_permission integ_general {
   channel_id   = module.general.category.id
@@ -82,6 +130,15 @@ resource discord_channel_permission integ_integ {
   overwrite_id = local.roles.integ.id
   allow        = local.permissions.allow.allow_bits
   deny         = local.permissions.allow.deny_bits
+}
+
+
+resource discord_channel_permission integ_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.integ.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
 }
 
 ### BDE
@@ -101,6 +158,14 @@ resource discord_channel_permission bde_bde {
   deny         = local.permissions.allow.deny_bits
 }
 
+resource discord_channel_permission bde_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.bde.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
 ### Emploid'ut
 resource discord_channel_permission emploidut_general {
   channel_id   = module.general.category.id
@@ -116,6 +181,14 @@ resource discord_channel_permission emploidut_emploidut {
   overwrite_id = local.roles.emploidut.id
   allow        = local.permissions.allow.allow_bits
   deny         = local.permissions.allow.deny_bits
+}
+
+resource discord_channel_permission emploidut_notifications {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.emploidut.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
 }
 
 ### Treso
@@ -135,24 +208,6 @@ resource discord_channel_permission treso_treso {
   deny         = local.permissions.allow.deny_bits
 }
 
-### Notifications
-resource discord_channel_permission payutc_notifications {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.payutc.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-resource discord_channel_permission woolly_notifications {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.woolly.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-
 resource discord_channel_permission treso_notifications {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
@@ -160,6 +215,8 @@ resource discord_channel_permission treso_notifications {
   allow        = local.permissions.readonly.allow_bits
   deny         = local.permissions.readonly.deny_bits
 }
+
+### members
 
 resource discord_channel_permission member_notifications {
   channel_id   = discord_text_channel.notifications.id
@@ -169,49 +226,26 @@ resource discord_channel_permission member_notifications {
   deny         = local.permissions.readonly.deny_bits
 }
 
-resource discord_channel_permission respinfo_notifications {
-  channel_id   = discord_text_channel.notifications.id
+resource discord_channel_permission member_spam {
+  channel_id   = discord_text_channel.spam.id
   type         = "role"
-  overwrite_id = local.roles.respinfo.id
+  overwrite_id = local.roles.member.id
   allow        = local.permissions.readonly.allow_bits
   deny         = local.permissions.readonly.deny_bits
 }
 
-resource discord_channel_permission jeffrey_notifications {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.jeffrey.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
+### everyone
 
-resource discord_channel_permission integ_notifications {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.integ.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-resource discord_channel_permission bde_notifications {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.bde.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-resource discord_channel_permission emploidut_notifications {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.emploidut.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-### Games
-resource discord_channel_permission games_member {
+resource discord_channel_permission everyone_games {
   channel_id   = discord_text_channel.games.id
+  type         = "role"
+  overwrite_id = local.roles.everyone.id
+  allow        = local.permissions.member.allow_bits
+  deny         = local.permissions.member.deny_bits
+}
+
+resource discord_channel_permission everyone_questions_techniques {
+  channel_id   = discord_text_channel.questions-techniques.id
   type         = "role"
   overwrite_id = local.roles.everyone.id
   allow        = local.permissions.member.allow_bits
