@@ -279,3 +279,21 @@ resource github_team_repository woolly_woolly_ui {
   repository = github_repository.woolly_ui.name
   permission = "push"
 }
+
+### Emploidut
+
+resource github_team emploidut {
+  name        = "Emploidut"
+  description = "Développer la nouvelle version de Emploidut"
+  privacy     = "closed"
+}
+
+resource github_team_repository emploidut_emploidutApi {
+  team_id    = github_team.emploidut.id
+  repository = github_repository.emploidutApi.name
+  permission = "push"
+  depends_on = [
+    github_repository.emploidutApi,
+    github_team.emploidut
+  ]
+}
