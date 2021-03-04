@@ -1245,26 +1245,24 @@ resource github_repository emploidutApi {
   vulnerability_alerts = true
 }
 
-# data github_branch emploidutApi_main {
-#   repository = "emploidut-api"
-#   branch     = "main"
-# }
-# 
-# resource github_branch_default emploidutApi {
-#   repository = github_repository.emploidutApi.name
-#   branch     = data.github_branch.emploidutApi_main.branch
-#   depends_on = [github_branch.emploidutApi_main]
-# }
-# 
-# resource github_branch_protection emploidutApi_main {
-#   repository_id     = github_repository.emploidutApi.node_id
-#   pattern           = "main"
-#   push_restrictions = [github_team.simde.node_id]
-#   required_pull_request_reviews {
-#     dismiss_stale_reviews           = true
-#     dismissal_restrictions          = [github_team.simde.node_id]
-#     require_code_owner_reviews      = true
-#     required_approving_review_count = 1
-#   }
-#   depends_on = [github_branch.emploidutApi_main]
-# }
+data github_branch emploidutApi_master {
+  repository = "emploidut-api"
+  branch     = "master"
+}
+
+resource github_branch_default emploidutApi {
+  repository = github_repository.emploidutApi.name
+  branch     = data.github_branch.emploidutApi_master.branch
+}
+
+resource github_branch_protection emploidutApi_master {
+  repository_id     = github_repository.emploidutApi.node_id
+  pattern           = "master"
+  push_restrictions = [github_team.simde.node_id]
+  required_pull_request_reviews {
+    dismiss_stale_reviews           = true
+    dismissal_restrictions          = [github_team.simde.node_id]
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+  }
+}

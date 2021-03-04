@@ -556,10 +556,10 @@ module arthur_wacquez {
   source   = "./users"
   username = "0uTl0w24"
   teams = {
-    # "emploidut" = {
-    #   team = github_team.emploidut.id
-    #   role = "member"
-    # }
+    "emploidut" = {
+      team = github_team.emploidut.id
+      role = "member"
+    }
   }
 }
 
@@ -567,9 +567,9 @@ module victor_tondolo {
   source   = "./users"
   username = "0uTl0w24"
   teams = {
-    # "emploidut" = {
-    #   team = github_team.emploidut.id
-    #   role = "member"
-    # }
+    "emploidut" = {
+      team = github_team.emploidut.id
+      role = "member"
+    }
   }
 }
