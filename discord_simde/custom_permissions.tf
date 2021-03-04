@@ -218,6 +218,22 @@ resource discord_channel_permission curieux_notifications {
   deny         = local.permissions.readonly.deny_bits
 }
 
+resource discord_channel_permission curieux_spam {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.curieux.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
+resource discord_channel_permission member_spam {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.member.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
 ### everyone
 
 resource discord_channel_permission everyone_games {
