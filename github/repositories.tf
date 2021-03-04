@@ -1219,3 +1219,50 @@ resource github_branch_default terraform_jda {
   repository = github_repository.terraform_jda.name
   branch     = data.github_branch.terraform_jda_master.branch
 }
+
+### emploidut_back
+
+resource github_repository emploidutApi {
+  allow_merge_commit     = true
+  allow_rebase_merge     = true
+  allow_squash_merge     = true
+  archived               = false
+  auto_init              = false
+  delete_branch_on_merge = true
+  description            = "Backend de emploidut"
+  has_downloads          = false
+  has_issues             = true
+  has_projects           = true
+  has_wiki               = false
+  is_template            = false
+  name                   = "emploidut-api"
+  topics = [
+    "api",
+    "emploidut",
+    "service"
+  ]
+  visibility           = "public"
+  vulnerability_alerts = true
+}
+
+data github_branch emploidutApi_master {
+  repository = "emploidut-api"
+  branch     = "master"
+}
+
+resource github_branch_default emploidutApi {
+  repository = github_repository.emploidutApi.name
+  branch     = data.github_branch.emploidutApi_master.branch
+}
+
+resource github_branch_protection emploidutApi_master {
+  repository_id     = github_repository.emploidutApi.node_id
+  pattern           = "master"
+  push_restrictions = [github_team.simde.node_id]
+  required_pull_request_reviews {
+    dismiss_stale_reviews           = true
+    dismissal_restrictions          = [github_team.simde.node_id]
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+  }
+}

@@ -36,8 +36,8 @@ resource discord_channel_permission curieux_spam {
   channel_id   = discord_text_channel.spam.id
   type         = "role"
   overwrite_id = local.roles.curieux.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
 }
 
 ### Payutc
@@ -230,8 +230,8 @@ resource discord_channel_permission member_spam {
   channel_id   = discord_text_channel.spam.id
   type         = "role"
   overwrite_id = local.roles.member.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
 }
 
 ### everyone
