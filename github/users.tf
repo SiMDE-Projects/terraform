@@ -565,7 +565,7 @@ module arthur_wacquez {
 
 module victor_tondolo {
   source   = "./users"
-  username = "0uTl0w24"
+  username = "victor-tndl"
   teams = {
     "emploidut" = {
       team = github_team.emploidut.id
