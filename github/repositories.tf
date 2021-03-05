@@ -1256,12 +1256,12 @@ resource github_branch_default emploidutApi {
 }
 
 resource github_branch_protection emploidutApi_master {
-  repository_id     = github_repository.emploidutApi.node_id
-  pattern           = "master"
-  push_restrictions = [github_team.simde.node_id]
+  repository_id = github_repository.emploidutApi.node_id
+  pattern       = "master"
+  #push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
-    dismiss_stale_reviews           = true
-    dismissal_restrictions          = [github_team.simde.node_id]
+    dismiss_stale_reviews = true
+    #dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true
     required_approving_review_count = 1
   }
