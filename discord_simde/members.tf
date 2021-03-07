@@ -312,3 +312,15 @@ module felix {
     (discord_role.curieux.id) = true
   }
 }
+
+module thomas_guegan {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "StyHeet"
+  discriminator = 5848
+  roles = {
+    (discord_role.respinfo.id) = true #UTSea P21
+    (discord_role.integ.id)    = true
+  }
+}
