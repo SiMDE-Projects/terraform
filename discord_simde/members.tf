@@ -324,3 +324,14 @@ module thomas_guegan {
     (discord_role.integ.id)    = true
   }
 }
+
+module gabriel_francez {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Perciviel"
+  discriminator = 4863
+  roles = {
+    (discord_role.curieux.id) = true
+  }
+}
