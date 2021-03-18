@@ -335,7 +335,7 @@ module gabriel_francez {
     (discord_role.curieux.id) = true
   }
 }
-  
+
 module theo_chazeaud {
   source        = "./member"
   api_token     = var.api_token
@@ -344,6 +344,6 @@ module theo_chazeaud {
   discriminator = 8416
   roles = {
     (discord_role.member.id) = true
-    (discord_role.payutc.id) = true
+    (discord_role.member.id) = true
   }
 }
