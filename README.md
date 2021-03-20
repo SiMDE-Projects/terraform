@@ -37,13 +37,13 @@
 Chaque projet aura une catégorie contenant (au minimum) un channel textuel et un channel vocal. Cette catégorie pourra etre cachée, privée ou publique selon le cas. Le module prendra la forme suivante dans _/discord_simde/channels.tf_, les valeurs à modifier son commentées :
 
 ```terraform
-module private-project {							#nom de la ressource
+module private-project {                          #nom de la ressource
   source      = "./channels"
-  name        = "private-project" 					#nom des canaux, mettre le meme que le nom de la ressource
+  name        = "private-project"                 #nom des canaux, mettre le meme que le nom de la ressource
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.autre-canal.position + 1 	#position de la catégorie, on utilise ici les positions relatives
-  restricted  = true 								#catégorie publique / cachée
+  position    = module.autre-canal.position + 1   #position de la catégorie, on utilise ici les positions relatives
+  restricted  = true                              #catégorie publique / cachée
   permissions = local.permissions
   roles       = local.roles
 }
@@ -59,16 +59,16 @@ module private-project {							#nom de la ressource
 Chaque membre du Discord SiMDE sera représenté par une ressource issue de ce module pour assurer un suivi et une maintenance simplifiée. Chaque instance prendra la forme suivante dans _/discord_simde/members.tf_, les valeurs à modifier son commentées :
 
 ```terraform
-module cesar_richard {							#nom de la ressource, mettre le prenom_nom reel de l'utilisateur
+  module cesar_richard {                    #nom de la ressource, mettre le prenom_nom reel de l'utilisateur
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
-  username      = "licorne"						#username
-  discriminator = 2476							#discriminant
-  roles = {										#liste des roles à completer grâce aux roles de /discord_simde/roles.tf
+  username      = "licorne"                 #username
+  discriminator = 2476                      #discriminant (A mettre entre quotes s'il commence par un 0)
+  roles = {                                 #liste des roles à completer grâce aux roles de /discord_simde/roles.tf
     (discord_role.admin.id)  = true
     (discord_role.payutc.id) = true
-    (discord_role.member.id) = false			#il est possible de retirer un role automatiquement attribuer grâce à ce booléen
+    (discord_role.member.id) = false        #il est possible de retirer un role automatiquement attribuer grâce à ce booléen
   }
 }
 ```
@@ -100,14 +100,14 @@ Les fichiers dont le nom commence par un underscore ( \_ ) sont des utilisés po
 Chaque instance prendra la forme suivante dans _/discord_simde/members.tf_, les valeurs à modifier son commentées :
 
 ```terraform
-module cesar_richard {					#nom de la ressource, mettre le nom réel de la personne
+module cesar_richard {                #nom de la ressource, mettre le nom réel de la personne
   source   = "./users"
-  username = "cesar-richard"			#username GitHub
-  role     = "admin"					#role global dans l'organisation GitHub SiMDE (defaults to "member")
-  teams = {								#liste des Teams attachées, voir /discord_simde/teams.tf
-    "jeffrey" = {						#nom de la team
+  username = "cesar-richard"          #username GitHub
+  role     = "admin"                  #role global dans l'organisation GitHub SiMDE (defaults to "member")
+  teams = {                           #liste des Teams attachées, voir /discord_simde/teams.tf
+    "jeffrey" = {                     #nom de la team
       team = github_team.jeffrey.id,	#id de la team
-      role = "member"					#role au sein de la team
+      role = "member"					        #role au sein de la team
     },
     "simde" = {
       team = github_team.simde.id,
