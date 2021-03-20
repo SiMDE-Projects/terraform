@@ -84,10 +84,19 @@ module cesar_richard {							#nom de la ressource, mettre le prenom_nom reel de 
 - **repo_flairsou.tf** : Définition des répo du projet flairsou (forme à retravailler)
 - **repositories.tf** : Définition des répo du SiMDE (forme à retravailler)
 - **teams.tf** : Définition des Teams GitHub
-- **users.tf** : Définition des Utilisateurs GitHub en suivant le module "users" ([voir 4.1](https://github.com/SiMDE-Projects/terraform/blob/4956044989bfec2b295dabb31cad59a9b7777d4c/README.md#41-users-module-repr%C3%A9sentant-les-utilisateurs-github))
+- **users.tf** : Définition des Utilisateurs GitHub en suivant le module "users" ([voir 4.2](https://github.com/SiMDE-Projects/terraform/blob/4956044989bfec2b295dabb31cad59a9b7777d4c/README.md#41-users-module-repr%C3%A9sentant-les-utilisateurs-github))
 - **variables.tf** : Définition des variables d'entrée pour terraform (token API, organisation, ...)
 
-#### 4.1. users/ (Module représentant les utilisateurs GitHub)
+#### 4.1. repositories/ (Module représentant les repositories GitHub)
+
+Chaque repository est représenté par un fichier qui lui est propre au sein de ce module. Ces fichiers porteront le nom du repository pour plus de lisibilité.
+Les fichiers dont le nom commence par un underscore ( \_ ) sont des utilisés pour la configuration du module, ils ne doivent pas être modifiés.
+
+- **\_variables.tf** : Définition des variables d'entrée pour terraform (liste des teams github, ...)
+- **\_outputs.tf** : Définition des valeurs a exposer hors du module pour être utilisées ailleurs (pour l'instant pas utilisé, mais par exemple les instances des repositories)
+- **_my_repository.tf_** (par exemple) : Défini les paramètres du repo "_my_repository_"
+
+#### 4.2. users/ (Module représentant les utilisateurs GitHub)
 
 Chaque instance prendra la forme suivante dans _/discord_simde/members.tf_, les valeurs à modifier son commentées :
 
