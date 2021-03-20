@@ -81,10 +81,9 @@ module cesar_richard {							#nom de la ressource, mettre le prenom_nom reel de 
 
 - **outputs.tf** : Définition des valeurs a exposer hors du module pour être utilisées ailleurs
 - **providers.tf** : Définition du provider utilisé pour ce module
-- **repo_flairsou.tf** : Définition des répo du projet flairsou (forme à retravailler)
-- **repositories.tf** : Définition des répo du SiMDE (forme à retravailler)
+- **repositories.tf** : Définition des repository du SiMDE (forme à retravailler, à transférer dans le module repositories)
 - **teams.tf** : Définition des Teams GitHub
-- **users.tf** : Définition des Utilisateurs GitHub en suivant le module "users" ([voir 4.2](https://github.com/SiMDE-Projects/terraform/blob/4956044989bfec2b295dabb31cad59a9b7777d4c/README.md#41-users-module-repr%C3%A9sentant-les-utilisateurs-github))
+- **users.tf** : Définition des Utilisateurs GitHub en suivant le module "users" ([voir 4.2](https://github.com/SiMDE-Projects/terraform/blob/997c07baa1cb3e5b20540957f0411980b0d701ed/README.md#42-users-module-repr%C3%A9sentant-les-utilisateurs-github))
 - **variables.tf** : Définition des variables d'entrée pour terraform (token API, organisation, ...)
 
 #### 4.1. repositories/ (Module représentant les repositories GitHub)
