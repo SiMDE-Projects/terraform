@@ -21,10 +21,10 @@ resource github_repository flairsou {
 resource github_branch_protection flairsou_master {
   repository_id     = github_repository.flairsou.node_id
   pattern           = "main"
-  push_restrictions = [github_team.simde.node_id]
+  push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
     dismiss_stale_reviews           = true
-    dismissal_restrictions          = [github_team.simde.node_id]
+    dismissal_restrictions          = [var.teams.simde.node_id]
     require_code_owner_reviews      = true
     required_approving_review_count = 1
   }
@@ -59,4 +59,17 @@ resource github_project_column flairsou_main_approved {
 resource github_project_column flairsou_main_done {
   project_id = github_repository_project.flairsou_main.id
   name       = "DONE"
+}
+
+
+resource github_team_repository simde_flairsou {
+  team_id    = var.teams.simde.id
+  repository = github_repository.flairsou.name
+  permission = "maintain"
+}
+
+resource github_team_repository flairsou_flairsou {
+  team_id    = var.teams.flairsou.id
+  repository = github_repository.flairsou.name
+  permission = "maintain"
 }
