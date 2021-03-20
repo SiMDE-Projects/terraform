@@ -18,12 +18,12 @@
 
 ### 3. discord_simde/ (terraform du Discord)
 
-*	**channels.tf** : Définition des canaux en suivant le module "channel" (voir 3.1)
+*	**channels.tf** : Définition des canaux en suivant le module "channel" ([voir 3.1](https://github.com/SiMDE-Projects/terraform/blob/4956044989bfec2b295dabb31cad59a9b7777d4c/README.md#31-channels-module-repr%C3%A9sentant-les-channels-dun-projet))
 *	**custom_channels.tf** : Définition des canaux spéciaux, ne suivant pas le modèle du module "channel"
 *	**custom_permissions.tf** : Définition des permissions particulières
 *	**invites.tf** : Définition des invitations discords aux différents canaux
 *	**logo.png** : Logo du serveur
-*	**members.tf** : Définition des membres du Discord
+*	**members.tf** : Définition des membres du Discord ([voir 3.2](https://github.com/SiMDE-Projects/terraform/blob/4956044989bfec2b295dabb31cad59a9b7777d4c/README.md#32-member-module-repr%C3%A9sentant-les-members-du-discord))
 *	**outputs.tf** : Définition des valeurs a exposer hors du module pour être utilisées ailleurs (codes d'invitation)
 *	**permissions.tf** : Définition des permissions liées aux roles
 *	**provider.tf** : Définition du provider utilisé pour ce module
@@ -82,7 +82,7 @@ module cesar_richard {							#nom de la ressource, mettre le prenom_nom reel de 
 *	**repo_flairsou.tf** : Définition des répo du projet flairsou (forme à retravailler)
 *	**repositories.tf** : Définition des répo du SiMDE (forme à retravailler)
 *	**teams.tf** : Définition des Teams GitHub
-*	**users.tf** : Définition des Utilisateurs GitHub en suivant le module "users" (voir 4.1)
+*	**users.tf** : Définition des Utilisateurs GitHub en suivant le module "users" ([voir 4.1](https://github.com/SiMDE-Projects/terraform/blob/4956044989bfec2b295dabb31cad59a9b7777d4c/README.md#41-users-module-repr%C3%A9sentant-les-utilisateurs-github))
 *	**variables.tf** : Définition des variables d'entrée pour terraform (token API, organisation, ...)
 
 #### 4.1. users/ (Module représentant les utilisateurs GitHub)
@@ -108,4 +108,3 @@ module "cesar_richard" {				#nom de la ressource, mettre le nom réel de la pers
 ``` 
 
 *	**main.tf** : Fichier représentant la resource complète. Vu sa taille et sa complexité il n'a pas été necessaire de le scinder comme les autres modules
-
