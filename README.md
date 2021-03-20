@@ -106,8 +106,8 @@ module cesar_richard {                #nom de la ressource, mettre le nom réel 
   role     = "admin"                  #role global dans l'organisation GitHub SiMDE (defaults to "member")
   teams = {                           #liste des Teams attachées, voir /discord_simde/teams.tf
     "jeffrey" = {                     #nom de la team
-      team = github_team.jeffrey.id,	#id de la team
-      role = "member"					        #role au sein de la team
+      team = github_team.jeffrey.id,  #id de la team
+      role = "member"                 #role au sein de la team
     },
     "simde" = {
       team = github_team.simde.id,
