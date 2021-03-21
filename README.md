@@ -14,7 +14,7 @@
 
 ### 2. .github/ (GitHub actions)
 
-- **workflows/workflow.yaml** : Définition des jobs de la CI (ajout automatique de labels et validation d'un _terraform plan_
+- **workflows/workflow.yaml** : Définition des jobs de la CI (ajout automatique de labels et validation d'un _terraform plan_)
 - **labeler.yml** : Définition des labels mis automatiquement sur les PR en fonction des fichiers modifiés
 
 ### 3. discord_simde/ (terraform du Discord)
