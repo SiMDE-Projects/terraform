@@ -89,7 +89,7 @@ Chaque membre du Discord SiMDE sera représenté par une ressource issue de ce m
 #### 4.1. repositories/ (Module représentant les repositories GitHub)
 
 Chaque repository est représenté par un fichier qui lui est propre au sein de ce module. Ces fichiers porteront le nom du repository pour plus de lisibilité.
-Les fichiers dont le nom commence par un underscore ( \_ ) sont des utilisés pour la configuration du module, ils ne doivent pas être modifiés.
+Les fichiers dont le nom commence par un underscore ( \_ ) sont utilisés pour la configuration du module, ils ne doivent pas être modifiés.
 
 - **\_variables.tf** : Définition des variables d'entrée pour terraform (liste des teams github, ...)
 - **\_outputs.tf** : Définition des valeurs a exposer hors du module pour être utilisées ailleurs (pour l'instant pas utilisé, mais par exemple les instances des repositories)
