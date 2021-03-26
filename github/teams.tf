@@ -298,19 +298,19 @@ resource github_team_repository emploidut_emploidutApi {
   ]
 }
 
-### Gesasso2
+### Gesasso
 
-resource github_team gesasso2 {
-  name        = "Gesasso 2"
-  description = "Gesasso mais en version 2"
+resource github_team gesasso {
+  name        = "Gesasso"
+  description = "L'outil de gestion des assos au SiMDE"
   privacy     = "closed"
 }
 
-resource github_team_repository gesasso2_mkmail {
-  team_id    = github_team.gesasso2.id
-  repository = github_repository.gesasso2MkMail.name
+resource github_team_repository gesasso_mkmail {
+  team_id    = github_team.gesasso.id
+  repository = github_repository.gesassoMkMail.name
   permission = "push"
   depends_on = [
-    github_team.gesasso2
+    github_team.gesasso
   ]
 }

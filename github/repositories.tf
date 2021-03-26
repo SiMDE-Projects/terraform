@@ -1267,9 +1267,9 @@ resource github_branch_protection emploidutApi_master {
   }
 }
 
-### Gesasso2_mkmail
+### Gesasso_mkmail
 
-resource github_repository gesasso2MkMail {
+resource github_repository gesassoMkMail {
   allow_merge_commit     = true
   allow_rebase_merge     = true
   allow_squash_merge     = true
@@ -1282,33 +1282,33 @@ resource github_repository gesasso2MkMail {
   has_projects           = true
   has_wiki               = false
   is_template            = false
-  name                   = "gesasso2-mkmail"
+  name                   = "gesasso-mkmail"
   topics = [
-    "gesasso2",
+    "gesasso",
     "infra"
   ]
   visibility           = "private"
   vulnerability_alerts = true
 }
 
-data github_branch gesasso2MkMail_master {
-  repository = "gesasso2-mkmail"
+data github_branch gesassoMkMail_master {
+  repository = "gesasso-mkmail"
   branch     = "master"
   depends_on = [
-    github_repository.gesasso2MkMail
+    github_repository.gesassoMkMail
   ]
 }
 
-resource github_branch_default gesasso2MkMail {
-  repository = github_repository.gesasso2MkMail.name
-  branch     = data.github_branch.gesasso2MkMail_master.branch
+resource github_branch_default gesassoMkMail {
+  repository = github_repository.gesassoMkMail.name
+  branch     = data.github_branch.gesassoMkMail_master.branch
   depends_on = [
-    github_repository.gesasso2MkMail
+    github_repository.gesassoMkMail
   ]
 }
 
-resource github_branch_protection gesasso2MkMail_master {
-  repository_id = github_repository.gesasso2MkMail.node_id
+resource github_branch_protection gesassoMkMail_master {
+  repository_id = github_repository.gesassoMkMail.node_id
   pattern       = "master"
   #push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
@@ -1318,6 +1318,6 @@ resource github_branch_protection gesasso2MkMail_master {
     required_approving_review_count = 1
   }
   depends_on = [
-    github_branch_default.gesasso2MkMail
+    github_branch_default.gesassoMkMail
   ]
 }
