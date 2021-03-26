@@ -1,3 +1,21 @@
+locals {
+  teams = {
+    simde              = github_team.simde
+    jeffrey            = github_team.jeffrey
+    application_utcbde = github_team.application_utcbde
+    cloud              = github_team.cloud
+    covoit_utc         = github_team.covoit_utc
+    gesasso            = github_team.gesasso
+    locky              = github_team.locky
+    payutc             = github_team.payutc
+    planner            = github_team.planner
+    portail            = github_team.portail
+    woolly             = github_team.woolly
+    emploidut          = github_team.emploidut
+    flairsou           = github_team.flairsou
+  }
+}
+
 ### Jeffrey
 
 resource github_team jeffrey {
@@ -26,24 +44,12 @@ resource github_team flairsou {
   privacy     = "closed"
 }
 
-resource github_team_repository flairsou {
-  team_id    = github_team.flairsou.id
-  repository = github_repository.flairsou.name
-  permission = "maintain"
-}
-
 ### SiMDE admins
 
 resource github_team simde {
   name        = "SiMDE"
   description = "Administrateurs du SiMDE"
   privacy     = "closed"
-}
-
-resource github_team_repository simde_flairsou {
-  team_id    = github_team.simde.id
-  repository = github_repository.flairsou.name
-  permission = "maintain"
 }
 
 resource github_team_repository simde_jeffrey {

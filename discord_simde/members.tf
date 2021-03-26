@@ -344,6 +344,6 @@ module theo_chazeaud {
   discriminator = 8416
   roles = {
     (discord_role.member.id) = true
-    (discord_role.member.id) = true
+    (discord_role.payutc.id) = true
   }
 }

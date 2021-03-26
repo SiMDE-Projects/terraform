@@ -1,5 +1,10 @@
 ### Terraform
 
+module repositories {
+  source = "./repositories"
+  teams  = local.teams
+}
+
 resource github_repository terraform {
   allow_merge_commit     = true
   allow_rebase_merge     = true
