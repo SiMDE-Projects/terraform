@@ -13,6 +13,7 @@ locals {
     woolly             = github_team.woolly
     emploidut          = github_team.emploidut
     flairsou           = github_team.flairsou
+    gesasso            = github_team.gesasso
   }
 }
 
@@ -114,16 +115,16 @@ resource github_team_repository covoitutc_covoitutc {
   permission = "push"
 }
 
-### Gesasso_old
+### Gesasso
 
-resource github_team gesasso_old {
+resource github_team gesasso {
   provider    = github.old
-  name        = "gesasso_old"
+  name        = "gesasso"
   description = "Développer le gestionnaire des associations"
   privacy     = "closed"
 }
 
-resource github_team_repository gesasso_old_gesasso2 {
+resource github_team_repository gesasso_gesasso2 {
   provider   = github.old
   team_id    = github_team.gesasso.id
   repository = github_repository.gesasso2.name
@@ -304,19 +305,10 @@ resource github_team_repository emploidut_emploidutApi {
   ]
 }
 
-### Gesasso
+### Gesasso_new
 
-resource github_team gesasso {
+resource github_team gesasso_new {
   name        = "Gesasso"
   description = "L'outil de gestion des assos au SiMDE"
   privacy     = "closed"
-}
-
-resource github_team_repository gesasso_mkmail {
-  team_id    = github_team.gesasso.id
-  repository = github_repository.gesassoMkMail.name
-  permission = "push"
-  depends_on = [
-    github_team.gesasso
-  ]
 }
