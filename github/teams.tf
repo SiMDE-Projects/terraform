@@ -13,7 +13,7 @@ locals {
     woolly             = github_team.woolly
     emploidut          = github_team.emploidut
     flairsou           = github_team.flairsou
-    gesasso            = github_team.gesasso
+    gesasso_new        = github_team.gesasso_new
   }
 }
 
