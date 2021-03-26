@@ -35,8 +35,8 @@ resource github_team_repository simde_gesasso_mkmail {
   permission = "maintain"
 }
 
-resource github_team_repository gesasso_mkmail_gesasso_mkmail {
-  team_id    = var.teams.gesasso_new.id
+resource github_team_repository gesasso_gesasso_mkmail {
+  team_id    = var.teams.gesasso.id
   repository = github_repository.gesasso_mkmail.name
   permission = "maintain"
 }

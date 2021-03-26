@@ -963,39 +963,6 @@ resource github_branch_default utc_mobile {
   branch     = data.github_branch.utc_mobile_develop.branch
 }
 
-
-### gesasso2
-
-resource github_repository gesasso2 {
-  provider               = github.old
-  archived               = false
-  delete_branch_on_merge = true
-  description            = "Outil de gestion interne du SiMDE"
-  has_downloads          = true
-  has_issues             = true
-  has_projects           = true
-  has_wiki               = false
-  name                   = "gesasso2"
-  visibility             = "public"
-  vulnerability_alerts   = true
-  topics = [
-    "api-client"
-  ]
-}
-
-data github_branch gesasso2_master {
-  provider   = github.old
-  repository = "gesasso2"
-  branch     = "master"
-}
-
-resource github_branch_default gesasso2 {
-  provider   = github.old
-  repository = github_repository.gesasso2.name
-  branch     = data.github_branch.gesasso2_master.branch
-}
-
-
 ### covoitutc
 
 resource github_repository covoitutc {
