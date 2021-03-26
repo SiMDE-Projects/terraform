@@ -119,7 +119,7 @@ resource github_team_repository covoitutc_covoitutc {
 
 resource github_team gesasso {
   provider    = github.old
-  name        = "gesasso"
+  name        = "Gesasso"
   description = "Développer le gestionnaire des associations"
   privacy     = "closed"
 }
