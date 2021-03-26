@@ -1,4 +1,4 @@
-module "cesar-richard" {
+module cesar_richard {
   source   = "./users"
   username = "cesar-richard"
   role     = "admin"
@@ -14,7 +14,7 @@ module "cesar-richard" {
   }
 }
 
-module "maxime-vaillant" {
+module maxime_vaillant {
   source   = "./users"
   username = "maxime-vaillant"
   teams = {
@@ -30,7 +30,7 @@ module victor_moreliere {
   username = "GalliusJulius"
 }
 
-module "anto2oo" {
+module anto2oo {
   source   = "./users"
   username = "anto2oo"
   teams = {
@@ -41,7 +41,7 @@ module "anto2oo" {
   }
 }
 
-module "noeamiot" {
+module noe_amiot {
   source   = "./users"
   username = "noeamiot"
   role     = "admin"
@@ -57,7 +57,7 @@ module "noeamiot" {
   }
 }
 
-module "huetremy" {
+module remy_huet {
   source   = "./users"
   username = "huetremy"
   teams = {
@@ -68,7 +68,7 @@ module "huetremy" {
   }
 }
 
-module "matthieudecaux" {
+module matthieu_decaux {
   source   = "./users"
   username = "matthieudecaux"
   teams = {
@@ -79,7 +79,7 @@ module "matthieudecaux" {
   }
 }
 
-module "romain_maliachauguste" {
+module romain_maliachauguste {
   source   = "./users"
   username = "R0one"
 }
@@ -88,7 +88,7 @@ module "romain_maliachauguste" {
 ###   ORIGINAL ORGANIZATION ###
 ###############################
 
-module "old_aarrtthhuurr" {
+module old_aarrtthhuurr {
   providers = {
     github = github.old
   }
@@ -106,7 +106,7 @@ module "old_aarrtthhuurr" {
   }
 }
 
-module "old_abrasseu" {
+module old_alexandre_brasseur {
   providers = {
     github = github.old
   }
@@ -124,7 +124,7 @@ module "old_abrasseu" {
   }
 }
 
-module "old_acharann" {
+module old_acharann {
   providers = {
     github = github.old
   }
@@ -138,7 +138,7 @@ module "old_acharann" {
   }
 }
 
-module "old_artemisart" {
+module old_artemisart {
   providers = {
     github = github.old
   }
@@ -152,7 +152,7 @@ module "old_artemisart" {
   }
 }
 
-module "old_BaguetteEater" {
+module old_BaguetteEater {
   providers = {
     github = github.old
   }
@@ -166,7 +166,7 @@ module "old_BaguetteEater" {
   }
 }
 
-module "old_bonnetst" {
+module old_stephane_bonnet {
   providers = {
     github = github.old
   }
@@ -174,7 +174,7 @@ module "old_bonnetst" {
   username = "bonnetst"
 }
 
-module "old_Cathaiste" {
+module old_victor_ronfaut {
   providers = {
     github = github.old
   }
@@ -196,7 +196,7 @@ module "old_Cathaiste" {
   }
 }
 
-module "old_cesar-richard" {
+module old_cesar_richard {
   providers = {
     github = github.old
   }
@@ -233,7 +233,7 @@ module "old_courentin" {
   }
 }
 
-module "old_danousna" {
+module old_danousna {
   providers = {
     github = github.old
   }
@@ -247,7 +247,7 @@ module "old_danousna" {
   }
 }
 
-module "old_Eliaccess" {
+module old_Eliaccess {
   providers = {
     github = github.old
   }
@@ -255,7 +255,7 @@ module "old_Eliaccess" {
   username = "Eliaccess"
 }
 
-module "old_jpennors" {
+module old_jpennors {
   providers = {
     github = github.old
   }
@@ -281,7 +281,7 @@ module "old_jsmrcaga" {
   username = "jsmrcaga"
 }
 
-module "old_jumelloic" {
+module old_loic_jumel {
   providers = {
     github = github.old
   }
@@ -295,7 +295,7 @@ module "old_jumelloic" {
   }
 }
 
-module "old_lafondoc" {
+module old_colin_lafond {
   providers = {
     github = github.old
   }
@@ -309,7 +309,7 @@ module "old_lafondoc" {
   }
 }
 
-module "old_lvaroqui" {
+module old_luc_varoqui {
   providers = {
     github = github.old
   }
