@@ -1266,3 +1266,49 @@ resource github_branch_protection emploidutApi_master {
     required_approving_review_count = 1
   }
 }
+
+### Gesasso2_mkmail
+
+resource github_repository gesasso2MkMail {
+  allow_merge_commit     = true
+  allow_rebase_merge     = true
+  allow_squash_merge     = true
+  archived               = false
+  auto_init              = false
+  delete_branch_on_merge = true
+  description            = "Le nécessaire pour les mails"
+  has_downloads          = false
+  has_issues             = true
+  has_projects           = true
+  has_wiki               = false
+  is_template            = false
+  name                   = "gesasso2-mkmail"
+  topics = [
+    "gesasso2",
+    "infra"
+  ]
+  visibility           = "private"
+  vulnerability_alerts = true
+}
+
+data github_branch gesasso2MkMail_master {
+  repository = "gesasso2-mkmail"
+  branch     = "master"
+}
+
+resource github_branch_default gesasso2MkMail {
+  repository = github_repository.gesasso2MkMail.name
+  branch     = data.github_branch.gesasso2MkMail_master.branch
+}
+
+resource github_branch_protection gesasso2MkMail_master {
+  repository_id = github_repository.gesasso2MkMail.node_id
+  pattern       = "master"
+  #push_restrictions = [github_team.simde.node_id]
+  required_pull_request_reviews {
+    dismiss_stale_reviews = true
+    #dismissal_restrictions          = [github_team.simde.node_id]
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+  }
+}

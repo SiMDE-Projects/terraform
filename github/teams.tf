@@ -297,3 +297,20 @@ resource github_team_repository emploidut_emploidutApi {
     github_team.emploidut
   ]
 }
+
+### Gesasso2
+
+resource github_team gesasso2 {
+  name        = "Gesasso 2"
+  description = "Gesasso mais en version 2"
+  privacy     = "closed"
+}
+
+resource github_team_repository gesasso2_mkmail {
+  team_id    = github_team.gesasso2.id
+  repository = github_repository.gesasso2MkMail.name
+  permission = "push"
+  depends_on = [
+    github_team.gesasso2
+  ]
+}
