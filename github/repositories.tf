@@ -1303,7 +1303,7 @@ resource github_branch_default gesasso2MkMail {
   repository = github_repository.gesasso2MkMail.name
   branch     = data.github_branch.gesasso2MkMail_master.branch
   depends_on = [
-    github_branch.gesasso2MkMail_master
+    github_repository.gesasso2MkMail
   ]
 }
 
@@ -1318,6 +1318,6 @@ resource github_branch_protection gesasso2MkMail_master {
     required_approving_review_count = 1
   }
   depends_on = [
-    github_branch.gesasso2MkMail_master
+    github_branch_default.gesasso2MkMail
   ]
 }
