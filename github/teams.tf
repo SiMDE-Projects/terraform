@@ -114,16 +114,16 @@ resource github_team_repository covoitutc_covoitutc {
   permission = "push"
 }
 
-### Gesasso
+### Gesasso_old
 
-resource github_team gesasso {
+resource github_team gesasso_old {
   provider    = github.old
-  name        = "Gesasso"
+  name        = "gesasso_old"
   description = "Développer le gestionnaire des associations"
   privacy     = "closed"
 }
 
-resource github_team_repository gesasso_gesasso2 {
+resource github_team_repository gesasso_old_gesasso2 {
   provider   = github.old
   team_id    = github_team.gesasso.id
   repository = github_repository.gesasso2.name
