@@ -10,6 +10,10 @@ module cesar_richard {
     "simde" = {
       team = github_team.simde.id,
       role = "maintainer"
+    },
+    "gesasso" = {
+      team = github_team.gesasso.id,
+      role = "maintainer"
     }
   }
 }
@@ -52,6 +56,10 @@ module noe_amiot {
     },
     "simde" = {
       team = github_team.simde.id,
+      role = "maintainer"
+    },
+    "gesasso" = {
+      team = github_team.gesasso.id,
       role = "maintainer"
     }
   }

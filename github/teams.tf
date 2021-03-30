@@ -114,22 +114,6 @@ resource github_team_repository covoitutc_covoitutc {
   permission = "push"
 }
 
-### Gesasso
-
-resource github_team gesasso {
-  provider    = github.old
-  name        = "Gesasso"
-  description = "Développer le gestionnaire des associations"
-  privacy     = "closed"
-}
-
-resource github_team_repository gesasso_gesasso2 {
-  provider   = github.old
-  team_id    = github_team.gesasso.id
-  repository = github_repository.gesasso2.name
-  permission = "push"
-}
-
 ### Locky
 
 resource github_team locky {
@@ -302,4 +286,12 @@ resource github_team_repository emploidut_emploidutApi {
     github_repository.emploidutApi,
     github_team.emploidut
   ]
+}
+
+### Gesasso
+
+resource github_team gesasso {
+  name        = "Gesasso"
+  description = "L'outil de gestion des assos au SiMDE"
+  privacy     = "closed"
 }

@@ -1,3 +1,1 @@
-variable teams {
-  type = map
-}
+variable teams {}
