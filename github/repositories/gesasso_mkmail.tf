@@ -12,9 +12,9 @@ resource github_repository gesasso_mkmail {
   has_issues             = true
   has_projects           = true
   has_wiki               = false
-  name                 = "gesasso_mkmail"
-  visibility           = "public"
-  vulnerability_alerts = true
+  name                   = "gesasso_mkmail"
+  visibility             = "public"
+  vulnerability_alerts   = true
 }
 
 resource github_branch_protection gesasso_mkmail_master {
