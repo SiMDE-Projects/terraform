@@ -220,10 +220,6 @@ module old_cesar_richard {
       team = github_team.locky.id,
       role = "maintainer"
     }
-    "gesasso" = {
-      team = github_team.gesasso.id,
-      role = "maintainer"
-    }
   }
 }
 
@@ -295,12 +291,6 @@ module old_loic_jumel {
   }
   source   = "./users"
   username = "jumelloic"
-  teams = {
-    "gesasso" = {
-      team = github_team.gesasso.id,
-      role = "member"
-    }
-  }
 }
 
 module old_colin_lafond {
@@ -396,10 +386,6 @@ module "old_NastuzziSamy" {
     }
     "locky" = {
       team = github_team.locky.id,
-      role = "member"
-    }
-    "gesasso" = {
-      team = github_team.gesasso.id,
       role = "member"
     }
     "covoit_utc" = {
