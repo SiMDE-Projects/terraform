@@ -166,6 +166,17 @@ module pierre_adorni {
     (discord_role.respinfo.id) = true
   }
 }
+  
+module thomas_delplanque {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Thomas D."
+  discriminator = 2035
+  roles = {
+    (discord_role.integ.id)    = true
+  }
+}
 
 module mathias_deroubaix {
   source        = "./member"
