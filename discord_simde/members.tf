@@ -163,18 +163,18 @@ module pierre_adorni {
   discriminator = 6339
   roles = {
     (discord_role.integ.id)    = true
-    (discord_role.respinfo.id) = true
+    (discord_role.respinfo.id) = true #Team info integ 21
   }
 }
-  
+
 module thomas_delplanque {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
-  username      = "Thomas D."
+  username      = "ThomasD"
   discriminator = 2035
   roles = {
-    (discord_role.integ.id)    = true
+    (discord_role.integ.id) = true #Team info integ 21
   }
 }
 
@@ -237,7 +237,7 @@ module mael_belval {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
-  username      = "Maraiste"
+  username      = "Wanapad"
   discriminator = 8972
   roles = {
     (discord_role.curieux.id) = true
@@ -356,5 +356,16 @@ module theo_chazeaud {
   roles = {
     (discord_role.member.id) = true
     (discord_role.payutc.id) = true
+  }
+}
+
+module nasser_chaouchi {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Nasserarien"
+  discriminator = 3128
+  roles = {
+    (discord_role.integ.id) = true #Team info integ 21
   }
 }
