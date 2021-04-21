@@ -377,7 +377,6 @@ module thibaud_duhautbout {
   username      = "Thibaud"
   discriminator = 5605
   roles = {
-    (discord_role.member.id) = true
     (discord_role.treso.id) = true
   }
 }
