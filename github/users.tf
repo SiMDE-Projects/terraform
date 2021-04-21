@@ -92,6 +92,17 @@ module romain_maliachauguste {
   username = "R0one"
 }
 
+module thibaud_duhautbout {
+  source   = "./users"
+  username = "tduhautb"
+  teams = {
+    "flairsou" = {
+      team = github_team.flairsou.id,
+      role = "maintainer"
+    }
+  }
+}
+
 ###############################
 ###   ORIGINAL ORGANIZATION ###
 ###############################

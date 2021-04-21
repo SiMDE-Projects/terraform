@@ -369,3 +369,14 @@ module nasser_chaouchi {
     (discord_role.integ.id) = true #Team info integ 21
   }
 }
+
+module thibaud_duhautbout {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "thibaud"
+  discriminator = 5605
+  roles = {
+    (discord_role.treso.id) = true
+  }
+}
