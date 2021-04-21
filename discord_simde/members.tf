@@ -373,7 +373,7 @@ module nasser_chaouchi {
 module thibaud_duhautbout {
   source        = "./member"
   api_token     = var.api_token
-  server_id     = discord_server.server_id
+  server_id     = discord_server.server.id
   username      = "Thibaud"
   discriminator = 5605
   roles = {
