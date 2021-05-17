@@ -62,12 +62,23 @@ module private-woolly {
   roles       = local.roles
 }
 
+module private-pic {
+  source      = "./channels"
+  name        = "private-pic"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-woolly.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module private-bde {
   source      = "./channels"
   name        = "private-bde"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-woolly.position + 1
+  position    = module.private-pic.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
