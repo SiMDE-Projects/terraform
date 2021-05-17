@@ -7,6 +7,7 @@ locals {
     integ     = discord_role.integ
     jeffrey   = discord_role.jeffrey
     woolly    = discord_role.woolly
+    pic       = discord_role.pic
     bde       = discord_role.bde
     emploidut = discord_role.emploidut
     respinfo  = discord_role.respinfo
@@ -36,6 +37,10 @@ data discord_color jeffrey {
 }
 
 data discord_color woolly {
+  hex = "#E0E000"
+}
+
+data discord_color pic {
   hex = "#E0E000"
 }
 
@@ -119,10 +124,19 @@ resource discord_role woolly {
   mentionable = true
 }
 
+resource discord_role pic {
+  server_id   = discord_server.server.id
+  name        = "PIC"
+  position    = discord_role.emploidut.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.pic.dec
+  mentionable = true
+}
+
 resource discord_role bde {
   server_id   = discord_server.server.id
   name        = "BDE"
-  position    = discord_role.emploidut.position + 1
+  position    = discord_role.pic.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.bde.dec
   mentionable = true

@@ -47,6 +47,7 @@ module maxime_vaillant {
     (discord_role.payutc.id)  = true
     (discord_role.integ.id)   = true
     (discord_role.bde.id)     = true
+    (discord_role.pic.id)     = true
   }
 }
 
@@ -310,6 +311,7 @@ module victor_moreliere {
   roles = {
     (discord_role.curieux.id)  = true
     (discord_role.respinfo.id) = true
+    (discord_role.pic.id)      = true
   }
 }
 
@@ -379,4 +381,16 @@ module thibaud_duhautbout {
   roles = {
     (discord_role.treso.id) = true
   }
+}
+
+module augustin_de_laubier {
+    source        = "./member"
+      api_token     = var.api_token
+      server_id     = discord_server.server.id
+      username      = "Augustus"
+      discriminator = 2180
+      roles = {
+        (discord_role.curieux.id)  = true
+        (discord_role.pic.id)      = true
+      }
 }
