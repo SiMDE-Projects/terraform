@@ -380,3 +380,14 @@ module thibaud_duhautbout {
     (discord_role.treso.id) = true
   }
 }
+
+module julie_massari {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Julie"
+  discriminator = 1575
+  roles = {
+    (discord_role.member.id) = true
+  }
+}
