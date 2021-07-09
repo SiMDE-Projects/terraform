@@ -26,6 +26,14 @@ module maxime_vaillant {
       team = github_team.jeffrey.id,
       role = "member"
     }
+    "application_utcbde" = {
+      team = github_team.application_utcbde.id,
+      role = "member"
+    }
+    "planner" = {
+      team = github_team.planner.id,
+      role = "member"
+    }
   }
 }
 
