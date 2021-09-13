@@ -381,3 +381,15 @@ module "jules_boulet" {
     (discord_role.payutc.id) = true
   }
 }
+
+module "paco_pompeani" {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "paco POMPEANI"
+  discriminator = 9364
+  roles = {
+    (discord_role.respinfo.id) = false #Etuville A21
+    (discord_role.payutc.id)   = true
+  }
+}
