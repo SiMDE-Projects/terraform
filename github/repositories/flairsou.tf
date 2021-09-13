@@ -23,6 +23,7 @@ resource "github_branch_protection" "flairsou_master" {
   pattern           = "main"
   push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [var.teams.simde.node_id]
     require_code_owner_reviews      = true
@@ -99,6 +100,7 @@ resource "github_branch_protection" "flairsou-api_master" {
   pattern           = "main"
   push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [var.teams.simde.node_id]
     require_code_owner_reviews      = true

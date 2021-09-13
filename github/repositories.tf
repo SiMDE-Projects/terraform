@@ -41,6 +41,7 @@ resource "github_branch_protection" "terraform_main" {
   pattern           = "main"
   push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true
@@ -186,6 +187,7 @@ resource "github_branch_protection" "jeffrey_master" {
   pattern           = "master"
   push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true
@@ -270,6 +272,7 @@ resource "github_branch_protection" "jeffreyApi_master" {
   pattern           = "master"
   push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true

@@ -22,6 +22,7 @@ resource "github_branch_protection" "gesasso_mkmail_master" {
   pattern           = "main"
   push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [var.teams.simde.node_id]
     require_code_owner_reviews      = true
