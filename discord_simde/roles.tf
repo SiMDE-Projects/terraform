@@ -5,6 +5,7 @@ locals {
     treso     = discord_role.treso
     payutc    = discord_role.payutc
     integ     = discord_role.integ
+    etuville  = discord_role.etuville
     jeffrey   = discord_role.jeffrey
     woolly    = discord_role.woolly
     bde       = discord_role.bde
@@ -28,7 +29,11 @@ data "discord_color" "payutc" {
 }
 
 data "discord_color" "integ" {
-  hex = "#E0E000"
+  hex = "#E0A000"
+}
+
+data "discord_color" "etuville" {
+  hex = "#E0A000"
 }
 
 data "discord_color" "jeffrey" {
@@ -104,6 +109,15 @@ resource "discord_role" "jeffrey" {
 resource "discord_role" "integ" {
   server_id   = discord_server.server.id
   name        = "Integ"
+  position    = discord_role.etuville.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.integ.dec
+  mentionable = true
+}
+
+resource "discord_role" "etuville" {
+  server_id   = discord_server.server.id
+  name        = "Etuville"
   position    = discord_role.jeffrey.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.integ.dec
