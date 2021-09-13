@@ -1,4 +1,4 @@
-module cesar_richard {
+module "cesar_richard" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -11,7 +11,7 @@ module cesar_richard {
   }
 }
 
-module noe_amiot {
+module "noe_amiot" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -23,7 +23,7 @@ module noe_amiot {
   }
 }
 
-module victor_ronfaut {
+module "victor_ronfaut" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -35,7 +35,7 @@ module victor_ronfaut {
   }
 }
 
-module maxime_vaillant {
+module "maxime_vaillant" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -50,19 +50,19 @@ module maxime_vaillant {
   }
 }
 
-module antoine_cet {
+module "antoine_cet" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
   username      = "kinshasa"
   discriminator = 6035
   roles = {
-    (discord_role.respinfo.id) = true
+    (discord_role.respinfo.id) = false
   }
 }
 
 
-module anton42 {
+module "anton42" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -74,18 +74,18 @@ module anton42 {
   }
 }
 
-module BWRCat {
+module "BWRCat" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
   username      = "BWRCat"
   discriminator = 1078
   roles = {
-    (discord_role.respinfo.id) = true
+    (discord_role.respinfo.id) = false
   }
 }
 
-module remy_huet {
+module "remy_huet" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -97,7 +97,7 @@ module remy_huet {
   }
 }
 
-module matthieu_decaux {
+module "matthieu_decaux" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -109,18 +109,7 @@ module matthieu_decaux {
   }
 }
 
-module lucas_richard {
-  source        = "./member"
-  api_token     = var.api_token
-  server_id     = discord_server.server.id
-  username      = "GalaxyHearth"
-  discriminator = 9097
-  roles = {
-    (discord_role.respinfo.id) = true
-  }
-}
-
-module armand_ribault {
+module "armand_ribault" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -132,7 +121,7 @@ module armand_ribault {
   }
 }
 
-module alexandre_brasseur {
+module "alexandre_brasseur" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -144,7 +133,7 @@ module alexandre_brasseur {
   }
 }
 
-module romain_maliachauguste {
+module "romain_maliachauguste" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -155,7 +144,7 @@ module romain_maliachauguste {
   }
 }
 
-module pierre_adorni {
+module "pierre_adorni" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -167,7 +156,7 @@ module pierre_adorni {
   }
 }
 
-module thomas_delplanque {
+module "thomas_delplanque" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -178,7 +167,7 @@ module thomas_delplanque {
   }
 }
 
-module mathias_deroubaix {
+module "mathias_deroubaix" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -189,7 +178,7 @@ module mathias_deroubaix {
   }
 }
 
-module rayan_doudech {
+module "rayan_doudech" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -200,7 +189,7 @@ module rayan_doudech {
   }
 }
 
-module pascal_quach {
+module "pascal_quach" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -211,7 +200,7 @@ module pascal_quach {
   }
 }
 
-module pierre_pouliquen {
+module "pierre_pouliquen" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -222,7 +211,7 @@ module pierre_pouliquen {
   }
 }
 
-module neil {
+module "neil" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -233,7 +222,7 @@ module neil {
   }
 }
 
-module mael_belval {
+module "mael_belval" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -244,7 +233,7 @@ module mael_belval {
   }
 }
 
-module romain_leclere {
+module "romain_leclere" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -255,7 +244,7 @@ module romain_leclere {
   }
 }
 
-module ThreeNias {
+module "ThreeNias" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -266,7 +255,7 @@ module ThreeNias {
   }
 }
 
-module arthur_wacquez {
+module "arthur_wacquez" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -278,7 +267,7 @@ module arthur_wacquez {
   }
 }
 
-module victor_tondolo {
+module "victor_tondolo" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -290,7 +279,7 @@ module victor_tondolo {
   }
 }
 
-module victor_mignot {
+module "victor_mignot" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -301,7 +290,7 @@ module victor_mignot {
   }
 }
 
-module victor_moreliere {
+module "victor_moreliere" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -313,7 +302,7 @@ module victor_moreliere {
   }
 }
 
-module felix {
+module "felix" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -324,19 +313,19 @@ module felix {
   }
 }
 
-module thomas_guegan {
+module "thomas_guegan" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
   username      = "StyHeet"
   discriminator = 5848
   roles = {
-    (discord_role.respinfo.id) = true #UTSea P21
+    (discord_role.respinfo.id) = false #UTSea P21
     (discord_role.integ.id)    = true
   }
 }
 
-module gabriel_francez {
+module "gabriel_francez" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -347,7 +336,7 @@ module gabriel_francez {
   }
 }
 
-module theo_chazeaud {
+module "theo_chazeaud" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -359,7 +348,7 @@ module theo_chazeaud {
   }
 }
 
-module nasser_chaouchi {
+module "nasser_chaouchi" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -370,7 +359,7 @@ module nasser_chaouchi {
   }
 }
 
-module thibaud_duhautbout {
+module "thibaud_duhautbout" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
@@ -378,5 +367,17 @@ module thibaud_duhautbout {
   discriminator = 5605
   roles = {
     (discord_role.treso.id) = true
+  }
+}
+
+module "jules_boulet" {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Jul0os"
+  discriminator = 1166
+  roles = {
+    (discord_role.member.id) = true
+    (discord_role.payutc.id) = true
   }
 }

@@ -10,8 +10,8 @@ variable "position" {
   type    = number
 }
 variable "permissions" {
-  type = map
+  type = map(any)
 }
 variable "roles" {
-  type = map
+  type = map(any)
 }

@@ -1,4 +1,4 @@
-module general {
+module "general" {
   source      = "./channels"
   name        = "général"
   api_token   = var.api_token
@@ -7,7 +7,7 @@ module general {
   roles       = local.roles
 }
 
-module private-treso {
+module "private-treso" {
   source      = "./channels"
   name        = "private-flairsou"
   api_token   = var.api_token
@@ -18,7 +18,7 @@ module private-treso {
   roles       = local.roles
 }
 
-module private-payutc {
+module "private-payutc" {
   source      = "./channels"
   name        = "private-payutc"
   api_token   = var.api_token
@@ -29,7 +29,7 @@ module private-payutc {
   roles       = local.roles
 }
 
-module private-integ {
+module "private-integ" {
   source      = "./channels"
   name        = "private-integ"
   api_token   = var.api_token
@@ -40,7 +40,7 @@ module private-integ {
   roles       = local.roles
 }
 
-module private-jeffrey {
+module "private-jeffrey" {
   source      = "./channels"
   name        = "private-jeffrey"
   api_token   = var.api_token
@@ -51,7 +51,7 @@ module private-jeffrey {
   roles       = local.roles
 }
 
-module private-woolly {
+module "private-woolly" {
   source      = "./channels"
   name        = "private-woolly"
   api_token   = var.api_token
@@ -62,7 +62,7 @@ module private-woolly {
   roles       = local.roles
 }
 
-module private-bde {
+module "private-bde" {
   source      = "./channels"
   name        = "private-bde"
   api_token   = var.api_token
@@ -73,7 +73,7 @@ module private-bde {
   roles       = local.roles
 }
 
-module private-emploidut {
+module "private-emploidut" {
   source      = "./channels"
   name        = "private-emploidut"
   api_token   = var.api_token
@@ -84,7 +84,7 @@ module private-emploidut {
   roles       = local.roles
 }
 
-module private-admin {
+module "private-admin" {
   source      = "./channels"
   name        = "private-admin"
   api_token   = var.api_token

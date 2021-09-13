@@ -1,1 +1,1 @@
-variable teams {}
+variable "teams" {}

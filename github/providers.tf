@@ -1,19 +1,19 @@
 terraform {
   required_providers {
     github = {
-      source  = "hashicorp/github"
-      version = "4.1.0"
+      source  = "integrations/github"
+      version = ">= 4.14.0"
     }
   }
 }
 
-provider github {
-  token        = var.token
-  organization = var.organization
+provider "github" {
+  token = var.token
+  owner = var.organization
 }
 
-provider github {
-  alias        = "old"
-  token        = var.token
-  organization = var.old_organization
+provider "github" {
+  alias = "old"
+  token = var.token
+  owner = var.old_organization
 }

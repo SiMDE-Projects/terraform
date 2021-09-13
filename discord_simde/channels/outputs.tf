@@ -1,11 +1,11 @@
-output text_channel_id {
+output "text_channel_id" {
   value = discord_text_channel.text.id
 }
 
-output position {
+output "position" {
   value = discord_category_channel.category.position
 }
 
-output category {
+output "category" {
   value = discord_category_channel.category
 }

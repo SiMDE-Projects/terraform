@@ -1,5 +1,5 @@
 ### RespInfo
-resource discord_channel_permission respinfo_general {
+resource "discord_channel_permission" "respinfo_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.respinfo.id
@@ -7,7 +7,7 @@ resource discord_channel_permission respinfo_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission respinfo_notifications {
+resource "discord_channel_permission" "respinfo_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.respinfo.id
@@ -16,7 +16,7 @@ resource discord_channel_permission respinfo_notifications {
 }
 
 ### Honorable Curieux
-resource discord_channel_permission curieux_general {
+resource "discord_channel_permission" "curieux_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.curieux.id
@@ -24,7 +24,7 @@ resource discord_channel_permission curieux_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission curieux_notifications {
+resource "discord_channel_permission" "curieux_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.curieux.id
@@ -32,7 +32,7 @@ resource discord_channel_permission curieux_notifications {
   deny         = local.permissions.readonly.deny_bits
 }
 
-resource discord_channel_permission curieux_spam {
+resource "discord_channel_permission" "curieux_spam" {
   channel_id   = discord_text_channel.spam.id
   type         = "role"
   overwrite_id = local.roles.curieux.id
@@ -41,7 +41,7 @@ resource discord_channel_permission curieux_spam {
 }
 
 ### Payutc
-resource discord_channel_permission payutc_general {
+resource "discord_channel_permission" "payutc_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.payutc.id
@@ -49,7 +49,7 @@ resource discord_channel_permission payutc_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission payutc_payutc {
+resource "discord_channel_permission" "payutc_payutc" {
   channel_id   = module.private-payutc.category.id
   type         = "role"
   overwrite_id = local.roles.payutc.id
@@ -57,7 +57,7 @@ resource discord_channel_permission payutc_payutc {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission payutc_notifications {
+resource "discord_channel_permission" "payutc_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.payutc.id
@@ -66,7 +66,7 @@ resource discord_channel_permission payutc_notifications {
 }
 
 ### Woolly
-resource discord_channel_permission woolly_general {
+resource "discord_channel_permission" "woolly_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.woolly.id
@@ -74,7 +74,7 @@ resource discord_channel_permission woolly_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission woolly_woolly {
+resource "discord_channel_permission" "woolly_woolly" {
   channel_id   = module.private-woolly.category.id
   type         = "role"
   overwrite_id = local.roles.woolly.id
@@ -82,7 +82,7 @@ resource discord_channel_permission woolly_woolly {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission woolly_notifications {
+resource "discord_channel_permission" "woolly_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.woolly.id
@@ -91,7 +91,7 @@ resource discord_channel_permission woolly_notifications {
 }
 
 ### Jeffrey
-resource discord_channel_permission jeffrey_general {
+resource "discord_channel_permission" "jeffrey_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.jeffrey.id
@@ -99,7 +99,7 @@ resource discord_channel_permission jeffrey_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission jeffrey_jeffrey {
+resource "discord_channel_permission" "jeffrey_jeffrey" {
   channel_id   = module.private-jeffrey.category.id
   type         = "role"
   overwrite_id = local.roles.jeffrey.id
@@ -107,7 +107,7 @@ resource discord_channel_permission jeffrey_jeffrey {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission jeffrey_notifications {
+resource "discord_channel_permission" "jeffrey_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.jeffrey.id
@@ -116,7 +116,7 @@ resource discord_channel_permission jeffrey_notifications {
 }
 
 ### Integ
-resource discord_channel_permission integ_general {
+resource "discord_channel_permission" "integ_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.integ.id
@@ -124,7 +124,7 @@ resource discord_channel_permission integ_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission integ_integ {
+resource "discord_channel_permission" "integ_integ" {
   channel_id   = module.private-integ.category.id
   type         = "role"
   overwrite_id = local.roles.integ.id
@@ -133,7 +133,7 @@ resource discord_channel_permission integ_integ {
 }
 
 
-resource discord_channel_permission integ_notifications {
+resource "discord_channel_permission" "integ_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.integ.id
@@ -142,7 +142,7 @@ resource discord_channel_permission integ_notifications {
 }
 
 ### BDE
-resource discord_channel_permission bde_general {
+resource "discord_channel_permission" "bde_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.bde.id
@@ -150,7 +150,7 @@ resource discord_channel_permission bde_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission bde_bde {
+resource "discord_channel_permission" "bde_bde" {
   channel_id   = module.private-bde.category.id
   type         = "role"
   overwrite_id = local.roles.bde.id
@@ -158,7 +158,7 @@ resource discord_channel_permission bde_bde {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission bde_notifications {
+resource "discord_channel_permission" "bde_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.bde.id
@@ -167,7 +167,7 @@ resource discord_channel_permission bde_notifications {
 }
 
 ### Emploid'ut
-resource discord_channel_permission emploidut_general {
+resource "discord_channel_permission" "emploidut_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.emploidut.id
@@ -175,7 +175,7 @@ resource discord_channel_permission emploidut_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission emploidut_emploidut {
+resource "discord_channel_permission" "emploidut_emploidut" {
   channel_id   = module.private-emploidut.category.id
   type         = "role"
   overwrite_id = local.roles.emploidut.id
@@ -183,7 +183,7 @@ resource discord_channel_permission emploidut_emploidut {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission emploidut_notifications {
+resource "discord_channel_permission" "emploidut_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.emploidut.id
@@ -192,7 +192,7 @@ resource discord_channel_permission emploidut_notifications {
 }
 
 ### Treso
-resource discord_channel_permission treso_general {
+resource "discord_channel_permission" "treso_general" {
   channel_id   = module.general.category.id
   type         = "role"
   overwrite_id = local.roles.treso.id
@@ -200,7 +200,7 @@ resource discord_channel_permission treso_general {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission treso_treso {
+resource "discord_channel_permission" "treso_treso" {
   channel_id   = module.private-treso.category.id
   type         = "role"
   overwrite_id = local.roles.treso.id
@@ -208,7 +208,7 @@ resource discord_channel_permission treso_treso {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource discord_channel_permission treso_notifications {
+resource "discord_channel_permission" "treso_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.treso.id
@@ -218,7 +218,7 @@ resource discord_channel_permission treso_notifications {
 
 ### members
 
-resource discord_channel_permission member_notifications {
+resource "discord_channel_permission" "member_notifications" {
   channel_id   = discord_text_channel.notifications.id
   type         = "role"
   overwrite_id = local.roles.member.id
@@ -226,7 +226,7 @@ resource discord_channel_permission member_notifications {
   deny         = local.permissions.readonly.deny_bits
 }
 
-resource discord_channel_permission member_spam {
+resource "discord_channel_permission" "member_spam" {
   channel_id   = discord_text_channel.spam.id
   type         = "role"
   overwrite_id = local.roles.member.id
@@ -236,7 +236,7 @@ resource discord_channel_permission member_spam {
 
 ### everyone
 
-resource discord_channel_permission everyone_games {
+resource "discord_channel_permission" "everyone_games" {
   channel_id   = discord_text_channel.games.id
   type         = "role"
   overwrite_id = local.roles.everyone.id
@@ -244,7 +244,7 @@ resource discord_channel_permission everyone_games {
   deny         = local.permissions.member.deny_bits
 }
 
-resource discord_channel_permission everyone_questions_techniques {
+resource "discord_channel_permission" "everyone_questions_techniques" {
   channel_id   = discord_text_channel.questions-techniques.id
   type         = "role"
   overwrite_id = local.roles.everyone.id

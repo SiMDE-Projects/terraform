@@ -1,13 +1,13 @@
-data github_user user {
+data "github_user" "user" {
   username = var.username
 }
 
-resource github_membership membership {
+resource "github_membership" "membership" {
   username = var.username
   role     = var.role
 }
 
-resource github_team_membership membership {
+resource "github_team_membership" "membership" {
   team_id  = each.value.team
   username = var.username
   role     = each.value.role

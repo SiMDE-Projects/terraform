@@ -1,10 +1,10 @@
-resource discord_category_channel category {
+resource "discord_category_channel" "category" {
   name      = var.name
   server_id = var.server_id
   position  = var.position
 }
 
-resource discord_channel_permission admin {
+resource "discord_channel_permission" "admin" {
   count        = var.restricted ? 1 : 0
   channel_id   = discord_category_channel.category.id
   type         = "role"
@@ -13,7 +13,7 @@ resource discord_channel_permission admin {
   deny         = var.permissions.admin.deny_bits
 }
 
-resource discord_channel_permission member {
+resource "discord_channel_permission" "member" {
   count        = var.restricted ? 0 : 1
   channel_id   = discord_category_channel.category.id
   type         = "role"
@@ -22,7 +22,7 @@ resource discord_channel_permission member {
   deny         = var.permissions.member.deny_bits
 }
 
-resource discord_channel_permission member_denied {
+resource "discord_channel_permission" "member_denied" {
   count        = var.restricted ? 1 : 0
   channel_id   = discord_category_channel.category.id
   type         = "role"
@@ -30,14 +30,14 @@ resource discord_channel_permission member_denied {
   deny         = var.permissions.deny.deny_bits
 }
 
-resource discord_text_channel text {
+resource "discord_text_channel" "text" {
   name      = var.name
   server_id = var.server_id
   category  = discord_category_channel.category.id
   position  = 0
 }
 
-resource discord_voice_channel voice {
+resource "discord_voice_channel" "voice" {
   name      = var.name
   server_id = var.server_id
   category  = discord_category_channel.category.id
