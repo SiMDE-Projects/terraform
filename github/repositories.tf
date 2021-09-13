@@ -1,11 +1,11 @@
 ### Terraform
 
-module repositories {
+module "repositories" {
   source = "./repositories"
   teams  = local.teams
 }
 
-resource github_repository terraform {
+resource "github_repository" "terraform" {
   allow_merge_commit     = true
   allow_rebase_merge     = true
   allow_squash_merge     = true
@@ -26,21 +26,22 @@ resource github_repository terraform {
   vulnerability_alerts = true
 }
 
-data github_branch terraform_main {
+data "github_branch" "terraform_main" {
   repository = "terraform"
   branch     = "main"
 }
 
-resource github_branch_default terraform {
+resource "github_branch_default" "terraform" {
   repository = github_repository.terraform.name
   branch     = data.github_branch.terraform_main.branch
 }
 
-resource github_branch_protection terraform_main {
+resource "github_branch_protection" "terraform_main" {
   repository_id     = github_repository.terraform.node_id
   pattern           = "main"
   push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true
@@ -55,91 +56,91 @@ resource github_branch_protection terraform_main {
   }
 }
 
-resource github_issue_label terraform_toApply {
+resource "github_issue_label" "terraform_toApply" {
   repository = github_repository.terraform.name
   name       = "To Apply"
   color      = "FFFF00"
 }
 
-resource github_issue_label terraform_applied {
+resource "github_issue_label" "terraform_applied" {
   repository = github_repository.terraform.name
   name       = "Applied"
   color      = "00FF00"
 }
 
-resource github_issue_label github {
+resource "github_issue_label" "github" {
   repository = github_repository.terraform.name
   name       = "github"
   color      = "B00541"
 }
 
-resource github_issue_label discord {
+resource "github_issue_label" "discord" {
   repository = github_repository.terraform.name
   name       = "discord"
   color      = "B00541"
 }
 
-resource github_issue_label discord_member {
+resource "github_issue_label" "discord_member" {
   repository = github_repository.terraform.name
   name       = "discord_member"
   color      = "D916BB"
 }
 
-resource github_issue_label github_user {
+resource "github_issue_label" "github_user" {
   repository = github_repository.terraform.name
   name       = "github_user"
   color      = "0000FF"
 }
 
-resource github_issue_label repository {
+resource "github_issue_label" "repository" {
   repository = github_repository.terraform.name
   name       = "repository"
   color      = "0000FF"
 }
 
-resource github_issue_label channels {
+resource "github_issue_label" "channels" {
   repository = github_repository.terraform.name
   name       = "channels"
   color      = "D916BB"
 }
 
-resource github_issue_label discord_permissions {
+resource "github_issue_label" "discord_permissions" {
   repository = github_repository.terraform.name
   name       = "discord_permissions"
   color      = "D916BB"
 }
 
-resource github_issue_label roles {
+resource "github_issue_label" "roles" {
   repository = github_repository.terraform.name
   name       = "roles"
   color      = "D916BB"
 }
 
-resource github_issue_label discord_server {
+resource "github_issue_label" "discord_server" {
   repository = github_repository.terraform.name
   name       = "discord_server"
   color      = "D916BB"
 }
 
-resource github_issue_label variables {
+resource "github_issue_label" "variables" {
   repository = github_repository.terraform.name
   name       = "variables"
   color      = "E39000"
 }
 
-resource github_issue_label teams {
+resource "github_issue_label" "teams" {
   repository = github_repository.terraform.name
   name       = "teams"
   color      = "0000FF"
 }
 
-resource github_issue_label invites {
+resource "github_issue_label" "invites" {
   repository = github_repository.terraform.name
   name       = "invites"
   color      = "D916BB"
 }
 
-resource github_issue_label modules {
+resource "github_issue_label" "modules" {
   repository = github_repository.terraform.name
   name       = "modules"
   color      = "E39000"
@@ -148,7 +149,7 @@ resource github_issue_label modules {
 
 ### jeffrey
 
-resource github_repository jeffrey {
+resource "github_repository" "jeffrey" {
   allow_merge_commit     = true
   allow_rebase_merge     = true
   allow_squash_merge     = true
@@ -176,16 +177,17 @@ data "github_branch" "jeffrey_master" {
   branch     = "master"
 }
 
-resource github_branch_default jeffrey {
+resource "github_branch_default" "jeffrey" {
   repository = github_repository.jeffrey.name
   branch     = data.github_branch.jeffrey_master.branch
 }
 
-resource github_branch_protection jeffrey_master {
+resource "github_branch_protection" "jeffrey_master" {
   repository_id     = github_repository.jeffrey.node_id
   pattern           = "master"
   push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true
@@ -201,40 +203,40 @@ resource github_branch_protection jeffrey_master {
   }
 }
 
-resource github_repository_project jeffrey_main {
+resource "github_repository_project" "jeffrey_main" {
   name       = "Jeffrey Main Project"
   repository = github_repository.jeffrey.name
   body       = "Main project's tasks"
 }
 
-resource github_project_column jeffrey_main_todo {
+resource "github_project_column" "jeffrey_main_todo" {
   project_id = github_repository_project.jeffrey_main.id
   name       = "TODO"
 }
 
-resource github_project_column jeffrey_main_doing {
+resource "github_project_column" "jeffrey_main_doing" {
   project_id = github_repository_project.jeffrey_main.id
   name       = "DOING"
 }
 
-resource github_project_column jeffrey_main_codeReview {
+resource "github_project_column" "jeffrey_main_codeReview" {
   project_id = github_repository_project.jeffrey_main.id
   name       = "CODE REVIEW"
 }
 
-resource github_project_column jeffrey_main_approved {
+resource "github_project_column" "jeffrey_main_approved" {
   project_id = github_repository_project.jeffrey_main.id
   name       = "APPROVED"
 }
 
-resource github_project_column jeffrey_main_done {
+resource "github_project_column" "jeffrey_main_done" {
   project_id = github_repository_project.jeffrey_main.id
   name       = "DONE"
 }
 
 ### jeffrey-api
 
-resource github_repository jeffreyApi {
+resource "github_repository" "jeffreyApi" {
   allow_merge_commit     = true
   allow_rebase_merge     = true
   allow_squash_merge     = true
@@ -260,16 +262,17 @@ data "github_branch" "jeffreyApi_master" {
   branch     = "master"
 }
 
-resource github_branch_default jeffreyApi {
+resource "github_branch_default" "jeffreyApi" {
   repository = github_repository.jeffreyApi.name
   branch     = data.github_branch.jeffreyApi_master.branch
 }
 
-resource github_branch_protection jeffreyApi_master {
+resource "github_branch_protection" "jeffreyApi_master" {
   repository_id     = github_repository.jeffreyApi.node_id
   pattern           = "master"
   push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true
@@ -282,33 +285,33 @@ resource github_branch_protection jeffreyApi_master {
   //  }
 }
 
-resource github_repository_project jeffreyApi_main {
+resource "github_repository_project" "jeffreyApi_main" {
   name       = "Jeffrey API Main Project"
   repository = github_repository.jeffreyApi.name
   body       = "Main project's tasks"
 }
 
-resource github_project_column jeffreyApi_main_todo {
+resource "github_project_column" "jeffreyApi_main_todo" {
   project_id = github_repository_project.jeffreyApi_main.id
   name       = "TODO"
 }
 
-resource github_project_column jeffreyApi_main_doing {
+resource "github_project_column" "jeffreyApi_main_doing" {
   project_id = github_repository_project.jeffreyApi_main.id
   name       = "DOING"
 }
 
-resource github_project_column jeffreyApi_main_codeReview {
+resource "github_project_column" "jeffreyApi_main_codeReview" {
   project_id = github_repository_project.jeffreyApi_main.id
   name       = "CODE REVIEW"
 }
 
-resource github_project_column jeffreyApi_main_approved {
+resource "github_project_column" "jeffreyApi_main_approved" {
   project_id = github_repository_project.jeffreyApi_main.id
   name       = "APPROVED"
 }
 
-resource github_project_column jeffreyApi_main_done {
+resource "github_project_column" "jeffreyApi_main_done" {
   project_id = github_repository_project.jeffreyApi_main.id
   name       = "DONE"
 }
@@ -320,7 +323,7 @@ resource github_project_column jeffreyApi_main_done {
 
 ### ginger
 
-resource github_repository ginger {
+resource "github_repository" "ginger" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -334,13 +337,13 @@ resource github_repository ginger {
   vulnerability_alerts   = true
 }
 
-data github_branch ginger_master {
+data "github_branch" "ginger_master" {
   provider   = github.old
   repository = "ginger"
   branch     = "master"
 }
 
-resource github_branch_default ginger {
+resource "github_branch_default" "ginger" {
   provider   = github.old
   repository = github_repository.ginger.name
   branch     = data.github_branch.ginger_master.branch
@@ -349,7 +352,7 @@ resource github_branch_default ginger {
 
 ### ginger-client
 
-resource github_repository ginger_client {
+resource "github_repository" "ginger_client" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -363,13 +366,13 @@ resource github_repository ginger_client {
   vulnerability_alerts   = true
 }
 
-data github_branch ginger_client_master {
+data "github_branch" "ginger_client_master" {
   provider   = github.old
   repository = "ginger-client"
   branch     = "master"
 }
 
-resource github_branch_default ginger_client {
+resource "github_branch_default" "ginger_client" {
   provider   = github.old
   repository = github_repository.ginger_client.name
   branch     = data.github_branch.ginger_client_master.branch
@@ -378,7 +381,7 @@ resource github_branch_default ginger_client {
 
 ### koala
 
-resource github_repository koala {
+resource "github_repository" "koala" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -392,13 +395,13 @@ resource github_repository koala {
   vulnerability_alerts   = true
 }
 
-data github_branch koala_master {
+data "github_branch" "koala_master" {
   provider   = github.old
   repository = "koala"
   branch     = "master"
 }
 
-resource github_branch_default koala {
+resource "github_branch_default" "koala" {
   provider   = github.old
   repository = github_repository.koala.name
   branch     = data.github_branch.koala_master.branch
@@ -407,7 +410,7 @@ resource github_branch_default koala {
 
 ### portail-old
 
-resource github_repository portail_old {
+resource "github_repository" "portail_old" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -421,13 +424,13 @@ resource github_repository portail_old {
   vulnerability_alerts   = true
 }
 
-data github_branch portail_old_master {
+data "github_branch" "portail_old_master" {
   provider   = github.old
   repository = "portail-old"
   branch     = "master"
 }
 
-resource github_branch_default portail_old {
+resource "github_branch_default" "portail_old" {
   provider   = github.old
   repository = github_repository.portail_old.name
   branch     = data.github_branch.portail_old_master.branch
@@ -436,7 +439,7 @@ resource github_branch_default portail_old {
 
 ### gesmail-old
 
-resource github_repository gesmail_old {
+resource "github_repository" "gesmail_old" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -450,13 +453,13 @@ resource github_repository gesmail_old {
   vulnerability_alerts   = true
 }
 
-data github_branch gesmail_old_master {
+data "github_branch" "gesmail_old_master" {
   provider   = github.old
   repository = "gesmail-old"
   branch     = "master"
 }
 
-resource github_branch_default gesmail_old {
+resource "github_branch_default" "gesmail_old" {
   provider   = github.old
   repository = github_repository.gesmail_old.name
   branch     = data.github_branch.gesmail_old_master.branch
@@ -465,7 +468,7 @@ resource github_branch_default gesmail_old {
 
 ### gesassos2_old
 
-resource github_repository gesassos2_old {
+resource "github_repository" "gesassos2_old" {
   provider               = github.old
   archived               = true
   delete_branch_on_merge = true
@@ -481,7 +484,7 @@ resource github_repository gesassos2_old {
 
 ### faux-ginger
 
-resource github_repository faux_ginger {
+resource "github_repository" "faux_ginger" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -495,13 +498,13 @@ resource github_repository faux_ginger {
   vulnerability_alerts   = true
 }
 
-data github_branch faux_ginger_master {
+data "github_branch" "faux_ginger_master" {
   provider   = github.old
   repository = "faux-ginger"
   branch     = "master"
 }
 
-resource github_branch_default faux_ginger {
+resource "github_branch_default" "faux_ginger" {
   provider   = github.old
   repository = github_repository.faux_ginger.name
   branch     = data.github_branch.faux_ginger_master.branch
@@ -510,7 +513,7 @@ resource github_branch_default faux_ginger {
 
 ### python-hosting
 
-resource github_repository python_hosting {
+resource "github_repository" "python_hosting" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -524,13 +527,13 @@ resource github_repository python_hosting {
   vulnerability_alerts   = true
 }
 
-data github_branch python_hosting_master {
+data "github_branch" "python_hosting_master" {
   provider   = github.old
   repository = "python-hosting"
   branch     = "master"
 }
 
-resource github_branch_default python_hosting {
+resource "github_branch_default" "python_hosting" {
   provider   = github.old
   repository = github_repository.python_hosting.name
   branch     = data.github_branch.python_hosting_master.branch
@@ -539,7 +542,7 @@ resource github_branch_default python_hosting {
 
 ### bdecotiz
 
-resource github_repository bdecotiz {
+resource "github_repository" "bdecotiz" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -553,13 +556,13 @@ resource github_repository bdecotiz {
   vulnerability_alerts   = true
 }
 
-data github_branch bdecotiz_master {
+data "github_branch" "bdecotiz_master" {
   provider   = github.old
   repository = "bdecotiz"
   branch     = "master"
 }
 
-resource github_branch_default bdecotiz {
+resource "github_branch_default" "bdecotiz" {
   provider   = github.old
   repository = github_repository.bdecotiz.name
   branch     = data.github_branch.bdecotiz_master.branch
@@ -568,7 +571,7 @@ resource github_branch_default bdecotiz {
 
 ### paymoi
 
-resource github_repository paymoi {
+resource "github_repository" "paymoi" {
   provider               = github.old
   archived               = true
   delete_branch_on_merge = true
@@ -584,7 +587,7 @@ resource github_repository paymoi {
 
 ### woolly-api
 
-resource github_repository woolly_api {
+resource "github_repository" "woolly_api" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -598,13 +601,13 @@ resource github_repository woolly_api {
   vulnerability_alerts   = true
 }
 
-data github_branch woolly_api_develop {
+data "github_branch" "woolly_api_develop" {
   provider   = github.old
   repository = "woolly-api"
   branch     = "develop"
 }
 
-resource github_branch_default woolly_api {
+resource "github_branch_default" "woolly_api" {
   provider   = github.old
   repository = github_repository.woolly_api.name
   branch     = data.github_branch.woolly_api_develop.branch
@@ -613,7 +616,7 @@ resource github_branch_default woolly_api {
 
 ### woolly-ui
 
-resource github_repository woolly_ui {
+resource "github_repository" "woolly_ui" {
   provider               = github.old
   archived               = true
   delete_branch_on_merge = true
@@ -629,7 +632,7 @@ resource github_repository woolly_ui {
 
 ### gesassos-web
 
-resource github_repository gesassos_web {
+resource "github_repository" "gesassos_web" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -643,13 +646,13 @@ resource github_repository gesassos_web {
   vulnerability_alerts   = true
 }
 
-data github_branch gesassos_web_master {
+data "github_branch" "gesassos_web_master" {
   provider   = github.old
   repository = "gesassos-web"
   branch     = "master"
 }
 
-resource github_branch_default gesassos_web {
+resource "github_branch_default" "gesassos_web" {
   provider   = github.old
   repository = github_repository.gesassos_web.name
   branch     = data.github_branch.gesassos_web_master.branch
@@ -658,7 +661,7 @@ resource github_branch_default gesassos_web {
 
 ### ginger2
 
-resource github_repository ginger2 {
+resource "github_repository" "ginger2" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -672,13 +675,13 @@ resource github_repository ginger2 {
   vulnerability_alerts   = true
 }
 
-data github_branch ginger2_master {
+data "github_branch" "ginger2_master" {
   provider   = github.old
   repository = "ginger2"
   branch     = "master"
 }
 
-resource github_branch_default ginger2 {
+resource "github_branch_default" "ginger2" {
   provider   = github.old
   repository = github_repository.ginger2.name
   branch     = data.github_branch.ginger2_master.branch
@@ -687,7 +690,7 @@ resource github_branch_default ginger2 {
 
 ### woolly-front
 
-resource github_repository woolly_front {
+resource "github_repository" "woolly_front" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -701,13 +704,13 @@ resource github_repository woolly_front {
   vulnerability_alerts   = true
 }
 
-data github_branch woolly_front_develop {
+data "github_branch" "woolly_front_develop" {
   provider   = github.old
   repository = "woolly-front"
   branch     = "develop"
 }
 
-resource github_branch_default woolly_front {
+resource "github_branch_default" "woolly_front" {
   provider   = github.old
   repository = github_repository.woolly_front.name
   branch     = data.github_branch.woolly_front_develop.branch
@@ -716,7 +719,7 @@ resource github_branch_default woolly_front {
 
 ### welcome
 
-resource github_repository welcome {
+resource "github_repository" "welcome" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -730,13 +733,13 @@ resource github_repository welcome {
   vulnerability_alerts   = true
 }
 
-data github_branch welcome_master {
+data "github_branch" "welcome_master" {
   provider   = github.old
   repository = "welcome"
   branch     = "master"
 }
 
-resource github_branch_default welcome {
+resource "github_branch_default" "welcome" {
   provider   = github.old
   repository = github_repository.welcome.name
   branch     = data.github_branch.welcome_master.branch
@@ -745,7 +748,7 @@ resource github_branch_default welcome {
 
 ### jessy
 
-resource github_repository jessy {
+resource "github_repository" "jessy" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -759,13 +762,13 @@ resource github_repository jessy {
   vulnerability_alerts   = true
 }
 
-data github_branch jessy_master {
+data "github_branch" "jessy_master" {
   provider   = github.old
   repository = "jessy"
   branch     = "master"
 }
 
-resource github_branch_default jessy {
+resource "github_branch_default" "jessy" {
   provider   = github.old
   repository = github_repository.jessy.name
   branch     = data.github_branch.jessy_master.branch
@@ -774,7 +777,7 @@ resource github_branch_default jessy {
 
 ### jessy-api
 
-resource github_repository jessy_api {
+resource "github_repository" "jessy_api" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -788,13 +791,13 @@ resource github_repository jessy_api {
   vulnerability_alerts   = true
 }
 
-data github_branch jessy_api_master {
+data "github_branch" "jessy_api_master" {
   provider   = github.old
   repository = "jessy-api"
   branch     = "master"
 }
 
-resource github_branch_default jessy_api {
+resource "github_branch_default" "jessy_api" {
   provider   = github.old
   repository = github_repository.jessy_api.name
   branch     = data.github_branch.jessy_api_master.branch
@@ -803,7 +806,7 @@ resource github_branch_default jessy_api {
 
 ### portail
 
-resource github_repository portail {
+resource "github_repository" "portail" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -827,13 +830,13 @@ resource github_repository portail {
   ]
 }
 
-data github_branch portail_develop {
+data "github_branch" "portail_develop" {
   provider   = github.old
   repository = "portail"
   branch     = "develop"
 }
 
-resource github_branch_default portail {
+resource "github_branch_default" "portail" {
   provider   = github.old
   repository = github_repository.portail.name
   branch     = data.github_branch.portail_develop.branch
@@ -842,7 +845,7 @@ resource github_branch_default portail {
 
 ### beethoven
 
-resource github_repository beethoven {
+resource "github_repository" "beethoven" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -856,13 +859,13 @@ resource github_repository beethoven {
   vulnerability_alerts   = true
 }
 
-data github_branch beethoven_master {
+data "github_branch" "beethoven_master" {
   provider   = github.old
   repository = "beethoven"
   branch     = "master"
 }
 
-resource github_branch_default beethoven {
+resource "github_branch_default" "beethoven" {
   provider   = github.old
   repository = github_repository.beethoven.name
   branch     = data.github_branch.beethoven_master.branch
@@ -871,7 +874,7 @@ resource github_branch_default beethoven {
 
 ### emploidutemps
 
-resource github_repository emploidutemps {
+resource "github_repository" "emploidutemps" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -885,13 +888,13 @@ resource github_repository emploidutemps {
   vulnerability_alerts   = true
 }
 
-data github_branch emploidutemps_2_0 {
+data "github_branch" "emploidutemps_2_0" {
   provider   = github.old
   repository = "emploidutemps"
   branch     = "2.0"
 }
 
-resource github_branch_default emploidutemps {
+resource "github_branch_default" "emploidutemps" {
   provider   = github.old
   repository = github_repository.emploidutemps.name
   branch     = data.github_branch.emploidutemps_2_0.branch
@@ -900,7 +903,7 @@ resource github_branch_default emploidutemps {
 
 ### hackathon-covoit
 
-resource github_repository hackathon_covoit {
+resource "github_repository" "hackathon_covoit" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -914,13 +917,13 @@ resource github_repository hackathon_covoit {
   vulnerability_alerts   = true
 }
 
-data github_branch hackathon_covoit_master {
+data "github_branch" "hackathon_covoit_master" {
   provider   = github.old
   repository = "hackathon-covoit"
   branch     = "master"
 }
 
-resource github_branch_default hackathon_covoit {
+resource "github_branch_default" "hackathon_covoit" {
   provider   = github.old
   repository = github_repository.hackathon_covoit.name
   branch     = data.github_branch.hackathon_covoit_master.branch
@@ -929,7 +932,7 @@ resource github_branch_default hackathon_covoit {
 
 ### utc-mobile
 
-resource github_repository utc_mobile {
+resource "github_repository" "utc_mobile" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -951,13 +954,13 @@ resource github_repository utc_mobile {
   ]
 }
 
-data github_branch utc_mobile_develop {
+data "github_branch" "utc_mobile_develop" {
   provider   = github.old
   repository = "utc-mobile"
   branch     = "develop"
 }
 
-resource github_branch_default utc_mobile {
+resource "github_branch_default" "utc_mobile" {
   provider   = github.old
   repository = github_repository.utc_mobile.name
   branch     = data.github_branch.utc_mobile_develop.branch
@@ -965,7 +968,7 @@ resource github_branch_default utc_mobile {
 
 ### covoitutc
 
-resource github_repository covoitutc {
+resource "github_repository" "covoitutc" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -979,13 +982,13 @@ resource github_repository covoitutc {
   vulnerability_alerts   = true
 }
 
-data github_branch covoitutc_master {
+data "github_branch" "covoitutc_master" {
   provider   = github.old
   repository = "covoitutc"
   branch     = "master"
 }
 
-resource github_branch_default covoitutc {
+resource "github_branch_default" "covoitutc" {
   provider   = github.old
   repository = github_repository.covoitutc.name
   branch     = data.github_branch.covoitutc_master.branch
@@ -994,7 +997,7 @@ resource github_branch_default covoitutc {
 
 ### planner
 
-resource github_repository planner {
+resource "github_repository" "planner" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -1008,13 +1011,13 @@ resource github_repository planner {
   vulnerability_alerts   = true
 }
 
-data github_branch planner_master {
+data "github_branch" "planner_master" {
   provider   = github.old
   repository = "planner"
   branch     = "master"
 }
 
-resource github_branch_default planner {
+resource "github_branch_default" "planner" {
   provider   = github.old
   repository = github_repository.planner.name
   branch     = data.github_branch.planner_master.branch
@@ -1023,7 +1026,7 @@ resource github_branch_default planner {
 
 ### payutc-mobile
 
-resource github_repository payutc_mobile {
+resource "github_repository" "payutc_mobile" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -1037,13 +1040,13 @@ resource github_repository payutc_mobile {
   vulnerability_alerts   = true
 }
 
-data github_branch payutc_mobile_master {
+data "github_branch" "payutc_mobile_master" {
   provider   = github.old
   repository = "payutc-mobile"
   branch     = "master"
 }
 
-resource github_branch_default payutc_mobile {
+resource "github_branch_default" "payutc_mobile" {
   provider   = github.old
   repository = github_repository.payutc_mobile.name
   branch     = data.github_branch.payutc_mobile_master.branch
@@ -1052,7 +1055,7 @@ resource github_branch_default payutc_mobile {
 
 ### weekmail
 
-resource github_repository weekmail {
+resource "github_repository" "weekmail" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -1066,13 +1069,13 @@ resource github_repository weekmail {
   vulnerability_alerts   = true
 }
 
-data github_branch weekmail_master {
+data "github_branch" "weekmail_master" {
   provider   = github.old
   repository = "weekmail"
   branch     = "master"
 }
 
-resource github_branch_default weekmail {
+resource "github_branch_default" "weekmail" {
   provider   = github.old
   repository = github_repository.weekmail.name
   branch     = data.github_branch.weekmail_master.branch
@@ -1081,7 +1084,7 @@ resource github_branch_default weekmail {
 
 ### payback
 
-resource github_repository payback {
+resource "github_repository" "payback" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -1095,13 +1098,13 @@ resource github_repository payback {
   vulnerability_alerts   = true
 }
 
-data github_branch payback_master {
+data "github_branch" "payback_master" {
   provider   = github.old
   repository = "payback"
   branch     = "master"
 }
 
-resource github_branch_default payback {
+resource "github_branch_default" "payback" {
   provider   = github.old
   repository = github_repository.payback.name
   branch     = data.github_branch.payback_master.branch
@@ -1110,7 +1113,7 @@ resource github_branch_default payback {
 
 ### textes-donnees-personnelles
 
-resource github_repository textes_donnees_personnelles {
+resource "github_repository" "textes_donnees_personnelles" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -1124,13 +1127,13 @@ resource github_repository textes_donnees_personnelles {
   vulnerability_alerts   = true
 }
 
-data github_branch textes_donnees_personnelles_master {
+data "github_branch" "textes_donnees_personnelles_master" {
   provider   = github.old
   repository = "textes-donnees-personnelles"
   branch     = "master"
 }
 
-resource github_branch_default textes_donnees_personnelles {
+resource "github_branch_default" "textes_donnees_personnelles" {
   provider   = github.old
   repository = github_repository.textes_donnees_personnelles.name
   branch     = data.github_branch.textes_donnees_personnelles_master.branch
@@ -1138,7 +1141,7 @@ resource github_branch_default textes_donnees_personnelles {
 
 ### locky
 
-resource github_repository locky {
+resource "github_repository" "locky" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -1152,13 +1155,13 @@ resource github_repository locky {
   vulnerability_alerts   = true
 }
 
-data github_branch locky_master {
+data "github_branch" "locky_master" {
   provider   = github.old
   repository = github_repository.locky.name
   branch     = "master"
 }
 
-resource github_branch_default locky {
+resource "github_branch_default" "locky" {
   provider   = github.old
   repository = github_repository.locky.name
   branch     = data.github_branch.locky_master.branch
@@ -1166,7 +1169,7 @@ resource github_branch_default locky {
 
 ### terraform_jda
 
-resource github_repository terraform_jda {
+resource "github_repository" "terraform_jda" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
@@ -1180,13 +1183,13 @@ resource github_repository terraform_jda {
   vulnerability_alerts   = true
 }
 
-data github_branch terraform_jda_master {
+data "github_branch" "terraform_jda_master" {
   provider   = github.old
   repository = github_repository.terraform_jda.name
   branch     = "master"
 }
 
-resource github_branch_default terraform_jda {
+resource "github_branch_default" "terraform_jda" {
   provider   = github.old
   repository = github_repository.terraform_jda.name
   branch     = data.github_branch.terraform_jda_master.branch
@@ -1194,7 +1197,7 @@ resource github_branch_default terraform_jda {
 
 ### emploidut_back
 
-resource github_repository emploidutApi {
+resource "github_repository" "emploidutApi" {
   allow_merge_commit     = true
   allow_rebase_merge     = true
   allow_squash_merge     = true
@@ -1217,17 +1220,17 @@ resource github_repository emploidutApi {
   vulnerability_alerts = true
 }
 
-data github_branch emploidutApi_master {
+data "github_branch" "emploidutApi_master" {
   repository = "emploidut-api"
   branch     = "master"
 }
 
-resource github_branch_default emploidutApi {
+resource "github_branch_default" "emploidutApi" {
   repository = github_repository.emploidutApi.name
   branch     = data.github_branch.emploidutApi_master.branch
 }
 
-resource github_branch_protection emploidutApi_master {
+resource "github_branch_protection" "emploidutApi_master" {
   repository_id = github_repository.emploidutApi.node_id
   pattern       = "master"
   #push_restrictions = [github_team.simde.node_id]

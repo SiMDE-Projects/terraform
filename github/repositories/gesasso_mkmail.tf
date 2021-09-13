@@ -1,6 +1,6 @@
 ### Gesasso Mk Mail
 
-resource github_repository gesasso_mkmail {
+resource "github_repository" "gesasso_mkmail" {
   allow_merge_commit     = true
   allow_rebase_merge     = true
   allow_squash_merge     = true
@@ -17,11 +17,12 @@ resource github_repository gesasso_mkmail {
   vulnerability_alerts   = true
 }
 
-resource github_branch_protection gesasso_mkmail_master {
+resource "github_branch_protection" "gesasso_mkmail_master" {
   repository_id     = github_repository.gesasso_mkmail.node_id
   pattern           = "main"
   push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
+    restrict_dismissals             = true
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [var.teams.simde.node_id]
     require_code_owner_reviews      = true
@@ -29,13 +30,13 @@ resource github_branch_protection gesasso_mkmail_master {
   }
 }
 
-resource github_team_repository simde_gesasso_mkmail {
+resource "github_team_repository" "simde_gesasso_mkmail" {
   team_id    = var.teams.simde.id
   repository = github_repository.gesasso_mkmail.name
   permission = "maintain"
 }
 
-resource github_team_repository gesasso_gesasso_mkmail {
+resource "github_team_repository" "gesasso_gesasso_mkmail" {
   team_id    = var.teams.gesasso.id
   repository = github_repository.gesasso_mkmail.name
   permission = "maintain"

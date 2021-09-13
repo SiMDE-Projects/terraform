@@ -1,15 +1,15 @@
-variable discord_token {
+variable "discord_token" {
   type = string
 }
 
-variable github_token {
+variable "github_token" {
   type = string
 }
 
-variable github_organization {
+variable "github_organization" {
   type = string
 }
 
-variable github_old_organization {
+variable "github_old_organization" {
   type = string
 }

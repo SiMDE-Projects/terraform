@@ -1,4 +1,4 @@
-module cesar_richard {
+module "cesar_richard" {
   source   = "./users"
   username = "cesar-richard"
   role     = "admin"
@@ -18,7 +18,7 @@ module cesar_richard {
   }
 }
 
-module maxime_vaillant {
+module "maxime_vaillant" {
   source   = "./users"
   username = "maxime-vaillant"
   teams = {
@@ -26,23 +26,15 @@ module maxime_vaillant {
       team = github_team.jeffrey.id,
       role = "member"
     }
-    "application_utcbde" = {
-      team = github_team.application_utcbde.id,
-      role = "member"
-    }
-    "planner" = {
-      team = github_team.planner.id,
-      role = "member"
-    }
   }
 }
 
-module victor_moreliere {
+module "victor_moreliere" {
   source   = "./users"
   username = "GalliusJulius"
 }
 
-module anto2oo {
+module "anto2oo" {
   source   = "./users"
   username = "anto2oo"
   teams = {
@@ -53,7 +45,7 @@ module anto2oo {
   }
 }
 
-module noe_amiot {
+module "noe_amiot" {
   source   = "./users"
   username = "noeamiot"
   role     = "admin"
@@ -73,7 +65,7 @@ module noe_amiot {
   }
 }
 
-module remy_huet {
+module "remy_huet" {
   source   = "./users"
   username = "huetremy"
   teams = {
@@ -84,7 +76,7 @@ module remy_huet {
   }
 }
 
-module matthieu_decaux {
+module "matthieu_decaux" {
   source   = "./users"
   username = "matthieudecaux"
   teams = {
@@ -95,12 +87,12 @@ module matthieu_decaux {
   }
 }
 
-module romain_maliachauguste {
+module "romain_maliachauguste" {
   source   = "./users"
   username = "R0one"
 }
 
-module thibaud_duhautbout {
+module "thibaud_duhautbout" {
   source   = "./users"
   username = "tduhautb"
   teams = {
@@ -115,7 +107,7 @@ module thibaud_duhautbout {
 ###   ORIGINAL ORGANIZATION ###
 ###############################
 
-module old_aarrtthhuurr {
+module "old_aarrtthhuurr" {
   providers = {
     github = github.old
   }
@@ -133,7 +125,7 @@ module old_aarrtthhuurr {
   }
 }
 
-module old_alexandre_brasseur {
+module "old_alexandre_brasseur" {
   providers = {
     github = github.old
   }
@@ -151,7 +143,7 @@ module old_alexandre_brasseur {
   }
 }
 
-module old_acharann {
+module "old_acharann" {
   providers = {
     github = github.old
   }
@@ -165,7 +157,7 @@ module old_acharann {
   }
 }
 
-module old_artemisart {
+module "old_artemisart" {
   providers = {
     github = github.old
   }
@@ -179,7 +171,7 @@ module old_artemisart {
   }
 }
 
-module old_BaguetteEater {
+module "old_BaguetteEater" {
   providers = {
     github = github.old
   }
@@ -193,7 +185,7 @@ module old_BaguetteEater {
   }
 }
 
-module old_stephane_bonnet {
+module "old_stephane_bonnet" {
   providers = {
     github = github.old
   }
@@ -201,7 +193,7 @@ module old_stephane_bonnet {
   username = "bonnetst"
 }
 
-module old_victor_ronfaut {
+module "old_victor_ronfaut" {
   providers = {
     github = github.old
   }
@@ -223,7 +215,7 @@ module old_victor_ronfaut {
   }
 }
 
-module old_cesar_richard {
+module "old_cesar_richard" {
   providers = {
     github = github.old
   }
@@ -256,7 +248,7 @@ module "old_courentin" {
   }
 }
 
-module old_danousna {
+module "old_danousna" {
   providers = {
     github = github.old
   }
@@ -270,7 +262,7 @@ module old_danousna {
   }
 }
 
-module old_Eliaccess {
+module "old_Eliaccess" {
   providers = {
     github = github.old
   }
@@ -278,7 +270,7 @@ module old_Eliaccess {
   username = "Eliaccess"
 }
 
-module old_jpennors {
+module "old_jpennors" {
   providers = {
     github = github.old
   }
@@ -304,7 +296,7 @@ module "old_jsmrcaga" {
   username = "jsmrcaga"
 }
 
-module old_loic_jumel {
+module "old_loic_jumel" {
   providers = {
     github = github.old
   }
@@ -312,7 +304,7 @@ module old_loic_jumel {
   username = "jumelloic"
 }
 
-module old_colin_lafond {
+module "old_colin_lafond" {
   providers = {
     github = github.old
   }
@@ -326,7 +318,7 @@ module old_colin_lafond {
   }
 }
 
-module old_luc_varoqui {
+module "old_luc_varoqui" {
   providers = {
     github = github.old
   }
@@ -565,7 +557,7 @@ module "old_yElSaadany" {
   }
 }
 
-module arthur_wacquez {
+module "arthur_wacquez" {
   source   = "./users"
   username = "0uTl0w24"
   teams = {
@@ -576,7 +568,7 @@ module arthur_wacquez {
   }
 }
 
-module victor_tondolo {
+module "victor_tondolo" {
   source   = "./users"
   username = "victor-tndl"
   teams = {

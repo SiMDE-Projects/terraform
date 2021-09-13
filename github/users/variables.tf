@@ -1,13 +1,13 @@
-variable username {
+variable "username" {
   type = string
 }
 
-variable role {
+variable "role" {
   type    = string
   default = "member"
 }
 
-variable teams {
+variable "teams" {
   default = {}
-  type    = map
+  type    = map(any)
 }

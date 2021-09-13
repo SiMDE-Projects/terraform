@@ -10,19 +10,19 @@ locals {
   }
 }
 
-data discord_permission admin {
+data "discord_permission" "admin" {
   allow_extends = data.discord_permission.base_permissions.allow_bits
   deny_extends  = data.discord_permission.base_permissions.deny_bits
   administrator = "allow"
 }
 
-data discord_permission bot {
+data "discord_permission" "bot" {
   allow_extends   = data.discord_permission.base_permissions.allow_bits
   deny_extends    = data.discord_permission.base_permissions.deny_bits
   manage_webhooks = "allow"
 }
 
-data discord_permission member {
+data "discord_permission" "member" {
   allow_extends         = data.discord_permission.base_permissions.allow_bits
   deny_extends          = data.discord_permission.base_permissions.deny_bits
   priority_speaker      = "deny"
@@ -35,13 +35,13 @@ data discord_permission member {
   speak                 = "allow"
 }
 
-data discord_permission deny {
+data "discord_permission" "deny" {
   allow_extends = data.discord_permission.base_permissions.allow_bits
   deny_extends  = data.discord_permission.base_permissions.deny_bits
   view_channel  = "deny"
 }
 
-data discord_permission allow {
+data "discord_permission" "allow" {
   allow_extends        = data.discord_permission.base_permissions.allow_bits
   deny_extends         = data.discord_permission.base_permissions.deny_bits
   view_channel         = "allow"
@@ -49,7 +49,7 @@ data discord_permission allow {
   read_message_history = "allow"
 }
 
-data discord_permission readonly {
+data "discord_permission" "readonly" {
   allow_extends        = data.discord_permission.base_permissions.allow_bits
   deny_extends         = data.discord_permission.base_permissions.deny_bits
   view_channel         = "allow"
@@ -57,7 +57,7 @@ data discord_permission readonly {
   read_message_history = "allow"
 }
 
-data discord_permission base_permissions {
+data "discord_permission" "base_permissions" {
   view_channel          = "deny"
   send_messages         = "unset"
   use_vad               = "allow"

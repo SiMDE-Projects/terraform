@@ -1,8 +1,8 @@
-data discord_local_image logo {
+data "discord_local_image" "logo" {
   file = "./discord_simde/logo.png"
 }
 
-resource discord_server server {
+resource "discord_server" "server" {
   name                    = "SiMDE - Service Informatique de la Maison des Étudiants"
   region                  = "europe"
   icon_data_uri           = data.discord_local_image.logo.data_uri

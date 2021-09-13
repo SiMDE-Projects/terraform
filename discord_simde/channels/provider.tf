@@ -2,11 +2,11 @@ terraform {
   required_providers {
     discord = {
       source  = "aequasi/discord"
-      version = "0.0.4"
+      version = ">= 0.0.4"
     }
   }
 }
 
-provider discord {
+provider "discord" {
   token = var.api_token
 }
