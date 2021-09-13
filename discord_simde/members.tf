@@ -389,7 +389,7 @@ module "paco_pompeani" {
   username      = "paco POMPEANI"
   discriminator = 9364
   roles = {
-    (discord_role.respinfo.id) = false #Etuville A21
-    (discord_role.payutc.id)   = true
+    (discord_role.respinfo.id) = true #Etuville A21
+    (discord_role.etuville.id) = true
   }
 }
