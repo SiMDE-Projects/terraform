@@ -215,7 +215,7 @@ module "neil" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
-  username      = "new-uno"
+  username      = "new-N"
   discriminator = 8213
   roles = {
     (discord_role.curieux.id) = true
@@ -391,5 +391,27 @@ module "paco_pompeani" {
   roles = {
     (discord_role.respinfo.id) = true #Etuville A21
     (discord_role.etuville.id) = true
+  }
+}
+
+module "leopold_chappuis" {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "léo"
+  discriminator = 6003
+  roles = {
+    (discord_role.member.id) = true
+  }
+}
+
+module "guillaume_theunissen" {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Guillaume"
+  discriminator = 5702
+  roles = {
+    (discord_role.member.id) = true
   }
 }
