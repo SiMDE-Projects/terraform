@@ -415,3 +415,14 @@ module "guillaume_theunissen" {
     (discord_role.member.id) = true
   }
 }
+
+module "loic_jumel" {
+  source        = "./member"
+  api_token     = var.api_token
+  server_id     = discord_server.server.id
+  username      = "Loïc Jumel"
+  discriminator = 8501
+  roles = {
+    (discord_role.admin.id) = true
+  }
+}
