@@ -215,7 +215,7 @@ module "neil" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
-  username      = "new-uno"
+  username      = "new-N"
   discriminator = 8213
   roles = {
     (discord_role.curieux.id) = true
