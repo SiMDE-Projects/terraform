@@ -401,7 +401,8 @@ module "leopold_chappuis" {
   username      = "léo"
   discriminator = 6003
   roles = {
-    (discord_role.member.id) = true
+    (discord_role.member.id)  = true
+    (discord_role.gesasso.id) = true
   }
 }
 
@@ -412,7 +413,8 @@ module "guillaume_theunissen" {
   username      = "Guillaume"
   discriminator = 5702
   roles = {
-    (discord_role.member.id) = true
+    (discord_role.member.id)  = true
+    (discord_role.gesasso.id) = true
   }
 }
 

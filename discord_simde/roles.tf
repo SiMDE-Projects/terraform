@@ -9,6 +9,7 @@ locals {
     jeffrey   = discord_role.jeffrey
     woolly    = discord_role.woolly
     bde       = discord_role.bde
+    gesasso   = discord_role.gesasso
     emploidut = discord_role.emploidut
     respinfo  = discord_role.respinfo
     curieux   = discord_role.curieux
@@ -45,6 +46,10 @@ data "discord_color" "woolly" {
 }
 
 data "discord_color" "bde" {
+  hex = "#E0E000"
+}
+
+data "discord_color" "gesasso" {
   hex = "#E0E000"
 }
 
@@ -127,9 +132,18 @@ resource "discord_role" "etuville" {
 resource "discord_role" "woolly" {
   server_id   = discord_server.server.id
   name        = "Woolly"
-  position    = discord_role.bde.position + 1
+  position    = discord_role.gesasso.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.woolly.dec
+  mentionable = true
+}
+
+resource "discord_role" "gesasso" {
+  server_id   = discord_server.server.id
+  name        = "Projet Gesasso"
+  position    = discord_role.bde.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.gesasso.dec
   mentionable = true
 }
 
