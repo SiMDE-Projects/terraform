@@ -7,19 +7,22 @@ resource "github_repository" "gesasso_mkultra" {
   archived               = false
   auto_init              = false
   delete_branch_on_merge = true
-  description            = "Le nécessaire pour les mails"
+  description            = "Portail de collecte des demandes des asso pour Gesasso"
   has_downloads          = false
   has_issues             = true
   has_projects           = true
   has_wiki               = false
   name                   = "gesasso_mkultra"
-  visibility             = "public"
-  vulnerability_alerts   = true
+  topics = [
+    "gesasso"
+  ]
+  visibility           = "public"
+  vulnerability_alerts = true
 }
 
 resource "github_branch_protection" "gesasso_mkultra_master" {
-  repository_id     = github_repository.gesasso_mkultra.node_id
-  pattern           = "main"
+  repository_id     = github_repository.gesasso_mkultra.name
+  pattern           = "master"
   push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
     restrict_dismissals             = true
