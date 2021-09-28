@@ -1,4 +1,4 @@
-### Gesasso Mk Mail
+### Gesasso Mk Ultra
 
 resource "github_repository" "gesasso_mkultra" {
   allow_merge_commit     = true
@@ -12,13 +12,13 @@ resource "github_repository" "gesasso_mkultra" {
   has_issues             = true
   has_projects           = true
   has_wiki               = false
-  name                   = "gesasso_mkmail"
+  name                   = "gesasso_mkultra"
   visibility             = "public"
   vulnerability_alerts   = true
 }
 
 resource "github_branch_protection" "gesasso_mkultra_master" {
-  repository_id     = github_repository.gesasso_mkmail.node_id
+  repository_id     = github_repository.gesasso_mkultra.node_id
   pattern           = "main"
   push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
@@ -32,12 +32,12 @@ resource "github_branch_protection" "gesasso_mkultra_master" {
 
 resource "github_team_repository" "simde_gesasso_mkultra" {
   team_id    = var.teams.simde.id
-  repository = github_repository.gesasso_mkmail.name
+  repository = github_repository.gesasso_mkultra.name
   permission = "maintain"
 }
 
 resource "github_team_repository" "gesasso_gesasso_mkultra" {
   team_id    = var.teams.gesasso.id
-  repository = github_repository.gesasso_mkmail.name
+  repository = github_repository.gesasso_mkultra.name
   permission = "maintain"
 }
