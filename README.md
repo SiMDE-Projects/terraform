@@ -1,4 +1,4 @@
-# Terraform du SiMDE
+# Terraform du SiMDE [![Terraform CI](https://github.com/SiMDE-Projects/terraform/actions/workflows/workflow.yaml/badge.svg)](https://github.com/SiMDE-Projects/terraform/actions/workflows/workflow.yaml)
 
 ## Disclaimer :
 
