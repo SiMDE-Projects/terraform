@@ -34,6 +34,7 @@ resource "discord_text_channel" "text" {
   name      = var.name
   server_id = var.server_id
   category  = discord_category_channel.category.id
+  topic     = var.topic
   position  = 0
 }
 

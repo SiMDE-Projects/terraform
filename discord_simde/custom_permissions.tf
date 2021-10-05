@@ -216,6 +216,39 @@ resource "discord_channel_permission" "treso_notifications" {
   deny         = local.permissions.readonly.deny_bits
 }
 
+### Gesasso
+resource "discord_channel_permission" "gesasso_general" {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.gesasso.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "gesasso_gesasso" {
+  channel_id   = module.private-gesasso.category.id
+  type         = "role"
+  overwrite_id = local.roles.gesasso.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "gesasso_notifications" {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.gesasso.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
+resource "discord_channel_permission" "gesasso_spam" {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.gesasso.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
 ### members
 
 resource "discord_channel_permission" "member_notifications" {

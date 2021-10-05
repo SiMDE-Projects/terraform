@@ -15,3 +15,7 @@ variable "permissions" {
 variable "roles" {
   type = map(any)
 }
+variable "topic" {
+  default = null
+  type    = string
+}

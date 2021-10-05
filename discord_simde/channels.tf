@@ -62,12 +62,24 @@ module "private-woolly" {
   roles       = local.roles
 }
 
+module "private-gesasso" {
+  source      = "./channels"
+  name        = "private-gesasso"
+  topic       = "Projet de plateforme de traitement automatisé des requetes de support SiMDE"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-woolly.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module "private-bde" {
   source      = "./channels"
   name        = "private-bde"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-woolly.position + 1
+  position    = module.private-gesasso.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
