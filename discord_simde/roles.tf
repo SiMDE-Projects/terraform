@@ -6,6 +6,7 @@ locals {
     payutc    = discord_role.payutc
     integ     = discord_role.integ
     etuville  = discord_role.etuville
+    comet     = discord_role.comet
     jeffrey   = discord_role.jeffrey
     woolly    = discord_role.woolly
     bde       = discord_role.bde
@@ -57,6 +58,10 @@ data "discord_color" "emploidut" {
   hex = "#E0E000"
 }
 
+data "discord_color" "comet" {
+  hex = "#E0E000"
+}
+
 data "discord_color" "member" {
   hex = "#4070F0"
 }
@@ -102,15 +107,6 @@ resource "discord_role" "treso" {
   mentionable = true
 }
 
-resource "discord_role" "jeffrey" {
-  server_id   = discord_server.server.id
-  name        = "Projet Jeffrey"
-  position    = discord_role.woolly.position + 1
-  permissions = data.discord_permission.member.allow_bits
-  color       = data.discord_color.jeffrey.dec
-  mentionable = true
-}
-
 resource "discord_role" "integ" {
   server_id   = discord_server.server.id
   name        = "Integ"
@@ -126,6 +122,15 @@ resource "discord_role" "etuville" {
   position    = discord_role.jeffrey.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.integ.dec
+  mentionable = true
+}
+
+resource "discord_role" "jeffrey" {
+  server_id   = discord_server.server.id
+  name        = "Projet Jeffrey"
+  position    = discord_role.woolly.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.jeffrey.dec
   mentionable = true
 }
 
@@ -159,9 +164,18 @@ resource "discord_role" "bde" {
 resource "discord_role" "emploidut" {
   server_id   = discord_server.server.id
   name        = "Emploi du temps"
-  position    = discord_role.member.position + 1
+  position    = discord_role.comet.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.emploidut.dec
+  mentionable = true
+}
+
+resource "discord_role" "comet" {
+  server_id   = discord_server.server.id
+  name        = "COMET"
+  position    = discord_role.member.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.comet.dec
   mentionable = true
 }
 
