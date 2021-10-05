@@ -18,12 +18,23 @@ module "private-treso" {
   roles       = local.roles
 }
 
+module "private-comet" {
+  source      = "./channels"
+  name        = "private-comet"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-treso.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module "private-payutc" {
   source      = "./channels"
   name        = "private-payutc"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-treso.position + 1
+  position    = module.private-comet.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles

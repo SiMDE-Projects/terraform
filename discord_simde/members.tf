@@ -310,7 +310,8 @@ module "thomas_guegan" {
   discriminator = 5848
   roles = {
     (discord_role.respinfo.id) = false #UTSea P21
-    (discord_role.integ.id)    = true
+    (discord_role.integ.id)    = true  #integ A21
+    (discord_role.comet.id)    = true  #comet A21
   }
 }
 
