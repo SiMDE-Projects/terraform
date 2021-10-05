@@ -1,22 +1,22 @@
 github: github/**/*
-discord: discord/**/*
+discord: discord_simde/**/*
 
 discord_member: discord_simde/members.tf
 github_user: github/users.tf
 
 repository: github/repo**.tf
 
-channels: ./**/*channels.tf
-discord_permissions: ./**/*permissions.tf
+channels: discord_simde/custom_channels.tf, discord_simde/channels.tf
+discord_permissions: discord_simde/custom_permissions.tf, discord_simde/permissions.tf
 
 roles: discord_simde/roles.tf
 
 discord_server: discord_simde/server.tf
 
-variables: ./*/variables.tf
+variables: variables.tf, ./**/variables.tf
 
 teams: github/teams.tf
 
 invites: ./*/invites.tf
 
-modules: ./*/**/*
+modules: ./discord_simde/member/*, ./discord_simde/channels/*, ./github/users/*,  ./github/repositories/*

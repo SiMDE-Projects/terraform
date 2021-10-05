@@ -1,4 +1,4 @@
-# Terraform du SiMDE
+# Terraform du SiMDE [![Terraform CI](https://github.com/SiMDE-Projects/terraform/actions/workflows/workflow.yaml/badge.svg)](https://github.com/SiMDE-Projects/terraform/actions/workflows/workflow.yaml)
 
 ## Disclaimer :
 
@@ -44,6 +44,7 @@ module private-project {                          #nom de la ressource
   server_id   = discord_server.server.id
   position    = module.autre-canal.position + 1   #position de la catégorie, on utilise ici les positions relatives
   restricted  = true                              #catégorie publique / cachée
+  topic       = "Description du canal"
   permissions = local.permissions
   roles       = local.roles
 }
@@ -93,11 +94,11 @@ Les fichiers dont le nom commence par un underscore ( \_ ) sont utilisés pour l
 
 - **\_variables.tf** : Définition des variables d'entrée pour terraform (liste des teams github, ...)
 - **\_outputs.tf** : Définition des valeurs a exposer hors du module pour être utilisées ailleurs (pour l'instant pas utilisé, mais par exemple les instances des repositories)
-- **_my_repository.tf_** (par exemple) : Défini les paramètres du repo "_my_repository_"
+- **_my_repository_.tf** (par exemple) : Défini les paramètres du repo "_my_repository_"
 
 #### 4.2. users/ (Module représentant les utilisateurs GitHub)
 
-Chaque instance prendra la forme suivante dans _/discord_simde/members.tf_, les valeurs à modifier son commentées :
+Chaque instance prendra la forme suivante dans _/discord_simde/members.tf_, les valeurs à modifier son commentées. Attention: les membres ne sont qu'invités à rejoindre les teams et repositories, il doivent accepter depuis leurs notifications GitHub ou via le mail recu.
 
 ```terraform
 module cesar_richard {                #nom de la ressource, mettre le nom réel de la personne

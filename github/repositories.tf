@@ -3,6 +3,9 @@
 module "repositories" {
   source = "./repositories"
   teams  = local.teams
+  providers = {
+    github.old = github.old
+  }
 }
 
 resource "github_repository" "terraform" {
@@ -661,50 +664,6 @@ resource "github_branch_default" "gesassos_web" {
 
 ### ginger2
 
-resource "github_repository" "ginger2" {
-  provider               = github.old
-  archived               = false
-  delete_branch_on_merge = true
-  description            = ""
-  has_downloads          = true
-  has_issues             = true
-  has_projects           = true
-  has_wiki               = true
-  name                   = "ginger2"
-  visibility             = "public"
-  vulnerability_alerts   = true
-}
-
-data "github_branch" "ginger2_master" {
-  provider   = github.old
-  repository = "ginger2"
-  branch     = "master"
-}
-
-resource "github_branch_default" "ginger2" {
-  provider   = github.old
-  repository = github_repository.ginger2.name
-  branch     = data.github_branch.ginger2_master.branch
-}
-
-resource "github_branch_protection_v3" "example" {
-  repository     = github_repository.ginger2.name
-  branch         = "master"
-  enforce_admins = true
-
-  required_status_checks {
-    strict   = true
-    contexts = ["Docker Compose Actions Workflow"]
-  }
-
-  required_pull_request_reviews {
-    dismissal_teams = [github_team.simde.slug]
-  }
-
-  restrictions {
-    teams = [github_team.simde.slug]
-  }
-}
 
 
 ### woolly-front
