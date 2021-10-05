@@ -687,6 +687,25 @@ resource "github_branch_default" "ginger2" {
   branch     = data.github_branch.ginger2_master.branch
 }
 
+resource "github_branch_protection_v3" "example" {
+  repository     = github_repository.ginger2.name
+  branch         = "master"
+  enforce_admins = true
+
+  required_status_checks {
+    strict   = true
+    contexts = ["Docker Compose Actions Workflow"]
+  }
+
+  required_pull_request_reviews {
+    dismissal_teams = [github_team.simde.slug]
+  }
+
+  restrictions {
+    teams = [github_team.simde.slug]
+  }
+}
+
 
 ### woolly-front
 

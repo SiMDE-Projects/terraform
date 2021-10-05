@@ -15,7 +15,7 @@ module "noe_amiot" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
-  username      = "Noé | Noé"
+  username      = "IJ-14525 | Noé"
   discriminator = 7299
   roles = {
     (discord_role.admin.id)  = true
@@ -299,17 +299,6 @@ module "victor_moreliere" {
   roles = {
     (discord_role.curieux.id)  = true
     (discord_role.respinfo.id) = true
-  }
-}
-
-module "felix" {
-  source        = "./member"
-  api_token     = var.api_token
-  server_id     = discord_server.server.id
-  username      = "felixpp"
-  discriminator = 5673
-  roles = {
-    (discord_role.curieux.id) = true
   }
 }
 
