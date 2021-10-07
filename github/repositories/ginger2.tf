@@ -2,7 +2,7 @@ resource "github_repository" "ginger2" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = ""
+  description            = "Projet de plateforme de traitement automatisé des requetes de support SiMDE"
   has_downloads          = true
   has_issues             = true
   has_projects           = true
