@@ -32,7 +32,7 @@ resource "github_branch_protection_v3" "ginger2_master" {
 
   required_status_checks {
     strict   = true
-    contexts = ["Docker Compose Actions Workflow"]
+    contexts = ["test"]
   }
 
   required_pull_request_reviews {
