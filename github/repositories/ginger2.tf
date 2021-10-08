@@ -2,11 +2,11 @@ resource "github_repository" "ginger2" {
   provider               = github.old
   archived               = false
   delete_branch_on_merge = true
-  description            = "Projet de plateforme de traitement automatisé des requetes de support SiMDE"
-  has_downloads          = true
+  description            = "Gestion automatisée des cotisation BDE UTC et des identifications d'utilisateurs par login ou badge"
+  has_downloads          = false
   has_issues             = true
-  has_projects           = true
-  has_wiki               = true
+  has_projects           = false
+  has_wiki               = false
   name                   = "ginger2"
   visibility             = "public"
   vulnerability_alerts   = true
