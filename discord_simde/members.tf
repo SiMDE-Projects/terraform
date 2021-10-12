@@ -186,6 +186,7 @@ module "rayan_doudech" {
   discriminator = 7690
   roles = {
     (discord_role.respinfo.id) = true
+    (discord_role.integfev.id) = true
   }
 }
 
