@@ -44,3 +44,71 @@ resource "github_team_repository" "gesasso_gesasso_mkultra" {
   repository = github_repository.gesasso_mkultra.name
   permission = "maintain"
 }
+
+#### Labels
+resource "github_issue_label" "gesasso_bug" {
+  repository = github_repository.gesasso_mkultra.name
+  name       = "bug"
+  color      = "d73a4a"
+}
+
+resource "github_issue_label" "gesasso_wontfix" {
+  repository = github_repository.gesasso_mkultra.name
+  name       = "wontfix"
+  color      = "ffffff"
+}
+
+resource "github_issue_label" "gesasso_documentation" {
+  repository = github_repository.gesasso_mkultra.name
+  name       = "documentation"
+  color      = "0075ca"
+}
+
+resource "github_issue_label" "gesasso_idea" {
+  repository = github_repository.gesasso_mkultra.name
+  name       = "idea"
+  color      = "182F08"
+}
+
+resource "github_issue_label" "gesasso_task" {
+  repository = github_repository.gesasso_mkultra.name
+  name       = "task"
+  color      = "B89826"
+}
+
+#### Project
+resource "github_repository_project" "gesasso_project" {
+  name       = "Gesasso project"
+  repository = github_repository.gesasso_mkultra.name
+  body       = "Gesasso project management"
+}
+
+resource "github_project_column" "gesasso_project_todo" {
+  project_id = github_repository_project.gesasso_project.id
+  name       = "TODO"
+}
+
+resource "github_project_column" "gesasso_project_doing" {
+  project_id = github_repository_project.gesasso_project.id
+  name       = "DOING"
+}
+
+resource "github_project_column" "gesasso_project_codeReview" {
+  project_id = github_repository_project.gesasso_project.id
+  name       = "CODE REVIEW"
+}
+
+resource "github_project_column" "gesasso_project_approved" {
+  project_id = github_repository_project.gesasso_project.id
+  name       = "APPROVED"
+}
+
+resource "github_project_column" "gesasso_project_done" {
+  project_id = github_repository_project.gesasso_project.id
+  name       = "DONE"
+}
+
+resource "github_project_column" "gesasso_project_wontdo" {
+  project_id = github_repository_project.gesasso_project.id
+  name       = "WON'T DO"
+}

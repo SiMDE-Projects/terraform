@@ -7,12 +7,23 @@ module "general" {
   roles       = local.roles
 }
 
+module "public-entraide" {
+  source      = "./channels"
+  name        = "public-entraide"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.general.position + 1
+  restricted  = false
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module "private-treso" {
   source      = "./channels"
   name        = "private-flairsou"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.general.position + 1
+  position    = module.public-entraide.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
