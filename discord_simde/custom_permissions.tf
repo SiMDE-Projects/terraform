@@ -282,6 +282,39 @@ resource "discord_channel_permission" "comet_spam" {
   deny         = local.permissions.allow.deny_bits
 }
 
+### IntegFev
+resource "discord_channel_permission" "integfev_general" {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.integfev.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "integfev_integfev" {
+  channel_id   = module.private-integfev.category.id
+  type         = "role"
+  overwrite_id = local.roles.integfev.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "integfev_notifications" {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.integfev.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
+resource "discord_channel_permission" "integfev_spam" {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.integfev.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
 ### members
 
 resource "discord_channel_permission" "member_notifications" {

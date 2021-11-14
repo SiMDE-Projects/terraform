@@ -12,6 +12,7 @@ locals {
     bde       = discord_role.bde
     gesasso   = discord_role.gesasso
     emploidut = discord_role.emploidut
+    integfev  = discord_role.integfev
     respinfo  = discord_role.respinfo
     curieux   = discord_role.curieux
     everyone  = discord_role_everyone.everyone
@@ -47,7 +48,7 @@ data "discord_color" "woolly" {
 }
 
 data "discord_color" "bde" {
-  hex = "#E0E000"
+  hex = "#E0A000"
 }
 
 data "discord_color" "gesasso" {
@@ -59,7 +60,11 @@ data "discord_color" "emploidut" {
 }
 
 data "discord_color" "comet" {
-  hex = "#E0E000"
+  hex = "#E0A000"
+}
+
+data "discord_color" "integfev" {
+  hex = "#E0A000"
 }
 
 data "discord_color" "member" {
@@ -173,9 +178,18 @@ resource "discord_role" "emploidut" {
 resource "discord_role" "comet" {
   server_id   = discord_server.server.id
   name        = "COMET"
-  position    = discord_role.member.position + 1
+  position    = discord_role.integfev.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.comet.dec
+  mentionable = true
+}
+
+resource "discord_role" "integfev" {
+  server_id   = discord_server.server.id
+  name        = "Integ Fev"
+  position    = discord_role.member.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.integfev.dec
   mentionable = true
 }
 
