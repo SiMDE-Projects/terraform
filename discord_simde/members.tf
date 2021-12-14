@@ -140,9 +140,9 @@ module "romain_maliachauguste" {
   username      = "r01"
   discriminator = 3937
   roles = {
-    (discord_role.member.id) = true
+    (discord_role.member.id)   = true
     (discord_role.etuville.id) = true
-    (discord_role.payutc.id) = true
+    (discord_role.payutc.id)   = true
   }
 }
 
@@ -155,6 +155,7 @@ module "pierre_adorni" {
   roles = {
     (discord_role.integ.id)    = true
     (discord_role.respinfo.id) = true #Team info integ 21
+    (discord_role.treso.id)    = true
   }
 }
 
