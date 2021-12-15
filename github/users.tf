@@ -103,6 +103,17 @@ module "thibaud_duhautbout" {
   }
 }
 
+module "pierre_adorni" {
+  source   = "./users"
+  username = "pierreadorni"
+  teams = {
+    "flairsou" = {
+      team = github_team.flairsou.id,
+      role = "member"
+    }
+  }
+}
+
 ###############################
 ###   ORIGINAL ORGANIZATION ###
 ###############################
