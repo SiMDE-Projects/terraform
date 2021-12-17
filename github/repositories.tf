@@ -415,7 +415,7 @@ resource "github_branch_default" "koala" {
 
 resource "github_repository" "portail_old" {
   provider               = github.old
-  archived               = false
+  archived               = true
   delete_branch_on_merge = true
   description            = "Portail des associations de l'UTC"
   has_downloads          = true
@@ -444,7 +444,7 @@ resource "github_branch_default" "portail_old" {
 
 resource "github_repository" "gesmail_old" {
   provider               = github.old
-  archived               = false
+  archived               = true
   delete_branch_on_merge = true
   description            = "Outil de gestion des mails du SiMDE"
   has_downloads          = true
@@ -699,7 +699,7 @@ resource "github_branch_default" "woolly_front" {
 
 resource "github_repository" "welcome" {
   provider               = github.old
-  archived               = false
+  archived               = true
   delete_branch_on_merge = true
   description            = "Index du compte asso du SiMDE"
   has_downloads          = true
@@ -728,7 +728,7 @@ resource "github_branch_default" "welcome" {
 
 resource "github_repository" "jessy" {
   provider               = github.old
-  archived               = false
+  archived               = true
   delete_branch_on_merge = true
   description            = "Application Android permettant d'effectuer des intéractions avec PayUTC"
   has_downloads          = true
@@ -757,7 +757,7 @@ resource "github_branch_default" "jessy" {
 
 resource "github_repository" "jessy_api" {
   provider               = github.old
-  archived               = false
+  archived               = true
   delete_branch_on_merge = true
   description            = ""
   has_downloads          = true
