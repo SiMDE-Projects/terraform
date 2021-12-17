@@ -357,7 +357,7 @@ module "thibaud_duhautbout" {
   source        = "./member"
   api_token     = var.api_token
   server_id     = discord_server.server.id
-  username      = "thibaud"
+  username      = "Thibaud Duhautbout"
   discriminator = 5605
   roles = {
     (discord_role.treso.id) = true

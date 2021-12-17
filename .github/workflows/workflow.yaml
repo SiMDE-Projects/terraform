@@ -37,9 +37,9 @@ jobs:
         id: init
         run: terraform init
 
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
+      # - name: Terraform Validate
+      #   id: validate
+      #   run: terraform validate -no-color
 
       - name: Terraform Plan
         id: plan
@@ -52,10 +52,10 @@ jobs:
           PLAN: "${{ steps.plan.outputs.stdout }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          #### Terraform Validation 🤖 ${{ steps.validate.outputs.stdout }}
           script: |
-            const output = `#### Terraform Format and Style 🖌 \`${{ steps.fmt.outcome }}\` (ignored)
+            const output = `#### Terraform Format and Style 🖌 \`${{ steps.fmt.outcome }}\`
             #### Terraform Initialization ⚙️ \`${{ steps.init.outcome }}\`
-            #### Terraform Validation 🤖 ${{ steps.validate.outputs.stdout }}
             #### Terraform Plan 📖 \`${{ steps.plan.outcome }}\`
 
             <details><summary>Show Plan</summary>
