@@ -1,8 +1,8 @@
 ### Terraform
 
 module "repositories" {
-  source = "./repositories"
-  teams  = local.teams
+  source    = "./repositories"
+  teams     = local.teams
   providers = {
     github.old = github.old
   }
@@ -20,13 +20,13 @@ resource "github_repository" "terraform" {
   has_issues             = false
   has_projects           = false
   has_wiki               = false
-  topics = [
+  topics                 = [
     "infrastructure-as-code"
   ]
-  is_template          = false
-  name                 = "terraform"
-  visibility           = "public"
-  vulnerability_alerts = true
+  is_template            = false
+  name                   = "terraform"
+  visibility             = "public"
+  vulnerability_alerts   = true
 }
 
 data "github_branch" "terraform_main" {
@@ -55,7 +55,7 @@ resource "github_branch_protection" "terraform_main" {
     contexts = [
       "Terraform Plan",
     ]
-    strict = true
+    strict   = true
   }
 }
 
@@ -165,10 +165,10 @@ resource "github_repository" "jeffrey" {
   has_projects           = true
   has_wiki               = false
 
-  homepage_url = "https://jeffrey.etu-utc.fr/"
-  is_template  = false
-  name         = "jeffrey"
-  topics = [
+  homepage_url         = "https://jeffrey.etu-utc.fr/"
+  is_template          = false
+  name                 = "jeffrey"
+  topics               = [
     "front"
   ]
   visibility           = "public"
@@ -202,7 +202,7 @@ resource "github_branch_protection" "jeffrey_master" {
       "Check i18next keys in fr-FR",
       "Travis CI - Pull Request",
     ]
-    strict = true
+    strict   = true
   }
 }
 
@@ -253,11 +253,11 @@ resource "github_repository" "jeffreyApi" {
   has_wiki               = false
   is_template            = false
   name                   = "jeffrey-api"
-  topics = [
+  topics                 = [
     "api"
   ]
-  visibility           = "public"
-  vulnerability_alerts = true
+  visibility             = "public"
+  vulnerability_alerts   = true
 }
 
 data "github_branch" "jeffreyApi_master" {
@@ -796,7 +796,7 @@ resource "github_repository" "portail" {
   name                   = "portail"
   visibility             = "public"
   vulnerability_alerts   = true
-  topics = [
+  topics                 = [
     "api",
     "assos",
     "laravel",
@@ -922,7 +922,7 @@ resource "github_repository" "utc_mobile" {
   name                   = "utc-mobile"
   visibility             = "public"
   vulnerability_alerts   = true
-  topics = [
+  topics                 = [
     "android",
     "app",
     "ios",
@@ -1189,13 +1189,13 @@ resource "github_repository" "emploidutApi" {
   has_wiki               = false
   is_template            = false
   name                   = "emploidut-api"
-  topics = [
+  topics                 = [
     "api",
     "emploidut",
     "service"
   ]
-  visibility           = "public"
-  vulnerability_alerts = true
+  visibility             = "public"
+  vulnerability_alerts   = true
 }
 
 data "github_branch" "emploidutApi_master" {
@@ -1213,7 +1213,7 @@ resource "github_branch_protection" "emploidutApi_master" {
   pattern       = "master"
   #push_restrictions = [github_team.simde.node_id]
   required_pull_request_reviews {
-    dismiss_stale_reviews = true
+    dismiss_stale_reviews           = true
     #dismissal_restrictions          = [github_team.simde.node_id]
     require_code_owner_reviews      = true
     required_approving_review_count = 1

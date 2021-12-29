@@ -7,19 +7,19 @@ resource "github_repository" "oauth_pda_utc" {
   archived               = false
   auto_init              = true
   delete_branch_on_merge = true
-  description            = "Bibliotheque d'authentification Django via le Portail des Associations UTC" 
+  description            = "Bibliotheque d'authentification Django via le Portail des Associations UTC"
   has_downloads          = true
   has_issues             = true
   has_projects           = false
   has_wiki               = false
   name                   = "oauth_pda_utc"
-  topics = [
+  topics                 = [
     "portail",
     "oauth2",
     "library"
   ]
-  visibility           = "public"
-  vulnerability_alerts = true
+  visibility             = "public"
+  vulnerability_alerts   = true
 }
 
 resource "github_branch_protection" "oauth_pda_utc_master" {
