@@ -16,7 +16,8 @@ resource "github_repository" "dot_github" {
   topics                 = [
     "template",
     "github",
-    "CI/CD",
+    "ci",
+    "cd",
   ]
   visibility             = "public"
   vulnerability_alerts   = true
