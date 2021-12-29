@@ -13,11 +13,11 @@ resource "github_repository" "gesasso_mkmail" {
   has_projects           = true
   has_wiki               = false
   name                   = "gesasso_mkmail"
-  topics = [
+  topics                 = [
     "gesasso"
   ]
-  visibility           = "public"
-  vulnerability_alerts = true
+  visibility             = "public"
+  vulnerability_alerts   = true
 }
 
 resource "github_branch_protection" "gesasso_mkmail_master" {

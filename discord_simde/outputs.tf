@@ -1,5 +1,5 @@
 output "invite" {
-  value = {
+  value      = {
     general         = discord_invite.general.id
     public-entraide = discord_invite.public-entraide.id
   }

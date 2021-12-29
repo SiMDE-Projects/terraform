@@ -4,7 +4,7 @@
 provider "registry.terraform.io/aequasi/discord" {
   version     = "0.0.4"
   constraints = "0.0.4"
-  hashes = [
+  hashes      = [
     "h1:0v6vfDg9B4Y0Y50L57lw3gpRUXqxv27SoQwqAROl1qQ=",
     "zh:1f1275bf9b81b817755f8a00cb8f2126c9c3943846ec2332f4a746e3b012f42d",
     "zh:3996ae828a6030360d2562c4306851b6ffa94107e0bbe579c5b2c94f57439d8b",
@@ -23,7 +23,7 @@ provider "registry.terraform.io/aequasi/discord" {
 provider "registry.terraform.io/hashicorp/github" {
   version     = "4.1.0"
   constraints = "4.1.0"
-  hashes = [
+  hashes      = [
     "h1:nOqwWaZWGnOchhT8DWGrOD1cW6/ylxfhPNwx3QxlERQ=",
     "zh:12a12ef18103cb942ae185c2faaa51973f9f55adf480254866169de0c1a2f870",
     "zh:4f90da2eeed0182b68cd47b76f110eb35b5f0ce0ea2bdfde60cbdbad350910c6",
@@ -40,7 +40,7 @@ provider "registry.terraform.io/hashicorp/github" {
 
 provider "registry.terraform.io/integrations/github" {
   version = "4.14.0"
-  hashes = [
+  hashes  = [
     "h1:CvPZLHgMA4ReLeF0iJc11gsD/r7chkZdW89VkJml0HU=",
     "zh:1c675ce700c0ebfc7ef437443fb25f912a62717b7bca60071bf9733d23db9576",
     "zh:242362cc1b4932b80333f3f9b4dab6edfc84fd4cb9811bad81872939cf088b5a",
