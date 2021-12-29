@@ -1,29 +1,30 @@
-### OAuth PDA UTC
+### .github
 
-resource "github_repository" "oauth_pda_utc" {
+resource "github_repository" "dot_github" {
   allow_merge_commit     = true
   allow_rebase_merge     = true
   allow_squash_merge     = true
   archived               = false
   auto_init              = true
   delete_branch_on_merge = true
-  description            = "Bibliotheque d'authentification Django via le Portail des Associations UTC"
-  has_downloads          = true
-  has_issues             = true
+  description            = "Template repository for this organization"
+  has_downloads          = false
+  has_issues             = false
   has_projects           = false
   has_wiki               = false
-  name                   = "oauth_pda_utc"
+  name                   = ".github"
   topics                 = [
-    "portail",
-    "oauth2",
-    "library"
+    "template",
+    "github",
+    "ci",
+    "cd",
   ]
   visibility             = "public"
   vulnerability_alerts   = true
 }
 
-resource "github_branch_protection" "oauth_pda_utc_master" {
-  repository_id     = github_repository.oauth_pda_utc.name
+resource "github_branch_protection" "dot_github_master" {
+  repository_id     = github_repository.dot_github.name
   pattern           = "master"
   push_restrictions = [var.teams.simde.node_id]
   required_pull_request_reviews {
@@ -35,8 +36,8 @@ resource "github_branch_protection" "oauth_pda_utc_master" {
   }
 }
 
-resource "github_team_repository" "simde_oauth_pda_utc" {
+resource "github_team_repository" "simde_dot_github" {
   team_id    = var.teams.simde.id
-  repository = github_repository.oauth_pda_utc.name
+  repository = github_repository.dot_github.name
   permission = "maintain"
 }
