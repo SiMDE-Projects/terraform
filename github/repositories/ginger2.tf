@@ -10,6 +10,9 @@ resource "github_repository" "ginger2" {
   name                   = "ginger2"
   visibility             = "public"
   vulnerability_alerts   = true
+  topics                 = [
+    "php",
+  ]
 }
 
 data "github_branch" "ginger2_master" {
@@ -32,7 +35,7 @@ resource "github_branch_protection_v3" "ginger2_master" {
 
   required_status_checks {
     strict   = true
-    contexts = ["test"]
+    contexts = ["Build and Test"]
   }
 
   required_pull_request_reviews {

@@ -313,24 +313,6 @@ module "old_colin_lafond" {
   }
 }
 
-module "old_luc_varoqui" {
-  providers = {
-    github = github.old
-  }
-  source   = "./users"
-  username = "lvaroqui"
-  teams = {
-    "woolly" = {
-      team = github_team.woolly.id,
-      role = "member"
-    }
-    "portail" = {
-      team = github_team.portail.id,
-      role = "member"
-    }
-  }
-}
-
 module "old_MercierCorentin" {
   providers = {
     github = github.old
