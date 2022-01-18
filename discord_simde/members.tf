@@ -394,7 +394,7 @@ module "leopold_chappuis" {
   api_token     = var.api_token
   server_id     = discord_server.server.id
   username      = "léo"
-  discriminator = 6003
+  discriminator = 0002
   roles = {
     (discord_role.member.id)  = true
     (discord_role.gesasso.id) = true
