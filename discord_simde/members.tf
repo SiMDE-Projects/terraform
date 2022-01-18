@@ -4,7 +4,7 @@ module "cesar_richard" {
   server_id     = discord_server.server.id
   username      = "licorne"
   discriminator = 2476
-  roles         = {
+  roles = {
     (discord_role.admin.id)  = true
     (discord_role.payutc.id) = true
     (discord_role.member.id) = false
@@ -17,7 +17,7 @@ module "noe_amiot" {
   server_id     = discord_server.server.id
   username      = "IJ-14525 | Noé"
   discriminator = 7299
-  roles         = {
+  roles = {
     (discord_role.admin.id)  = true
     (discord_role.payutc.id) = true
   }
@@ -29,7 +29,7 @@ module "victor_ronfaut" {
   server_id     = discord_server.server.id
   username      = "Cathaïste"
   discriminator = 4099
-  roles         = {
+  roles = {
     (discord_role.admin.id)  = true
     (discord_role.payutc.id) = true
   }
@@ -41,7 +41,7 @@ module "maxime_vaillant" {
   server_id     = discord_server.server.id
   username      = "Maxime"
   discriminator = 6059
-  roles         = {
+  roles = {
     (discord_role.member.id)  = true
     (discord_role.jeffrey.id) = true
     (discord_role.payutc.id)  = true
@@ -56,7 +56,7 @@ module "antoine_cet" {
   server_id     = discord_server.server.id
   username      = "kinshasa"
   discriminator = 6035
-  roles         = {
+  roles = {
     (discord_role.respinfo.id) = false
   }
 }
@@ -68,7 +68,7 @@ module "anton42" {
   server_id     = discord_server.server.id
   username      = "anton42"
   discriminator = 2714
-  roles         = {
+  roles = {
     (discord_role.member.id)  = true
     (discord_role.jeffrey.id) = true
   }
@@ -80,7 +80,7 @@ module "BWRCat" {
   server_id     = discord_server.server.id
   username      = "BWRCat"
   discriminator = 1078
-  roles         = {
+  roles = {
     (discord_role.respinfo.id) = false
   }
 }
@@ -91,7 +91,7 @@ module "remy_huet" {
   server_id     = discord_server.server.id
   username      = "RémyH"
   discriminator = "0657"
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
     (discord_role.treso.id)  = true
   }
@@ -103,7 +103,7 @@ module "matthieu_decaux" {
   server_id     = discord_server.server.id
   username      = "Matthieu"
   discriminator = 3565
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
     (discord_role.treso.id)  = true
   }
@@ -115,7 +115,7 @@ module "armand_ribault" {
   server_id     = discord_server.server.id
   username      = "armrib"
   discriminator = 7676
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
     (discord_role.woolly.id) = true
   }
@@ -127,7 +127,7 @@ module "alexandre_brasseur" {
   server_id     = discord_server.server.id
   username      = "Brass"
   discriminator = 7168
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
     (discord_role.woolly.id) = true
   }
@@ -139,7 +139,7 @@ module "romain_maliachauguste" {
   server_id     = discord_server.server.id
   username      = "r01"
   discriminator = 3937
-  roles         = {
+  roles = {
     (discord_role.member.id)   = true
     (discord_role.etuville.id) = true
     (discord_role.payutc.id)   = true
@@ -152,7 +152,7 @@ module "pierre_adorni" {
   server_id     = discord_server.server.id
   username      = "DRJonshon"
   discriminator = 6339
-  roles         = {
+  roles = {
     (discord_role.integ.id)    = true
     (discord_role.respinfo.id) = true #Team info integ 21
     (discord_role.treso.id)    = true
@@ -165,7 +165,7 @@ module "thomas_delplanque" {
   server_id     = discord_server.server.id
   username      = "ThomasD"
   discriminator = 2035
-  roles         = {
+  roles = {
     (discord_role.integ.id) = true #Team info integ 21
   }
 }
@@ -176,7 +176,7 @@ module "mathias_deroubaix" {
   server_id     = discord_server.server.id
   username      = "Mathias Deroubaix"
   discriminator = "0269"
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
   }
 }
@@ -187,7 +187,7 @@ module "rayan_doudech" {
   server_id     = discord_server.server.id
   username      = "Rayan"
   discriminator = 7690
-  roles         = {
+  roles = {
     (discord_role.respinfo.id) = true
     (discord_role.integfev.id) = true
   }
@@ -199,7 +199,7 @@ module "pascal_quach" {
   server_id     = discord_server.server.id
   username      = "Strike"
   discriminator = 5158
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
   }
 }
@@ -210,7 +210,7 @@ module "pierre_pouliquen" {
   server_id     = discord_server.server.id
   username      = "Afailature"
   discriminator = 7381
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
   }
 }
@@ -221,7 +221,7 @@ module "neil" {
   server_id     = discord_server.server.id
   username      = "new-N"
   discriminator = 8213
-  roles         = {
+  roles = {
     (discord_role.curieux.id) = true
   }
 }
@@ -232,8 +232,9 @@ module "mael_belval" {
   server_id     = discord_server.server.id
   username      = "Wanapad"
   discriminator = 8972
-  roles         = {
+  roles = {
     (discord_role.curieux.id) = true
+    (discord_role.treso.id)   = true
   }
 }
 
@@ -243,7 +244,7 @@ module "romain_leclere" {
   server_id     = discord_server.server.id
   username      = "Ossan"
   discriminator = 6694
-  roles         = {
+  roles = {
     (discord_role.curieux.id) = true
   }
 }
@@ -254,7 +255,7 @@ module "ThreeNias" {
   server_id     = discord_server.server.id
   username      = "ThreeNias"
   discriminator = 3036
-  roles         = {
+  roles = {
     (discord_role.curieux.id) = true
   }
 }
@@ -265,7 +266,7 @@ module "arthur_wacquez" {
   server_id     = discord_server.server.id
   username      = "Outlow"
   discriminator = 5834
-  roles         = {
+  roles = {
     (discord_role.curieux.id)   = true
     (discord_role.emploidut.id) = true
   }
@@ -277,7 +278,7 @@ module "victor_tondolo" {
   server_id     = discord_server.server.id
   username      = "Koppp"
   discriminator = 7389
-  roles         = {
+  roles = {
     (discord_role.curieux.id)   = true
     (discord_role.emploidut.id) = true
   }
@@ -289,7 +290,7 @@ module "victor_mignot" {
   server_id     = discord_server.server.id
   username      = "Dala"
   discriminator = 1597
-  roles         = {
+  roles = {
     (discord_role.curieux.id) = true
   }
 }
@@ -300,7 +301,7 @@ module "victor_moreliere" {
   server_id     = discord_server.server.id
   username      = "Totor"
   discriminator = 5934
-  roles         = {
+  roles = {
     (discord_role.curieux.id)  = true
     (discord_role.respinfo.id) = true
   }
@@ -312,7 +313,7 @@ module "thomas_guegan" {
   server_id     = discord_server.server.id
   username      = "StyHeet"
   discriminator = 5848
-  roles         = {
+  roles = {
     (discord_role.respinfo.id) = false #UTSea P21
     (discord_role.integ.id)    = true  #integ A21
     (discord_role.comet.id)    = true  #comet A21
@@ -325,7 +326,7 @@ module "gabriel_francez" {
   server_id     = discord_server.server.id
   username      = "Perciviel"
   discriminator = 4863
-  roles         = {
+  roles = {
     (discord_role.curieux.id) = true
   }
 }
@@ -336,7 +337,7 @@ module "theo_chazeaud" {
   server_id     = discord_server.server.id
   username      = "Théo"
   discriminator = 8416
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
     (discord_role.payutc.id) = true
   }
@@ -348,7 +349,7 @@ module "nasser_chaouchi" {
   server_id     = discord_server.server.id
   username      = "Nasserarien"
   discriminator = 3128
-  roles         = {
+  roles = {
     (discord_role.integ.id) = true #Team info integ 21
   }
 }
@@ -359,7 +360,7 @@ module "thibaud_duhautbout" {
   server_id     = discord_server.server.id
   username      = "Thibaud Duhautbout"
   discriminator = 5605
-  roles         = {
+  roles = {
     (discord_role.treso.id) = true
   }
 }
@@ -370,7 +371,7 @@ module "jules_boulet" {
   server_id     = discord_server.server.id
   username      = "Jul0os"
   discriminator = 1166
-  roles         = {
+  roles = {
     (discord_role.member.id) = true
     (discord_role.payutc.id) = true
   }
@@ -382,7 +383,7 @@ module "paco_pompeani" {
   server_id     = discord_server.server.id
   username      = "paco POMPEANI"
   discriminator = 9364
-  roles         = {
+  roles = {
     (discord_role.respinfo.id) = true #Etuville A21
     (discord_role.etuville.id) = true
   }
@@ -393,8 +394,8 @@ module "leopold_chappuis" {
   api_token     = var.api_token
   server_id     = discord_server.server.id
   username      = "léo"
-  discriminator = 6003
-  roles         = {
+  discriminator = 0002
+  roles = {
     (discord_role.member.id)  = true
     (discord_role.gesasso.id) = true
   }
@@ -406,7 +407,7 @@ module "guillaume_theunissen" {
   server_id     = discord_server.server.id
   username      = "Guillaume"
   discriminator = 5702
-  roles         = {
+  roles = {
     (discord_role.member.id)  = true
     (discord_role.gesasso.id) = true
   }
@@ -418,7 +419,7 @@ module "loic_jumel" {
   server_id     = discord_server.server.id
   username      = "Loïc Jumel"
   discriminator = 8501
-  roles         = {
+  roles = {
     (discord_role.admin.id) = true
   }
 }
