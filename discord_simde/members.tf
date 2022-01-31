@@ -143,6 +143,7 @@ module "romain_maliachauguste" {
     (discord_role.member.id)   = true
     (discord_role.etuville.id) = true
     (discord_role.payutc.id)   = true
+    (discord_role.sparkle.id)  = true
   }
 }
 

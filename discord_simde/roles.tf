@@ -9,6 +9,7 @@ locals {
     comet     = discord_role.comet
     jeffrey   = discord_role.jeffrey
     woolly    = discord_role.woolly
+    sparkle   = discord_role.sparkle
     bde       = discord_role.bde
     gesasso   = discord_role.gesasso
     emploidut = discord_role.emploidut
