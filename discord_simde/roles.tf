@@ -9,6 +9,7 @@ locals {
     comet     = discord_role.comet
     jeffrey   = discord_role.jeffrey
     woolly    = discord_role.woolly
+    sparkle   = discord_role.sparkle
     bde       = discord_role.bde
     gesasso   = discord_role.gesasso
     emploidut = discord_role.emploidut
@@ -52,6 +53,10 @@ data "discord_color" "bde" {
 }
 
 data "discord_color" "gesasso" {
+  hex = "#E0E000"
+}
+
+data "discord_color" "sparkle" {
   hex = "#E0E000"
 }
 
@@ -187,9 +192,18 @@ resource "discord_role" "comet" {
 resource "discord_role" "integfev" {
   server_id   = discord_server.server.id
   name        = "Integ Fev"
-  position    = discord_role.member.position + 1
+  position    = discord_role.sparkle.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.integfev.dec
+  mentionable = true
+}
+
+resource "discord_role" "sparkle" {
+  server_id   = discord_server.server.id
+  name        = "Projet Sparkle"
+  position    = discord_role.member.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.sparkle.dec
   mentionable = true
 }
 
