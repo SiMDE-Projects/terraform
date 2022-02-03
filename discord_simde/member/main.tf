@@ -2,6 +2,7 @@ data "discord_member" "member" {
   server_id     = var.server_id
   username      = var.username
   discriminator = var.discriminator
+  user_id       = var.user_id
 }
 
 resource "discord_member_roles" "member_role" {
