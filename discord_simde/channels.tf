@@ -88,9 +88,9 @@ module "private-sparkle" {
   source      = "./channels"
   name        = "private-sparkle"
   api_token   = var.api_token
-  server_id   = discord_server.server_id
+  server_id   = discord_server.server.id
   position    = module.private-woolly.position + 1
-  restricted. = true
+  restricted = true
   permissions = local.permissions
   roles = local.roles
 }
