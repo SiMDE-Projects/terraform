@@ -13,6 +13,7 @@ locals {
     woolly             = github_team.woolly
     emploidut          = github_team.emploidut
     flairsou           = github_team.flairsou
+    sparkle            = github_team.sparkle
   }
 }
 
@@ -293,5 +294,13 @@ resource "github_team_repository" "emploidut_emploidutApi" {
 resource "github_team" "gesasso" {
   name        = "Gesasso"
   description = "L'outil de gestion des assos au SiMDE"
+  privacy     = "closed"
+}
+
+### Sparkle
+
+resource "github_team" "sparkle" {
+  name        = "Sparkle"
+  description = "Développer la nouvelle version de Sparkle"
   privacy     = "closed"
 }

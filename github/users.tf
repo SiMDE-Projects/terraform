@@ -2,7 +2,7 @@ module "cesar_richard" {
   source   = "./users"
   username = "cesar-richard"
   role     = "admin"
-  teams = {
+  teams    = {
     "jeffrey" = {
       team = github_team.jeffrey.id,
       role = "maintainer"
@@ -15,13 +15,17 @@ module "cesar_richard" {
       team = github_team.gesasso.id,
       role = "maintainer"
     }
+    "sparkle" = {
+      team = github_team.sparkle.id,
+      role = "maintainer"
+    }
   }
 }
 
 module "maxime_vaillant" {
   source   = "./users"
   username = "maxime-vaillant"
-  teams = {
+  teams    = {
     "jeffrey" = {
       team = github_team.jeffrey.id,
       role = "member"
@@ -32,7 +36,7 @@ module "maxime_vaillant" {
 module "anto2oo" {
   source   = "./users"
   username = "anto2oo"
-  teams = {
+  teams    = {
     "jeffrey" = {
       team = github_team.jeffrey.id,
       role = "member"
@@ -44,7 +48,7 @@ module "noe_amiot" {
   source   = "./users"
   username = "noeamiot"
   role     = "admin"
-  teams = {
+  teams    = {
     "jeffrey" = {
       team = github_team.jeffrey.id,
       role = "member"
@@ -63,7 +67,7 @@ module "noe_amiot" {
 module "remy_huet" {
   source   = "./users"
   username = "huetremy"
-  teams = {
+  teams    = {
     "flairsou" = {
       team = github_team.flairsou.id,
       role = "maintainer"
@@ -74,7 +78,7 @@ module "remy_huet" {
 module "matthieu_decaux" {
   source   = "./users"
   username = "matthieudecaux"
-  teams = {
+  teams    = {
     "flairsou" = {
       team = github_team.flairsou.id,
       role = "member"
@@ -85,12 +89,18 @@ module "matthieu_decaux" {
 module "romain_maliachauguste" {
   source   = "./users"
   username = "R0one"
+  teams    = {
+    "sparkle" = {
+      team = github_team.sparkle.id,
+      role = "member"
+    }
+  }
 }
 
 module "thibaud_duhautbout" {
   source   = "./users"
   username = "tduhautb"
-  teams = {
+  teams    = {
     "flairsou" = {
       team = github_team.flairsou.id,
       role = "maintainer"
@@ -108,7 +118,7 @@ module "old_aarrtthhuurr" {
   }
   source   = "./users"
   username = "aarrtthhuurr"
-  teams = {
+  teams    = {
     "payutc" = {
       team = github_team.payutc.id,
       role = "member"
@@ -126,7 +136,7 @@ module "old_alexandre_brasseur" {
   }
   source   = "./users"
   username = "abrasseu"
-  teams = {
+  teams    = {
     "payutc" = {
       team = github_team.payutc.id,
       role = "member"
@@ -144,7 +154,7 @@ module "old_acharann" {
   }
   source   = "./users"
   username = "acharann"
-  teams = {
+  teams    = {
     "application_utcbde" = {
       team = github_team.application_utcbde.id,
       role = "member"
@@ -158,7 +168,7 @@ module "old_artemisart" {
   }
   source   = "./users"
   username = "artemisart"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "member"
@@ -172,7 +182,7 @@ module "old_BaguetteEater" {
   }
   source   = "./users"
   username = "BaguetteEater"
-  teams = {
+  teams    = {
     "payutc" = {
       team = github_team.payutc.id,
       role = "member"
@@ -194,7 +204,7 @@ module "old_victor_ronfaut" {
   }
   source   = "./users"
   username = "Cathaiste"
-  teams = {
+  teams    = {
     "woolly" = {
       team = github_team.woolly.id,
       role = "member"
@@ -217,7 +227,7 @@ module "old_cesar_richard" {
   source   = "./users"
   username = "cesar-richard"
   role     = "admin"
-  teams = {
+  teams    = {
     "payutc" = {
       team = github_team.payutc.id,
       role = "maintainer"
@@ -235,7 +245,7 @@ module "old_courentin" {
   }
   source   = "./users"
   username = "courentin"
-  teams = {
+  teams    = {
     "planner" = {
       team = github_team.planner.id,
       role = "member"
@@ -249,7 +259,7 @@ module "old_danousna" {
   }
   source   = "./users"
   username = "danousna"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "member"
@@ -271,7 +281,7 @@ module "old_jpennors" {
   }
   source   = "./users"
   username = "jpennors"
-  teams = {
+  teams    = {
     "woolly" = {
       team = github_team.woolly.id,
       role = "member"
@@ -305,7 +315,7 @@ module "old_colin_lafond" {
   }
   source   = "./users"
   username = "lafondoc"
-  teams = {
+  teams    = {
     "payutc" = {
       team = github_team.payutc.id,
       role = "member"
@@ -319,7 +329,7 @@ module "old_MercierCorentin" {
   }
   source   = "./users"
   username = "MercierCorentin"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "member"
@@ -341,7 +351,7 @@ module "old_mglorion" {
   }
   source   = "./users"
   username = "mglorion"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "member"
@@ -355,7 +365,7 @@ module "old_NastuzziSamy" {
   }
   source   = "./users"
   username = "NastuzziSamy"
-  teams = {
+  teams    = {
     "woolly" = {
       team = github_team.woolly.id,
       role = "member"
@@ -398,7 +408,7 @@ module "old_noeamiot" {
   source   = "./users"
   username = "noeamiot"
   role     = "admin"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "maintainer"
@@ -412,7 +422,7 @@ module "old_obledaym" {
   }
   source   = "./users"
   username = "obledaym"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "member"
@@ -430,7 +440,7 @@ module "old_Pangoraw" {
   }
   source   = "./users"
   username = "Pangoraw"
-  teams = {
+  teams    = {
     "woolly" = {
       team = github_team.woolly.id,
       role = "member"
@@ -444,7 +454,7 @@ module "old_picardthibault" {
   }
   source   = "./users"
   username = "picardthibault"
-  teams = {
+  teams    = {
     "application_utcbde" = {
       team = github_team.application_utcbde.id,
       role = "member"
@@ -458,7 +468,7 @@ module "old_pierrickdes59" {
   }
   source   = "./users"
   username = "pierrickdes59"
-  teams = {
+  teams    = {
     "payutc" = {
       team = github_team.payutc.id,
       role = "member"
@@ -472,7 +482,7 @@ module "old_pineaulo" {
   }
   source   = "./users"
   username = "pineaulo"
-  teams = {
+  teams    = {
     "application_utcbde" = {
       team = github_team.application_utcbde.id,
       role = "member"
@@ -486,7 +496,7 @@ module "old_R0one" {
   }
   source   = "./users"
   username = "R0one"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "member"
@@ -504,7 +514,7 @@ module "old_RevenMyst" {
   }
   source   = "./users"
   username = "RevenMyst"
-  teams = {
+  teams    = {
     "portail" = {
       team = github_team.portail.id,
       role = "member"
@@ -526,7 +536,7 @@ module "old_yElSaadany" {
   }
   source   = "./users"
   username = "yElSaadany"
-  teams = {
+  teams    = {
     "covoit_utc" = {
       team = github_team.covoit_utc.id,
       role = "member"
@@ -537,7 +547,7 @@ module "old_yElSaadany" {
 module "arthur_wacquez" {
   source   = "./users"
   username = "0uTl0w24"
-  teams = {
+  teams    = {
     "emploidut" = {
       team = github_team.emploidut.id
       role = "member"
@@ -548,7 +558,7 @@ module "arthur_wacquez" {
 module "victor_tondolo" {
   source   = "./users"
   username = "victor-tndl"
-  teams = {
+  teams    = {
     "emploidut" = {
       team = github_team.emploidut.id
       role = "member"
@@ -559,7 +569,7 @@ module "victor_tondolo" {
 module "pierre_adorni" {
   source   = "./users"
   username = "pierreadorni"
-  teams = {
+  teams    = {
     "flairsou" = {
       team = github_team.flairsou.id,
       role = "member"
@@ -570,9 +580,13 @@ module "pierre_adorni" {
 module "mael_belval" {
   source   = "./users"
   username = "mael-belval"
-  teams = {
+  teams    = {
     "flairsou" = {
       team = github_team.flairsou.id,
+      role = "member"
+    }
+    "sparkle" = {
+      team = github_team.sparkle.id,
       role = "member"
     }
   }
