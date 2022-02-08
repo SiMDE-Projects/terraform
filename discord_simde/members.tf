@@ -379,3 +379,13 @@ module "loic_jumel" {
     (discord_role.admin.id) = true
   }
 }
+
+module "armand_saint_marc" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "812342180600741889"
+  roles     = {
+    (discord_role.integ.id) = true # Integ A22
+  }
+}
