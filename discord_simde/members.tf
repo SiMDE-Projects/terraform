@@ -389,3 +389,13 @@ module "armand_saint_marc" {
     (discord_role.integ.id) = true # Integ A22
   }
 }
+
+module "marie_davenne" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "427164953968115722"
+  roles     = {
+    (discord_role.treso.id)    = true
+  }
+}

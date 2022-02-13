@@ -592,3 +592,13 @@ module "mael_belval" {
   }
 }
 
+module "marie_davenne" {
+  source   = "./users"
+  username = "maradav08"
+  teams    = {
+    "flairsou" = {
+      team = github_team.flairsou.id,
+      role = "member"
+    }
+  }
+}
