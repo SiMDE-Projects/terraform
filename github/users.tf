@@ -108,6 +108,17 @@ module "thibaud_duhautbout" {
   }
 }
 
+module "guillaume_theunissen" {
+  source   = "./users"
+  username = "theunissenguillaume"
+  teams    = {
+    "gesasso" = {
+      team = github_team.gesasso.id,
+      role = "member"
+    }
+  }
+}
+
 ###############################
 ###   ORIGINAL ORGANIZATION ###
 ###############################
