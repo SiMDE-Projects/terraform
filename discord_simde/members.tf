@@ -42,7 +42,6 @@ module "maxime_vaillant" {
     (discord_role.jeffrey.id) = true
     (discord_role.payutc.id)  = true
     (discord_role.integ.id)   = true
-    (discord_role.bde.id)     = true
   }
 }
 
@@ -144,6 +143,7 @@ module "pierre_adorni" {
     (discord_role.integ.id)    = true
     (discord_role.respinfo.id) = true #Team info integ 21
     (discord_role.treso.id)    = true
+    (discord_role.bde.id)     = true
   }
 }
 
