@@ -175,6 +175,7 @@ module "rayan_doudech" {
   roles     = {
     (discord_role.respinfo.id) = true
     (discord_role.integfev.id) = true
+    (discord_role.sparkle.id) = true
   }
 }
 
