@@ -357,7 +357,7 @@ resource "discord_channel_permission" "uvweb_general" {
   deny         = local.permissions.allow.deny_bits
 }
 
-resource "discord_channel_permission" "uvweb_sparkle" {
+resource "discord_channel_permission" "uvweb_uvweb" {
   channel_id   = module.private-uvweb.category.id
   type         = "role"
   overwrite_id = local.roles.uvweb.id
