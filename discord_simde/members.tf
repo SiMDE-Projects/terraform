@@ -107,6 +107,7 @@ module "armand_ribault" {
   roles     = {
     (discord_role.member.id) = true
     (discord_role.woolly.id) = true
+    (discord_role.uvweb.id)  = true
   }
 }
 
@@ -164,6 +165,7 @@ module "mathias_deroubaix" {
   user_id   = "750764518770212975"
   roles     = {
     (discord_role.member.id) = true
+    (discord_role.uvweb.id)  = true
   }
 }
 
