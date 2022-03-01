@@ -402,3 +402,13 @@ module "marie_davenne" {
     (discord_role.treso.id)    = true
   }
 }
+
+module "simon_vital" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "688848083714703414"
+  roles     = {
+    (discord_role.uvweb.id)    = true
+  }
+}
