@@ -348,6 +348,39 @@ resource "discord_channel_permission" "sparkle_spam" {
   deny         = local.permissions.allow.deny_bits
 }
 
+### UVWeb
+resource "discord_channel_permission" "uvweb_general" {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.uvweb.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "uvweb_sparkle" {
+  channel_id   = module.private-uvweb.category.id
+  type         = "role"
+  overwrite_id = local.roles.uvweb.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "uvweb_notifications" {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.uvweb.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
+resource "discord_channel_permission" "uvweb_spam" {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.uvweb.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
 ### members
 
 resource "discord_channel_permission" "member_notifications" {
