@@ -412,3 +412,14 @@ module "simon_vital" {
     (discord_role.uvweb.id)    = true
   }
 }
+
+module "marie_maraval" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "728278579858636900"
+  roles     = {
+    (discord_role.comet.id)    = true # P22
+    (discord_role.respinfo.id)    = true #Comet P22
+  }
+}
