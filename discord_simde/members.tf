@@ -107,6 +107,7 @@ module "armand_ribault" {
   roles     = {
     (discord_role.member.id) = true
     (discord_role.woolly.id) = true
+    (discord_role.uvweb.id)  = true
   }
 }
 
@@ -164,6 +165,7 @@ module "mathias_deroubaix" {
   user_id   = "750764518770212975"
   roles     = {
     (discord_role.member.id) = true
+    (discord_role.uvweb.id)  = true
   }
 }
 
@@ -398,5 +400,15 @@ module "marie_davenne" {
   user_id   = "427164953968115722"
   roles     = {
     (discord_role.treso.id)    = true
+  }
+}
+
+module "simon_vital" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "688848083714703414"
+  roles     = {
+    (discord_role.uvweb.id)    = true
   }
 }
