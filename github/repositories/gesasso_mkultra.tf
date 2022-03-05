@@ -14,7 +14,12 @@ resource "github_repository" "gesasso_mkultra" {
   has_wiki               = false
   name                   = "gesasso_mkultra"
   topics                 = [
-    "gesasso"
+    "gesasso",
+               "django",
+           "docker-compose",
+           "react",
+          "service",
+
   ]
   visibility             = "public"
   vulnerability_alerts   = true
