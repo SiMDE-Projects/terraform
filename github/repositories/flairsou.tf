@@ -89,7 +89,12 @@ resource "github_repository" "flairsou-api" {
   has_issues             = true
   has_projects           = true
   has_wiki               = true
-
+  topics = [
+    "django",
+    "reactjs",
+    "service",
+    "tresorerie"
+  ]
   name                 = "flairsou-api"
   visibility           = "public"
   vulnerability_alerts = true
