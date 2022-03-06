@@ -1,5 +1,4 @@
 resource "github_repository" "ginger2" {
-  provider               = github.old
   archived               = false
   delete_branch_on_merge = true
   description            = "Gestion automatisée des cotisation BDE UTC et des identifications d'utilisateurs par login ou badge"
@@ -12,23 +11,21 @@ resource "github_repository" "ginger2" {
   vulnerability_alerts   = true
   topics                 = [
     "php",
+    "service",
   ]
 }
 
 data "github_branch" "ginger2_master" {
-  provider   = github.old
   repository = "ginger2"
   branch     = "master"
 }
 
 resource "github_branch_default" "ginger2" {
-  provider   = github.old
   repository = github_repository.ginger2.name
   branch     = data.github_branch.ginger2_master.branch
 }
 
 resource "github_branch_protection_v3" "ginger2_master" {
-  provider       = github.old
   repository     = github_repository.ginger2.name
   branch         = data.github_branch.ginger2_master.branch
   enforce_admins = true
