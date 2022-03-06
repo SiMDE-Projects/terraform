@@ -3,3 +3,8 @@ module "flairsou" {
   username = "flairsou"
   host     = "%"
 }
+
+module "pmde" {
+  source   = "./database"
+  username = "pmde"
+}
