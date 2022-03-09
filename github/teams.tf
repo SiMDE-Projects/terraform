@@ -304,3 +304,12 @@ resource "github_team" "sparkle" {
   description = "Développer la nouvelle version de Sparkle"
   privacy     = "closed"
 }
+
+
+### UVWeb
+
+resource "github_team" "uvweb" {
+  name        = "UVWeb"
+  description = "Développer la nouvelle version de UVWeb"
+  privacy     = "closed"
+}
