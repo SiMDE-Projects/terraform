@@ -31,5 +31,5 @@ resource "discord_text_channel" "games" {
   server_id                = discord_server.server.id
   category                 = module.general.category.id
   position                 = discord_text_channel.notifications.position + 1
-  sync_perms_with_category = true
+  sync_perms_with_category = false
 }
