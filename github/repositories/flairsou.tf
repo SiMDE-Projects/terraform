@@ -27,7 +27,7 @@ resource "github_branch_protection" "flairsou_master" {
     dismiss_stale_reviews           = true
     dismissal_restrictions          = [var.teams.simde.node_id]
     require_code_owner_reviews      = true
-    required_approving_review_count = 2
+    required_approving_review_count = 1
   }
 }
 
