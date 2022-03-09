@@ -5,9 +5,8 @@ resource "github_repository" "uvweb" {
   has_issues    = true
   has_projects  = true
   has_wiki      = true
-  archived      = true
+  archived      = false
 }
-
 
 data "github_branch" "uvweb_master" {
   repository = github_repository.uvweb.name

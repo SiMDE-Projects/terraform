@@ -613,3 +613,14 @@ module "marie_davenne" {
     }
   }
 }
+
+module "armand_ribault" {
+  source   = "./users"
+  username = "armribdev"
+  teams    = {
+    "uvweb" = {
+      team = github_team.uvweb.id,
+      role = "member"
+    }
+  }
+}
