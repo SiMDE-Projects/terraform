@@ -423,3 +423,13 @@ module "marie_maraval" {
     (discord_role.respinfo.id)    = true #Comet P22
   }
 }
+
+module "charles_bricout" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "468419552640761866"
+  roles     = {
+    (discord_role.curieux.id)  = true # P22
+  }
+}
