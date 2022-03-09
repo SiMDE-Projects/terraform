@@ -304,3 +304,22 @@ resource "github_team" "sparkle" {
   description = "Développer la nouvelle version de Sparkle"
   privacy     = "closed"
 }
+
+
+### UVWeb
+
+resource "github_team" "uvweb" {
+  name        = "UVWeb"
+  description = "Développer la nouvelle version de UVWeb"
+  privacy     = "closed"
+}
+
+resource "github_team_repository" "uvweb_uvweb" {
+  team_id    = github_team.uvweb.id
+  repository = module.repositories.uvweb.name
+  permission = "push"
+  depends_on = [
+    module.repositories.uvweb,
+    github_team.uvweb
+  ]
+}
