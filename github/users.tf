@@ -618,7 +618,7 @@ module "armand_ribault" {
   source   = "./users"
   username = "armribdev"
   teams    = {
-    "flairsou" = {
+    "uvweb" = {
       team = github_team.uvweb.id,
       role = "member"
     }

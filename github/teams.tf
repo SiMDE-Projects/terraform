@@ -313,13 +313,3 @@ resource "github_team" "uvweb" {
   description = "Développer la nouvelle version de UVWeb"
   privacy     = "closed"
 }
-
-resource "github_team_repository" "uvweb_uvweb" {
-  team_id    = github_team.uvweb.id
-  repository = module.repositories.uvweb.name
-  permission = "push"
-  depends_on = [
-    module.repositories.uvweb,
-    github_team.uvweb
-  ]
-}
