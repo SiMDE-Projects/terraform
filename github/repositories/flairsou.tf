@@ -104,13 +104,6 @@ resource "github_branch_protection" "flairsou-api_master" {
   repository_id     = github_repository.flairsou-api.node_id
   pattern           = "main"
   push_restrictions = [var.teams.simde.node_id]
-  required_pull_request_reviews {
-    restrict_dismissals             = true
-    dismiss_stale_reviews           = true
-    dismissal_restrictions          = [var.teams.simde.node_id]
-    require_code_owner_reviews      = true
-    required_approving_review_count = 1
-  }
 }
 
 resource "github_repository_project" "flairsou-api_main" {
