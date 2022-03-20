@@ -433,3 +433,14 @@ module "charles_bricout" {
     (discord_role.curieux.id)  = true # P22
   }
 }
+
+module "ambroise_thibault" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = TODO
+  roles     = {
+    (discord_role.etuville.id) = true
+    (discord_role.sparkle.id)  = true
+  }
+}
