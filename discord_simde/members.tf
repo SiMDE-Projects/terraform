@@ -348,6 +348,7 @@ module "paco_pompeani" {
   roles     = {
     (discord_role.respinfo.id) = true #Etuville A21
     (discord_role.etuville.id) = true
+    (discord_role.sparkle.id)  = true
   }
 }
 
