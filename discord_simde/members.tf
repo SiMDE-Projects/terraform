@@ -444,6 +444,8 @@ module "ambroise_thibault" {
   roles     = {
     (discord_role.etuville.id) = true
     (discord_role.sparkle.id)  = true
+  }
+}
 
 module "nicolas_scheidler" {
   source    = "./member"
