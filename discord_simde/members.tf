@@ -435,6 +435,15 @@ module "charles_bricout" {
   }
 }
 
+module "ambroise_thibault" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = 689105176778637328
+  roles     = {
+    (discord_role.etuville.id) = true
+    (discord_role.sparkle.id)  = true
+
 module "nicolas_scheidler" {
   source    = "./member"
   api_token = var.api_token
