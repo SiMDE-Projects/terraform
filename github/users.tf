@@ -624,3 +624,14 @@ module "armand_ribault" {
     }
   }
 }
+
+module "leopold_chappuis" {
+  source   = "./users"
+  username = "leochapp"
+  teams    = {
+    "uvweb" = {
+      team = github_team.gesasso.id,
+      role = "member"
+    }
+  }
+}

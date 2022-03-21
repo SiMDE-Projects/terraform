@@ -17,7 +17,7 @@ resource "github_repository" "terraform" {
   delete_branch_on_merge = true
   description            = "Définition IAC du SiMDE"
   has_downloads          = false
-  has_issues             = false
+  has_issues             = true
   has_projects           = false
   has_wiki               = false
   topics                 = [
