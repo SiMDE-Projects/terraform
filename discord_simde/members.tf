@@ -440,6 +440,7 @@ module "nicolas_scheidler" {
   server_id = discord_server.server.id
   user_id   = TODO
   roles     = {
+    (discord_role.member.id) = true
     (discord_role.sparkle.id)  = true # P22
   }
 }
