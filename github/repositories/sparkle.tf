@@ -11,7 +11,7 @@ resource "github_repository" "sparkle" {
   has_downloads          = false
   has_issues             = true
   has_projects           = true
-  has_wiki               = false
+  has_wiki               = true
   name                   = "sparkle"
   topics                 = []
   visibility             = "public"
