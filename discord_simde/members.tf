@@ -438,7 +438,7 @@ module "nicolas_scheidler" {
   source    = "./member"
   api_token = var.api_token
   server_id = discord_server.server.id
-  user_id   = TODO
+  user_id   = 688841855848153142
   roles     = {
     (discord_role.member.id) = true
     (discord_role.sparkle.id)  = true # P22
