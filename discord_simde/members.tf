@@ -251,6 +251,7 @@ module "arthur_wacquez" {
   roles     = {
     (discord_role.curieux.id)   = true
     (discord_role.emploidut.id) = true
+    (discord_role.sparkle.id)  = true
   }
 }
 
