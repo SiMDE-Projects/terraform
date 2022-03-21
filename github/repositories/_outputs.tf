@@ -1,6 +1,6 @@
 output "repositories" {
   value = {
-    flairsou = github_repository.flairsou
+    flairsou-api = github_repository.flairsou-api
     uvweb = github_repository.uvweb
   }
 }
