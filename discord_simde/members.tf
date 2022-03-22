@@ -457,3 +457,14 @@ module "nicolas_scheidler" {
     (discord_role.sparkle.id)  = true # P22
   }
 }
+
+module "antoine_gajan" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = 341190261575254020
+  roles     = {
+    (discord_role.curieux.id) = true
+    (discord_role.sparkle.id)  = true # P22
+  }
+}
