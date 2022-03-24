@@ -151,12 +151,23 @@ module "private-integfev" {
   roles       = local.roles
 }
 
+module "private-portail" {
+  source      = "./channels"
+  name        = "private-portail"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-integfev.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module "private-admin" {
   source      = "./channels"
   name        = "private-admin"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-integfev.position + 1
+  position    = module.private-portail.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
