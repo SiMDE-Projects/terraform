@@ -635,3 +635,14 @@ module "leopold_chappuis" {
     }
   }
 }
+
+module "nicolas_scheidler" {
+  source = "./users"
+  username = "nscheidler"
+  teams    = {
+    "sparkle" = {
+      team = github_team.sparkle.id,
+      role = "member"
+    }
+  }
+}
