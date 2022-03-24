@@ -215,6 +215,15 @@ resource "discord_role" "sparkle" {
 resource "discord_role" "uvweb" {
   server_id   = discord_server.server.id
   name        = "Projet UVWeb"
+  position    = discord_role.portail.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.uvweb.dec
+  mentionable = true
+}
+
+resource "discord_role" "portail" {
+  server_id   = discord_server.server.id
+  name        = "Projet Portail des assos"
   position    = discord_role.member.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.uvweb.dec
