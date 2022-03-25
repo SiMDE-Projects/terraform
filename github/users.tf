@@ -646,3 +646,14 @@ module "nicolas_scheidler" {
     }
   }
 }
+
+module "paco_pompeani" {
+  source = "./users"
+  username = "aopom"
+  teams    = {
+    "sparkle" = {
+      team = github_team.sparkle.id,
+      role = "member"
+    }
+  }
+}
