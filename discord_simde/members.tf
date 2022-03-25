@@ -469,3 +469,14 @@ module "garance_delabrosse" {
     (discord_role.etuville.id) = true
   }
 }
+
+module "antoine_gajan" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = 341190261575254020
+  roles     = {
+    (discord_role.etuville.id)  = true # P22
+    (discord_role.sparkle.id)  = true # P22
+  }
+}
