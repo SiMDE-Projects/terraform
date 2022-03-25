@@ -464,7 +464,6 @@ module "antoine_gajan" {
   server_id = discord_server.server.id
   user_id   = 341190261575254020
   roles     = {
-    (discord_role.curieux.id) = true
     (discord_role.sparkle.id)  = true # P22
   }
 }
