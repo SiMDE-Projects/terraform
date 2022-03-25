@@ -455,5 +455,17 @@ module "nicolas_scheidler" {
   roles     = {
     (discord_role.member.id) = true
     (discord_role.sparkle.id)  = true # P22
+    (discord_role.etuville.id) = true
+  }
+}
+
+module "garance_delabrosse" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = 731991059814678688
+  roles     = {
+    (discord_role.sparkle.id)  = true # P22
+    (discord_role.etuville.id) = true
   }
 }
