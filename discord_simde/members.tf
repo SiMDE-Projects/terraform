@@ -480,3 +480,13 @@ module "antoine_gajan" {
     (discord_role.sparkle.id)  = true # P22
   }
 }
+
+module "leo_mullier" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "691966765219053678"
+  roles     = {
+    (discord_role.uvweb.id)    = true
+  }
+}
