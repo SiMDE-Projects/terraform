@@ -27,6 +27,10 @@ resource "github_branch_protection" "flairsou-api_master" {
   repository_id     = github_repository.flairsou-api.node_id
   pattern           = "main"
   push_restrictions = [var.teams.simde.node_id]
+  required_status_checks {
+    strict = true
+    contexts = ["Build Frontend", "Test API"]
+  }
 }
 
 resource "github_repository_project" "flairsou-api_main" {
