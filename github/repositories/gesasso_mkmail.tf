@@ -44,3 +44,10 @@ resource "github_team_repository" "gesasso_gesasso_mkmail" {
   repository = github_repository.gesasso_mkmail.name
   permission = "maintain"
 }
+
+resource "github_repository_deploy_key" "gesasso_mkmail_deploy_key" {
+  title      = "Main deploy key"
+  repository = github_repository.gesasso_mkmail.name
+  key        = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCbKRRdQi20inmlRGEMGoTE3cr3JQm0WpuIOsOzYo8Mta6MpU/bdg6Ju0JmfbDU5k3ZyW9J42iWTlBRVVovyJGsD8He2H4HlqXLyKMXBtleEyD2zAHS/e0WnxOa55T1CKQkk/Iq8IIaedU4jrQ8NOun+be1Ij0UtrLfGCjOTTYKjamm4zbMTguHH1VGXOcuhsPcVzb7Sxq5gdyW4RMTvRq2u336iCACtFULGfeEZACUbupG/+ZI+SOXDfPLRMszPx3RQ/fwrMdTgipF+cB4Bo6ihaAsXaxRapY9NYHULpgWCcGwsZSwnaH8UDV3IRsvohYZV8uRGdMSNSRWmZ+4J8PP gesasso@mail.mde.utc"
+  read_only  = "true"
+}
