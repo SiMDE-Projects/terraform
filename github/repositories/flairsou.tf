@@ -76,3 +76,10 @@ resource "github_team_repository" "flairsou_flairsou-api" {
   repository = github_repository.flairsou-api.name
   permission = "maintain"
 }
+
+resource "github_repository_deploy_key" "flairsou_deploy_key" {
+  title      = "Main deploy key"
+  repository = github_repository.flairsou-api.name
+  key        = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCYeBxjcUQGKe/xEAmzHapTJCRoHQWO/UC4r6r2D+bf3O1Ll/fCjmQGoKeAdjLi19zZDf/GaXnK3bkjFMTQ5k7u5rbN11tFP+ST2HVKHJSIu06u0Vb7ex+CQEmtw0C8DQhN0bX2c/SHgDaMW86WzppaIg1DuOTrd9MFGl0Je56sh9raFgb6xLX8mqnjxP2wTRr7WrB0Do4wgS5jr8p2NaJkGfY9xMqXGH+FNAkt7N/E7fb4OzQE4JTCvycqscnycKoxbeo2heEnH1l7SoswFzJ1T+1qCeSzFabHW/jgJk7cn5ghA+/Sirzomd71qdA+CdxrZ0L+nS5dCqRVP8YhYxv36V7kQz+N8LK3BSIpQepZr1Jrxg122URmGzWZ3H0tG2phApcznjbDuWRqqmL57nRHLN6kTZJWhru/SLbwHkxUdUurWijONLUl9RWGZd7ZnXZUnn4DElIJ16cntdX5mKqapD3Rhz5m7tTrHhYBmBJnmt84N0aQUvj53upglg5/+r0= simde@python.mde.utc"
+  read_only  = "true"
+}
