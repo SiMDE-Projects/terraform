@@ -49,3 +49,10 @@ resource "github_team_repository" "gesasso_gesasso_mkultra" {
   repository = github_repository.gesasso_mkultra.name
   permission = "maintain"
 }
+
+resource "github_repository_deploy_key" "gesasso_mkultra_deploy_key" {
+  title      = "Main deploy key"
+  repository = github_repository.gesasso_mkultra.name
+  key        = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2lsok3/Wsua6YGe2K4nSZyaqfh5UA3HlTy9WSn4i1SuAmxmwl1HEIGewrFucuVI/DCAROHI9zYpILh8z/QKOFQtdCeswmkss2XyEa/yfp9ElbNvrdV+A9rQDb6TgNp7KBykkxMWUvGCklSll1Cq4k8vCLc4jv26sJO3PT/Qb2OxmqmLL3LGohfiS1Cdao5b1KXxk8Q9ml/9iJkBxFCIStepkphaWyiIa+wqv1n4l5cS8K9bVVhkFAWByiw1nJ4CmZX6wHpe77qI9c8a+zQPJCHp0GbcSPrYUmr5lAZ3aZ6pZdhYSFc2jKoNyy9rjR8NyLKXBRtaTv5VJ5Umt3Rdin94KxrZ4ED65RiA7UEmTunJOjHqLt90fWuR4l9Sqs+yXDHGv+liF96XwofeseKSaKCitgXQUzz0IvKHCC0IKDh5aJpwKGILforMLJgRrjMZWpI/8pUFIvdoRdil7V8vQU7Ve2ZEXpZkkd9b6OyQp/DJ9RziBHbn3pWME34/A2dV8= simde@python.mde.utc"
+  read_only  = "true"
+}
