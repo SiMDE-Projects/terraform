@@ -9,7 +9,3 @@ module "github" {
   organization     = var.github_organization
   old_organization = var.github_old_organization
 }
-
-output "discord" {
-  value = module.discord_simde
-}
