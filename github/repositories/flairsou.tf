@@ -76,3 +76,15 @@ resource "github_team_repository" "flairsou_flairsou-api" {
   repository = github_repository.flairsou-api.name
   permission = "maintain"
 }
+
+resource "tls_private_key" "flairsou_ssh_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "github_repository_deploy_key" "flairsou_deploy_key" {
+  title      = "Main deploy key"
+  repository = github_repository.flairsou-api.name
+  key        = tls_private_key.flairsou_ssh_key.public_key_openssh
+  read_only  = "true"
+}

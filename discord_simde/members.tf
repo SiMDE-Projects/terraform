@@ -233,16 +233,6 @@ module "romain_leclere" {
   }
 }
 
-module "ThreeNias" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "720725739858559137"
-  roles     = {
-    (discord_role.curieux.id) = true
-  }
-}
-
 module "arthur_wacquez" {
   source    = "./member"
   api_token = var.api_token

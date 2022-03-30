@@ -49,3 +49,15 @@ resource "github_team_repository" "gesasso_gesasso_mkultra" {
   repository = github_repository.gesasso_mkultra.name
   permission = "maintain"
 }
+
+resource "tls_private_key" "gesasso_mkultra_ssh_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "github_repository_deploy_key" "gesasso_mkultra_deploy_key" {
+  title      = "Main deploy key"
+  repository = github_repository.gesasso_mkultra.name
+  key        = tls_private_key.gesasso_mkultra_ssh_key.public_key_openssh
+  read_only  = "true"
+}
