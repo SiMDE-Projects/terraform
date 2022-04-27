@@ -191,16 +191,6 @@ module "pascal_quach" {
   }
 }
 
-module "pierre_pouliquen" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "580741126294863903"
-  roles     = {
-    (discord_role.member.id) = true
-  }
-}
-
 module "neil" {
   source    = "./member"
   api_token = var.api_token
