@@ -176,6 +176,7 @@ module "rayan_doudech" {
   user_id   = "760802280621473793"
   roles     = {
     (discord_role.respinfo.id) = true
+    (discord_role.etuville.id) = true
     (discord_role.integfev.id) = true
     (discord_role.sparkle.id) = true
   }
