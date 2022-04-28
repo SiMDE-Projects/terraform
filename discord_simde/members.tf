@@ -342,6 +342,7 @@ module "leopold_chappuis" {
   roles     = {
     (discord_role.member.id)  = true
     (discord_role.gesasso.id) = true
+    (discord_role.payutc.id) = true
   }
 }
 
