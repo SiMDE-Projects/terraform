@@ -176,6 +176,7 @@ module "rayan_doudech" {
   user_id   = "760802280621473793"
   roles     = {
     (discord_role.respinfo.id) = true
+    (discord_role.etuville.id) = true
     (discord_role.integfev.id) = true
     (discord_role.sparkle.id) = true
   }
@@ -186,16 +187,6 @@ module "pascal_quach" {
   api_token = var.api_token
   server_id = discord_server.server.id
   user_id   = "239495459389964289"
-  roles     = {
-    (discord_role.member.id) = true
-  }
-}
-
-module "pierre_pouliquen" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "580741126294863903"
   roles     = {
     (discord_role.member.id) = true
   }
@@ -349,8 +340,9 @@ module "leopold_chappuis" {
   server_id = discord_server.server.id
   user_id   = "359038397265870848"
   roles     = {
-    (discord_role.member.id)  = true
     (discord_role.gesasso.id) = true
+    (discord_role.payutc.id) = true
+    (discord_role.admin.id) = true
   }
 }
 
