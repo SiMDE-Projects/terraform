@@ -340,8 +340,8 @@ module "leopold_chappuis" {
   server_id = discord_server.server.id
   user_id   = "359038397265870848"
   roles     = {
-    (discord_role.member.id)  = true
     (discord_role.gesasso.id) = true
+    (discord_role.admin.id) = true
   }
 }
 
