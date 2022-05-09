@@ -341,6 +341,7 @@ module "leopold_chappuis" {
   user_id   = "359038397265870848"
   roles     = {
     (discord_role.gesasso.id) = true
+    (discord_role.payutc.id) = true
     (discord_role.admin.id) = true
   }
 }
