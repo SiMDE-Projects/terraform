@@ -298,6 +298,7 @@ module "nasser_chaouchi" {
   user_id   = "243412317214212126"
   roles     = {
     (discord_role.integ.id) = false #Team info integ A21
+    (discord_role.payutc.id) = true #Team payutc P22
   }
 }
 
