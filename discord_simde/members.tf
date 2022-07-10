@@ -473,3 +473,13 @@ module "leo_mullier" {
     (discord_role.uvweb.id)    = true
   }
 }
+
+module "alexia_rolland" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "689494793834725441"
+  roles     = {
+    (discord_role.pacha_com.id)    = true
+  }
+}

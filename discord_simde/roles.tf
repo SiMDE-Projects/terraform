@@ -1,6 +1,7 @@
 locals {
   roles = {
     admin     = discord_role.admin
+    pacha_com = discord_role.pacha_com
     member    = discord_role.member
     treso     = discord_role.treso
     payutc    = discord_role.payutc
@@ -23,6 +24,10 @@ locals {
 
 data "discord_color" "admin" {
   hex = "#872205"
+}
+
+data "discord_color" "pacha_com" {
+  hex = "#852003"
 }
 
 data "discord_color" "treso" {
@@ -93,8 +98,16 @@ resource "discord_role" "admin" {
   server_id   = discord_server.server.id
   name        = "Saint administrateur"
   permissions = data.discord_permission.admin.allow_bits
-  position    = discord_role.zapier.position + 1
+  position    = discord_role.pacha_com.position + 1
   color       = data.discord_color.admin.dec
+}
+
+resource "discord_role" "pacha_com" {
+  server_id   = discord_server.server.id
+  name        = "Pacha de la Com"
+  permissions = data.discord_permission.member.allow_bits
+  position    = discord_role.zapier.position + 1
+  color       = data.discord_color.pacha_com.dec
 }
 
 resource "discord_role" "zapier" {
