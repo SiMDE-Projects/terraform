@@ -62,28 +62,6 @@ module "private-integ" {
   roles       = local.roles
 }
 
-module "private-jeffrey" {
-  source      = "./channels"
-  name        = "private-jeffrey"
-  api_token   = var.api_token
-  server_id   = discord_server.server.id
-  position    = module.private-integ.position + 1
-  restricted  = true
-  permissions = local.permissions
-  roles       = local.roles
-}
-
-module "private-woolly" {
-  source      = "./channels"
-  name        = "private-woolly"
-  api_token   = var.api_token
-  server_id   = discord_server.server.id
-  position    = module.private-jeffrey.position + 1
-  restricted  = true
-  permissions = local.permissions
-  roles       = local.roles
-}
-
 module "private-sparkle" {
   source      = "./channels"
   name        = "private-sparkle"
@@ -162,12 +140,23 @@ module "private-portail" {
   roles       = local.roles
 }
 
+module "private-pacha" {
+  source      = "./channels"
+  name        = "private-pacha"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-portail.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module "private-admin" {
   source      = "./channels"
   name        = "private-admin"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-portail.position + 1
+  position    = module.private-pacha.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles

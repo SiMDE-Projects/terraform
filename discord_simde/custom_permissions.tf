@@ -65,56 +65,6 @@ resource "discord_channel_permission" "payutc_notifications" {
   deny         = local.permissions.readonly.deny_bits
 }
 
-### Woolly
-resource "discord_channel_permission" "woolly_general" {
-  channel_id   = module.general.category.id
-  type         = "role"
-  overwrite_id = local.roles.woolly.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "woolly_woolly" {
-  channel_id   = module.private-woolly.category.id
-  type         = "role"
-  overwrite_id = local.roles.woolly.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "woolly_notifications" {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.woolly.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-### Jeffrey
-resource "discord_channel_permission" "jeffrey_general" {
-  channel_id   = module.general.category.id
-  type         = "role"
-  overwrite_id = local.roles.jeffrey.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "jeffrey_jeffrey" {
-  channel_id   = module.private-jeffrey.category.id
-  type         = "role"
-  overwrite_id = local.roles.jeffrey.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "jeffrey_notifications" {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.jeffrey.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
 ### Integ
 resource "discord_channel_permission" "integ_general" {
   channel_id   = module.general.category.id
@@ -377,6 +327,39 @@ resource "discord_channel_permission" "uvweb_spam" {
   channel_id   = discord_text_channel.spam.id
   type         = "role"
   overwrite_id = local.roles.uvweb.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+### Pacha Com
+resource "discord_channel_permission" "pacha_com_general" {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.pacha_com.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "pacha_com_pacha" {
+  channel_id   = module.private-pacha.category.id
+  type         = "role"
+  overwrite_id = local.roles.pacha_com.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "pacha_com_notifications" {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.pacha_com.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
+resource "discord_channel_permission" "pacha_com_spam" {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.pacha_com.id
   allow        = local.permissions.allow.allow_bits
   deny         = local.permissions.allow.deny_bits
 }

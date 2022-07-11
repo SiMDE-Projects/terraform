@@ -1,14 +1,13 @@
 locals {
   roles = {
     admin     = discord_role.admin
+    pacha_com = discord_role.pacha_com
     member    = discord_role.member
     treso     = discord_role.treso
     payutc    = discord_role.payutc
     integ     = discord_role.integ
     etuville  = discord_role.etuville
     comet     = discord_role.comet
-    jeffrey   = discord_role.jeffrey
-    woolly    = discord_role.woolly
     sparkle   = discord_role.sparkle
     uvweb     = discord_role.uvweb
     bde       = discord_role.bde
@@ -26,6 +25,10 @@ data "discord_color" "admin" {
   hex = "#872205"
 }
 
+data "discord_color" "pacha_com" {
+  hex = "#852003"
+}
+
 data "discord_color" "treso" {
   hex = "#E0E000"
 }
@@ -40,14 +43,6 @@ data "discord_color" "integ" {
 
 data "discord_color" "etuville" {
   hex = "#E0A000"
-}
-
-data "discord_color" "jeffrey" {
-  hex = "#E0E000"
-}
-
-data "discord_color" "woolly" {
-  hex = "#E0E000"
 }
 
 data "discord_color" "bde" {
@@ -94,8 +89,16 @@ resource "discord_role" "admin" {
   server_id   = discord_server.server.id
   name        = "Saint administrateur"
   permissions = data.discord_permission.admin.allow_bits
-  position    = discord_role.zapier.position + 1
+  position    = discord_role.pacha_com.position + 1
   color       = data.discord_color.admin.dec
+}
+
+resource "discord_role" "pacha_com" {
+  server_id   = discord_server.server.id
+  name        = "Pacha de la Com"
+  permissions = data.discord_permission.member.allow_bits
+  position    = discord_role.zapier.position + 1
+  color       = data.discord_color.pacha_com.dec
 }
 
 resource "discord_role" "zapier" {
@@ -135,27 +138,9 @@ resource "discord_role" "integ" {
 resource "discord_role" "etuville" {
   server_id   = discord_server.server.id
   name        = "Etuville"
-  position    = discord_role.jeffrey.position + 1
-  permissions = data.discord_permission.member.allow_bits
-  color       = data.discord_color.integ.dec
-  mentionable = true
-}
-
-resource "discord_role" "jeffrey" {
-  server_id   = discord_server.server.id
-  name        = "Projet Jeffrey"
-  position    = discord_role.woolly.position + 1
-  permissions = data.discord_permission.member.allow_bits
-  color       = data.discord_color.jeffrey.dec
-  mentionable = true
-}
-
-resource "discord_role" "woolly" {
-  server_id   = discord_server.server.id
-  name        = "Woolly"
   position    = discord_role.gesasso.position + 1
   permissions = data.discord_permission.member.allow_bits
-  color       = data.discord_color.woolly.dec
+  color       = data.discord_color.etuville.dec
   mentionable = true
 }
 
