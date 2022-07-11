@@ -15,6 +15,7 @@ locals {
     emploidut = discord_role.emploidut
     integfev  = discord_role.integfev
     respinfo  = discord_role.respinfo
+    portail   = discord_role.portail
     curieux   = discord_role.curieux
     everyone  = discord_role_everyone.everyone
   }
