@@ -39,7 +39,6 @@ module "maxime_vaillant" {
   user_id   = "611205176493342752"
   roles     = {
     (discord_role.member.id)  = true
-    (discord_role.jeffrey.id) = true
     (discord_role.payutc.id)  = true
     (discord_role.integ.id)   = true
   }
@@ -63,7 +62,6 @@ module "anton42" {
   user_id   = "301703000508989440"
   roles     = {
     (discord_role.member.id)  = true
-    (discord_role.jeffrey.id) = true
   }
 }
 
@@ -106,7 +104,6 @@ module "armand_ribault" {
   user_id   = "418537351858487297"
   roles     = {
     (discord_role.member.id) = true
-    (discord_role.woolly.id) = true
     (discord_role.uvweb.id)  = true
   }
 }
@@ -118,7 +115,6 @@ module "alexandre_brasseur" {
   user_id   = "757649562813857965"
   roles     = {
     (discord_role.member.id) = true
-    (discord_role.woolly.id) = true
   }
 }
 
@@ -177,6 +173,7 @@ module "rayan_doudech" {
   user_id   = "760802280621473793"
   roles     = {
     (discord_role.respinfo.id) = true
+    (discord_role.etuville.id) = true
     (discord_role.integfev.id) = true
     (discord_role.sparkle.id) = true
   }
@@ -187,16 +184,6 @@ module "pascal_quach" {
   api_token = var.api_token
   server_id = discord_server.server.id
   user_id   = "239495459389964289"
-  roles     = {
-    (discord_role.member.id) = true
-  }
-}
-
-module "pierre_pouliquen" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "580741126294863903"
   roles     = {
     (discord_role.member.id) = true
   }
@@ -308,6 +295,7 @@ module "nasser_chaouchi" {
   user_id   = "243412317214212126"
   roles     = {
     (discord_role.integ.id) = false #Team info integ A21
+    (discord_role.payutc.id) = true #Team payutc P22
   }
 }
 
@@ -350,8 +338,9 @@ module "leopold_chappuis" {
   server_id = discord_server.server.id
   user_id   = "359038397265870848"
   roles     = {
-    (discord_role.member.id)  = true
     (discord_role.gesasso.id) = true
+    (discord_role.payutc.id) = true
+    (discord_role.admin.id) = true
   }
 }
 
@@ -479,5 +468,15 @@ module "leo_mullier" {
   user_id   = "691966765219053678"
   roles     = {
     (discord_role.uvweb.id)    = true
+  }
+}
+
+module "alexia_rolland" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "689494793834725441"
+  roles     = {
+    (discord_role.pacha_com.id)    = true
   }
 }
