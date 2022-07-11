@@ -39,7 +39,6 @@ module "maxime_vaillant" {
   user_id   = "611205176493342752"
   roles     = {
     (discord_role.member.id)  = true
-    (discord_role.jeffrey.id) = true
     (discord_role.payutc.id)  = true
     (discord_role.integ.id)   = true
   }
@@ -63,7 +62,6 @@ module "anton42" {
   user_id   = "301703000508989440"
   roles     = {
     (discord_role.member.id)  = true
-    (discord_role.jeffrey.id) = true
   }
 }
 
@@ -106,7 +104,6 @@ module "armand_ribault" {
   user_id   = "418537351858487297"
   roles     = {
     (discord_role.member.id) = true
-    (discord_role.woolly.id) = true
     (discord_role.uvweb.id)  = true
   }
 }
@@ -118,7 +115,6 @@ module "alexandre_brasseur" {
   user_id   = "757649562813857965"
   roles     = {
     (discord_role.member.id) = true
-    (discord_role.woolly.id) = true
   }
 }
 
