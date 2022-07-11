@@ -1,6 +1,6 @@
 {
     "build": {
-        "dockerfile": "./docker/Dockerfile"
+        "dockerfile": "./Dockerfile"
     },
     "postStartCommand": ["terraform", "init"]
 }
