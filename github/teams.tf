@@ -1,7 +1,6 @@
 locals {
   teams = {
     simde              = github_team.simde
-    jeffrey            = github_team.jeffrey
     application_utcbde = github_team.application_utcbde
     cloud              = github_team.cloud
     covoit_utc         = github_team.covoit_utc
@@ -15,26 +14,6 @@ locals {
     flairsou           = github_team.flairsou
     sparkle            = github_team.sparkle
   }
-}
-
-### Jeffrey
-
-resource "github_team" "jeffrey" {
-  name        = "Jeffrey"
-  description = "Developpeurs de Jeffrey"
-  privacy     = "closed"
-}
-
-resource "github_team_repository" "jeffrey_jeffrey" {
-  team_id    = github_team.jeffrey.id
-  repository = github_repository.jeffrey.name
-  permission = "push"
-}
-
-resource "github_team_repository" "jeffrey_jeffreyApi" {
-  team_id    = github_team.jeffrey.id
-  repository = github_repository.jeffreyApi.name
-  permission = "push"
 }
 
 ### Flairsou
@@ -51,18 +30,6 @@ resource "github_team" "simde" {
   name        = "SiMDE"
   description = "Administrateurs du SiMDE"
   privacy     = "closed"
-}
-
-resource "github_team_repository" "simde_jeffrey" {
-  team_id    = github_team.simde.id
-  repository = github_repository.jeffrey.name
-  permission = "maintain"
-}
-
-resource "github_team_repository" "simde_jeffreyApi" {
-  team_id    = github_team.simde.id
-  repository = github_repository.jeffreyApi.name
-  permission = "maintain"
 }
 
 resource "github_team_repository" "simde_terraform" {
