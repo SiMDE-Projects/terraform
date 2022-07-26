@@ -3,7 +3,8 @@
 
 provider "registry.terraform.io/hashicorp/random" {
   version = "3.1.0"
-  hashes  = [
+  hashes = [
+    "h1:BZMEPucF+pbu9gsPk0G0BHx7YP04+tKdq2MrRDF1EDM=",
     "h1:rKYu5ZUbXwrLG1w81k7H3nce/Ys6yAxXhWcbtk36HjY=",
     "zh:2bbb3339f0643b5daa07480ef4397bd23a79963cc364cdfbb4e86354cb7725bc",
     "zh:3cd456047805bf639fbf2c761b1848880ea703a054f76db51852008b11008626",
@@ -21,9 +22,10 @@ provider "registry.terraform.io/hashicorp/random" {
 
 provider "registry.terraform.io/petoju/mysql" {
   version     = "3.0.11"
-  constraints = "3.0.11"
-  hashes      = [
+  constraints = ">= 3.0.11, 3.0.11"
+  hashes = [
     "h1:UZz4enMoVJoJdGXPdWD9zaHjrAN1jJ3VC8+Hd+g0HzU=",
+    "h1:aBYt0ZmB6229FqnsuVij8JnYKq9WEX+0WDmCfEkXiVc=",
     "zh:0f7ff721b0f5f90658a3698b3c42360109b310df97b3dfde8085cf034efb219f",
     "zh:151066a5a395ce91206d6311156478f5946f0b4b555ec1c87222eccf4313b280",
     "zh:2d0ac4ed2417730730eddfb3cb2bd56e12058951bbd97f9ca7cf7d2598a10365",
