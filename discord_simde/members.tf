@@ -83,6 +83,7 @@ module "remy_huet" {
   roles     = {
     (discord_role.member.id) = true
     (discord_role.treso.id)  = true
+    (discord_role.payutc.id) = true
   }
 }
 
@@ -176,6 +177,7 @@ module "rayan_doudech" {
     (discord_role.etuville.id) = true
     (discord_role.integfev.id) = true
     (discord_role.sparkle.id) = true
+    (discord_role.payutc.id) = true
   }
 }
 
