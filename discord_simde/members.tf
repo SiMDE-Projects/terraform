@@ -62,6 +62,7 @@ module "anton42" {
   user_id   = "301703000508989440"
   roles     = {
     (discord_role.member.id)  = true
+    (discord_role.bde.id)     = true
   }
 }
 
