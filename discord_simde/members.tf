@@ -483,3 +483,14 @@ module "alexia_rolland" {
     (discord_role.pacha_com.id)    = true
   }
 }
+
+module "Lysandre" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "691808947912310804"
+  roles     = {
+    (discord_role.payutc.id) = true
+    (discord_role.curieux.id) = true
+  }
+}
