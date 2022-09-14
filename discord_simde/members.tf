@@ -495,7 +495,7 @@ module "Lysandre" {
   }
 }
 
-module "Tom Jumel" {
+module "tom_jumel" {
   source    = "./member"
   api_token = var.api_token
   server_id = discord_server.server.id
@@ -506,7 +506,7 @@ module "Tom Jumel" {
   }
 }
 
-module "Louis Levasseur" {
+module "louis_levasseur" {
   source    = "./member"
   api_token = var.api_token
   server_id = discord_server.server.id
