@@ -494,3 +494,24 @@ module "Lysandre" {
     (discord_role.curieux.id) = true
   }
 }
+
+module "Tom Jumel" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "493120272631595008"
+  roles     = {
+    (discord_role.curieux.id) = true
+    (discord_role.gesasso.id) = true
+  }
+}
+
+module "Louis Levasseur" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "538384095256772612"
+  roles     = {
+    (discord_role.comet.id)    = true  #comet A22
+  }
+}
