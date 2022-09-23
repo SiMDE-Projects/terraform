@@ -176,7 +176,7 @@ module "rayan_doudech" {
   roles     = {
     (discord_role.respinfo.id) = true
     (discord_role.etuville.id) = true
-    (discord_role.integfev.id) = true
+    (discord_role.integfev.id) = false #integfev p22
     (discord_role.sparkle.id) = true
     (discord_role.payutc.id) = true
   }
@@ -481,6 +481,7 @@ module "alexia_rolland" {
   user_id   = "689494793834725441"
   roles     = {
     (discord_role.pacha_com.id)    = true
+    (discord_role.payutc.id) = true #Team payutc P22
   }
 }
 
@@ -503,6 +504,7 @@ module "tom_jumel" {
   roles     = {
     (discord_role.curieux.id) = true
     (discord_role.gesasso.id) = true
+    (discord_role.integfev.id) = true
   }
 }
 
