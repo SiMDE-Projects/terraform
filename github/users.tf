@@ -284,14 +284,6 @@ module "old_jpennors" {
   }
 }
 
-module "old_jsmrcaga" {
-  providers = {
-    github = github.old
-  }
-  source   = "./users"
-  username = "jsmrcaga"
-}
-
 module "old_loic_jumel" {
   providers = {
     github = github.old
