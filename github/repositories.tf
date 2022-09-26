@@ -836,9 +836,9 @@ resource "github_branch_default" "planner" {
 
 resource "github_repository" "payutc_mobile" {
   provider               = github.old
-  archived               = false
+  archived               = true
   delete_branch_on_merge = true
-  description            = "PayUTC Mobile Application"
+  description            = "PayUTC Mobile Application (obsolete)"
   has_downloads          = true
   has_issues             = true
   has_projects           = true
