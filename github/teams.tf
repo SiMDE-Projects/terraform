@@ -6,7 +6,6 @@ locals {
     covoit_utc         = github_team.covoit_utc
     gesasso            = github_team.gesasso
     locky              = github_team.locky
-    payutc             = github_team.payutc
     planner            = github_team.planner
     portail            = github_team.portail
     woolly             = github_team.woolly
