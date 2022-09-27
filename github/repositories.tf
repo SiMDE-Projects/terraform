@@ -50,13 +50,6 @@ resource "github_branch_protection" "terraform_main" {
     require_code_owner_reviews      = true
     required_approving_review_count = 1
   }
-
-  required_status_checks {
-    contexts = [
-      "Terraform Plan",
-    ]
-    strict   = true
-  }
 }
 
 resource "github_issue_label" "terraform_toApply" {
