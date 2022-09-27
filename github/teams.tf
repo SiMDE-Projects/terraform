@@ -6,7 +6,6 @@ locals {
     covoit_utc         = github_team.covoit_utc
     gesasso            = github_team.gesasso
     locky              = github_team.locky
-    payutc             = github_team.payutc
     planner            = github_team.planner
     portail            = github_team.portail
     woolly             = github_team.woolly
@@ -98,77 +97,6 @@ resource "github_team_repository" "locky_locky" {
   permission = "push"
 }
 
-# PayUTC
-resource "github_team" "payutc" {
-  provider    = github.old
-  name        = "PayUTC"
-  description = "Développer les outils et les APIs PayUTC"
-  privacy     = "closed"
-}
-
-resource "github_team_repository" "payutc_bdecotiz" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.bdecotiz.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_jessy" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.jessy.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_jessy_api" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.jessy_api.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_payback" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.payback.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_paymoi" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.paymoi.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_payutc_mobile" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.payutc_mobile.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_woolly_api" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.woolly_api.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_woolly_front" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.woolly_front.name
-  permission = "push"
-}
-
-resource "github_team_repository" "payutc_woolly_ui" {
-  provider   = github.old
-  team_id    = github_team.payutc.id
-  repository = github_repository.woolly_ui.name
-  permission = "push"
-}
-
 # Planner
 
 resource "github_team" "planner" {
@@ -185,7 +113,7 @@ resource "github_team_repository" "planner_planner" {
   permission = "push"
 }
 
-### Portail
+### Portail
 
 resource "github_team" "portail" {
   provider    = github.old
