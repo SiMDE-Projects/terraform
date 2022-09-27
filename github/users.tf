@@ -197,10 +197,6 @@ module "old_cesar_richard" {
   username = "cesar-richard"
   role     = "admin"
   teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
-      role = "maintainer"
-    }
     "locky" = {
       team = github_team.locky.id,
       role = "maintainer"
