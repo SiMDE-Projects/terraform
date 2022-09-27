@@ -110,10 +110,6 @@ module "old_aarrtthhuurr" {
   source   = "./users"
   username = "aarrtthhuurr"
   teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
-      role = "member"
-    }
     "application_utcbde" = {
       team = github_team.application_utcbde.id,
       role = "member"
@@ -128,10 +124,6 @@ module "old_alexandre_brasseur" {
   source   = "./users"
   username = "abrasseu"
   teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
-      role = "member"
-    }
     "woolly" = {
       team = github_team.woolly.id,
       role = "member"
@@ -162,20 +154,6 @@ module "old_artemisart" {
   teams    = {
     "portail" = {
       team = github_team.portail.id,
-      role = "member"
-    }
-  }
-}
-
-module "old_BaguetteEater" {
-  providers = {
-    github = github.old
-  }
-  source   = "./users"
-  username = "BaguetteEater"
-  teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
       role = "member"
     }
   }
@@ -292,20 +270,6 @@ module "old_loic_jumel" {
   username = "jumelloic"
 }
 
-module "old_colin_lafond" {
-  providers = {
-    github = github.old
-  }
-  source   = "./users"
-  username = "lafondoc"
-  teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
-      role = "member"
-    }
-  }
-}
-
 module "old_MercierCorentin" {
   providers = {
     github = github.old
@@ -315,10 +279,6 @@ module "old_MercierCorentin" {
   teams    = {
     "portail" = {
       team = github_team.portail.id,
-      role = "member"
-    }
-    "payutc" = {
-      team = github_team.payutc.id,
       role = "member"
     }
     "cloud" = {
@@ -355,22 +315,6 @@ module "old_NastuzziSamy" {
     }
     "portail" = {
       team = github_team.portail.id,
-      role = "member"
-    }
-    "planner" = {
-      team = github_team.planner.id,
-      role = "member"
-    }
-    "payutc" = {
-      team = github_team.payutc.id,
-      role = "member"
-    }
-    "locky" = {
-      team = github_team.locky.id,
-      role = "member"
-    }
-    "covoit_utc" = {
-      team = github_team.covoit_utc.id,
       role = "member"
     }
     "cloud" = {
@@ -410,10 +354,6 @@ module "old_obledaym" {
       team = github_team.portail.id,
       role = "member"
     }
-    "payutc" = {
-      team = github_team.payutc.id,
-      role = "member"
-    }
   }
 }
 
@@ -440,20 +380,6 @@ module "old_picardthibault" {
   teams    = {
     "application_utcbde" = {
       team = github_team.application_utcbde.id,
-      role = "member"
-    }
-  }
-}
-
-module "old_pierrickdes59" {
-  providers = {
-    github = github.old
-  }
-  source   = "./users"
-  username = "pierrickdes59"
-  teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
       role = "member"
     }
   }
