@@ -15,6 +15,10 @@ module "cesar_richard" {
       team = github_team.sparkle.id,
       role = "maintainer"
     }
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "maintainer"
+    }
   }
 }
 
@@ -516,6 +520,10 @@ module "armand_ribault" {
       team = github_team.uvweb.id,
       role = "member"
     }
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
   }
 }
 
@@ -547,6 +555,17 @@ module "paco_pompeani" {
   teams    = {
     "sparkle" = {
       team = github_team.sparkle.id,
+      role = "member"
+    }
+  }
+}
+
+module "tom_jumel" {
+  source = "./users"
+  username = "TomJumel"
+  teams    = {
+    "payutc" = {
+      team = github_team.payutc.id,
       role = "member"
     }
   }

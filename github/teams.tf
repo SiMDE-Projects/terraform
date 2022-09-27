@@ -6,6 +6,7 @@ locals {
     covoit_utc         = github_team.covoit_utc
     gesasso            = github_team.gesasso
     locky              = github_team.locky
+    payutc             = github_team.payutc
     planner            = github_team.planner
     portail            = github_team.portail
     woolly             = github_team.woolly
@@ -34,6 +35,20 @@ resource "github_team" "simde" {
 resource "github_team_repository" "simde_terraform" {
   team_id    = github_team.simde.id
   repository = github_repository.terraform.name
+  permission = "maintain"
+}
+
+### PayUTC Team
+
+resource "github_team" "payutc" {
+  name        = "PayUTC"
+  description = "Equipe concernée par les developpements d'outils liés à Pay'UTC"
+  privacy     = "closed"
+}
+
+resource "github_team_repository" "payutc_payutc_appli" {
+  team_id    = github_team.payutc.id
+  repository = "payutc-appli"
   permission = "maintain"
 }
 
