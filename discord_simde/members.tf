@@ -329,9 +329,9 @@ module "paco_pompeani" {
   server_id = discord_server.server.id
   user_id   = "692765795788521532"
   roles     = {
-    (discord_role.respinfo.id) = true #Etuville A21
-    (discord_role.etuville.id) = true
     (discord_role.sparkle.id)  = true
+    (discord_role.member.id) = true
+    (discord_role.portail.id)  = true
   }
 }
 
