@@ -1,5 +1,9 @@
 output "repositories" {
-  value = github_repository.*
+  value = {
+    flairsou-api = github_repository.flairsou-api
+    uvweb = github_repository.uvweb
+    payutc_appli = github_repository.payutc_appli
+  }
 }
 
 output "private_deploy_keys" {
