@@ -1,5 +1,5 @@
 data "discord_local_image" "logo" {
-  file = "./discord_simde/logo.png"
+  file = "./logo.png"
 }
 
 resource "discord_server" "server" {
