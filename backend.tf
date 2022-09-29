@@ -1,13 +1,4 @@
 terraform {
-#  backend "s3" {
-#    region  = "eu-west-3"
-#    bucket  = "terraform-remote-state-crichard"
-#    key     = "simde-project.tfstate"
-#    encrypt = true
-#  }
-}
-
-terraform {
   required_version = ">= 1.1.0"
   required_providers {
     random = {

@@ -3,6 +3,6 @@ output "discord" {
 }
 
 output "github" {
-  value = module.github
+  value     = module.github
   sensitive = true
 }

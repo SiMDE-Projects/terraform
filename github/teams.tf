@@ -46,12 +46,6 @@ resource "github_team" "payutc" {
   privacy     = "closed"
 }
 
-resource "github_team_repository" "payutc_payutc_appli" {
-  team_id    = github_team.payutc.id
-  repository = "payutc-appli"
-  permission = "maintain"
-}
-
 ###############################
 ###   ORIGINAL ORGANIZATION ###
 ###############################

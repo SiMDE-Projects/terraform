@@ -36,3 +36,9 @@ resource "github_team_repository" "simde_payutc_appli" {
   repository = github_repository.payutc_appli.name
   permission = "maintain"
 }
+
+resource "github_team_repository" "payutc_payutc_appli" {
+  team_id    = var.teams.payutc.id
+  repository = github_repository.payutc_appli.name
+  permission = "maintain"
+}
