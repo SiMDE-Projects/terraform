@@ -524,16 +524,15 @@ module "lucas_doublet" {
   server_id = discord_server.server.id
   user_id   = "231818542377467904"
   roles     = {
-    (discord_role.curieux.id) = true
   }
 }
 
-module "alexandre_eberhardt" {    # faire un nouveau channel woolly ?
+module "alexandre_eberhardt" {    
   source    = "./member"
   api_token = var.api_token
   server_id = discord_server.server.id
   user_id   = "386849408316211200"
   roles     = {
-    (discord_role.curieux.id) = true
+    (discord_role.woolly.id) = true
   }
 }
