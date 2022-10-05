@@ -5,6 +5,7 @@ locals {
     member    = discord_role.member
     treso     = discord_role.treso
     payutc    = discord_role.payutc
+    woolly    = discord_role.woolly
     integ     = discord_role.integ
     etuville  = discord_role.etuville
     comet     = discord_role.comet
@@ -35,6 +36,10 @@ data "discord_color" "treso" {
 
 data "discord_color" "payutc" {
   hex = "#E0E000"
+}
+
+data "discord_color" "woolly" {
+  hex = "#77b5fe"
 }
 
 data "discord_color" "integ" {
@@ -111,9 +116,18 @@ resource "discord_role" "zapier" {
 resource "discord_role" "payutc" {
   server_id   = discord_server.server.id
   name        = "Tim Pay'UTC"
-  position    = discord_role.treso.position + 1
+  position    = discord_role.woolly.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.payutc.dec
+  mentionable = true
+}
+
+resource "discord_role" "woolly" {
+  server_id   = discord_server.server.id
+  name        = "Tim Woolly"
+  position    = discord_role.treso.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.woolly.dec
   mentionable = true
 }
 

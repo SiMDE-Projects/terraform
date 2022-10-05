@@ -493,6 +493,7 @@ module "Lysandre" {
   roles     = {
     (discord_role.payutc.id) = true
     (discord_role.curieux.id) = true
+    (discord_role.woolly.id) = true
   }
 }
 
@@ -515,5 +516,16 @@ module "louis_levasseur" {
   user_id   = "538384095256772612"
   roles     = {
     (discord_role.comet.id)    = true  #comet A22
+  }
+}
+
+module "alexandre_eber" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "386849408316211200"
+  roles     = {
+    (discord_role.curieux.id)    = true
+    (discord_role.woolly.id)    = true
   }
 }
