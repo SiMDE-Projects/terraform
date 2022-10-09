@@ -515,6 +515,7 @@ module "louis_levasseur" {
   user_id   = "538384095256772612"
   roles     = {
     (discord_role.comet.id)    = true  #comet A22
+    (discord_role.sparkle.id)  = true # A22
   }
 }
 
