@@ -524,6 +524,7 @@ module "lucas_doublet" {
   server_id = discord_server.server.id
   user_id   = "231818542377467904"
   roles     = {
+    (discord_role.curieux.id) = true
   }
 }
 
