@@ -4,7 +4,7 @@ resource "mysql_user" "ghituale" {
 }
 
 resource "mysql_grant" "ghituale" {
-  user = mysql_user.ghituale
-  database   = "ALL"
-  privileges = ["ALL"]
+  user = mysql_user.ghituale.user
+  database   = "*.*"
+  privileges = ["SELECT", "UPDATE", "INSERT", "DELETE", "SHOW VIEW", "CREATE", "DROP", "ALTER", "INDEX", "CREATE VIEW"]
 }
