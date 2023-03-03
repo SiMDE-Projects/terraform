@@ -13,6 +13,7 @@ locals {
     emploidut          = github_team.emploidut
     flairsou           = github_team.flairsou
     sparkle            = github_team.sparkle
+    pumpkin            = github_team.pumpkin
   }
 }
 
@@ -215,5 +216,13 @@ resource "github_team" "sparkle" {
 resource "github_team" "uvweb" {
   name        = "UVWeb"
   description = "Développer la nouvelle version de UVWeb"
+  privacy     = "closed"
+}
+
+### Pumpkin
+
+resource "github_team" "pumpkin" {
+  name        = "Pumpkin"
+  description = "Développer le nouvel outil d'inventaire"
   privacy     = "closed"
 }

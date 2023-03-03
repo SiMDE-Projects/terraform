@@ -19,6 +19,10 @@ module "cesar_richard" {
       team = github_team.payutc.id,
       role = "maintainer"
     }
+    "pumpkin" = {
+      team = github_team.pumpkin.id,
+      role = "maintainer"
+    }
   }
 }
 
@@ -198,6 +202,10 @@ module "leopold_chappuis" {
     "uvweb" = {
       team = github_team.gesasso.id,
       role = "member"
+    },
+    "pumpkin" = {
+      team = github_team.pumpkin.id,
+      role = "maintainer"
     }
   }
 }
