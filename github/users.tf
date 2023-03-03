@@ -531,6 +531,10 @@ module "leopold_chappuis" {
   source   = "./users"
   username = "leochapp"
   teams    = {
+    "simde" = {
+      team = github_team.simde.id,
+      role = "member"
+    },
     "uvweb" = {
       team = github_team.gesasso.id,
       role = "member"
