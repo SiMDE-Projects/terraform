@@ -535,7 +535,21 @@ module "alexandre_eberhardt" {
   server_id = discord_server.server.id
   user_id   = "386849408316211200"
   roles     = {
+    (discord_role.payutc.id) = true
     (discord_role.woolly.id) = true
+    (discord_role.pumpkin.id) = true
+  }
+
+}
+
+module "maceo_anger" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "290047614693408768"
+  roles     = {
+    (discord_role.pumpkin.id) = true
+    (discord_role.uvweb.id)    = true
   }
 
 }
@@ -557,6 +571,7 @@ module "alexandru_ghitu" {
     (discord_role.payutc.id) = true
     (discord_role.uvweb.id)    = true
     (discord_role.integ.id) = true
+    (discord_role.pumpkin.id) = true
   }
 
 }

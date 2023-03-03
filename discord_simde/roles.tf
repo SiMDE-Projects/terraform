@@ -14,6 +14,7 @@ locals {
     bde       = discord_role.bde
     gesasso   = discord_role.gesasso
     emploidut = discord_role.emploidut
+    pumpkin    = discord_role.pumpkin
     integfev  = discord_role.integfev
     respinfo  = discord_role.respinfo
     portail   = discord_role.portail
@@ -40,6 +41,10 @@ data "discord_color" "payutc" {
 
 data "discord_color" "woolly" {
   hex = "#77b5fe"
+}
+
+data "discord_color" "pumpkin" {
+  hex = "#DAF7A6"
 }
 
 data "discord_color" "integ" {
@@ -182,6 +187,15 @@ resource "discord_role" "emploidut" {
   position    = discord_role.comet.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.emploidut.dec
+  mentionable = true
+}
+
+resource "discord_role" "pumpkin" {
+  server_id   = discord_server.server.id
+  name        = "Pumpkin"
+  position    = discord_role.sparkle.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.pumpkin.dec
   mentionable = true
 }
 
