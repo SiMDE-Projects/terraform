@@ -44,7 +44,7 @@ data "discord_color" "woolly" {
 }
 
 data "discord_color" "pumpkin" {
-  hex = "#DAF7A6"
+  hex = "#E0E000"
 }
 
 data "discord_color" "integ" {
