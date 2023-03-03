@@ -140,10 +140,10 @@ module "pierre_adorni" {
   server_id = discord_server.server.id
   user_id   = "322379809776861185"
   roles     = {
-    (discord_role.integ.id)    = true
-    (discord_role.respinfo.id) = true #Team info integ 21
+    (discord_role.integ.id)    = false
+    (discord_role.respinfo.id) = false #Team info integ 21
     (discord_role.treso.id)    = true
-    (discord_role.bde.id)     = true
+    (discord_role.bde.id)     = false
   }
 }
 
@@ -449,7 +449,7 @@ module "garance_delabrosse" {
   user_id   = 731991059814678688
   roles     = {
     (discord_role.sparkle.id)  = true # P22
-    (discord_role.etuville.id) = true
+    (discord_role.etuville.id) = false
   }
 }
 
@@ -481,7 +481,7 @@ module "alexia_rolland" {
   user_id   = "689494793834725441"
   roles     = {
     (discord_role.pacha_com.id)    = true
-    (discord_role.payutc.id) = true #Team payutc A22
+    (discord_role.payutc.id) = false #Team payutc A22
   }
 }
 
@@ -514,8 +514,8 @@ module "louis_levasseur" {
   server_id = discord_server.server.id
   user_id   = "538384095256772612"
   roles     = {
-    (discord_role.comet.id)    = true  #comet A22
-    (discord_role.sparkle.id)  = true # A22
+    (discord_role.comet.id)    = false  #comet A22
+    (discord_role.sparkle.id)  = false # A22
   }
 }
 
@@ -529,7 +529,7 @@ module "lucas_doublet" {
   }
 }
 
-module "alexandre_eberhardt" {    
+module "alexandre_eberhardt" {
   source    = "./member"
   api_token = var.api_token
   server_id = discord_server.server.id
@@ -537,4 +537,26 @@ module "alexandre_eberhardt" {
   roles     = {
     (discord_role.woolly.id) = true
   }
+
+}
+
+module "alexandru_ghitu" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "511964755305562127"
+  roles     = {
+    (discord_role.bde.id)     = true
+    (discord_role.member.id) = true
+    (discord_role.woolly.id) = true
+    (discord_role.curieux.id) = true
+    (discord_role.comet.id)    = true
+    (discord_role.sparkle.id)  = true
+    (discord_role.gesasso.id) = true
+    (discord_role.integfev.id) = true
+    (discord_role.payutc.id) = true
+    (discord_role.uvweb.id)    = true
+    (discord_role.integ.id) = true
+  }
+
 }
