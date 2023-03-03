@@ -205,7 +205,7 @@ module "leopold_chappuis" {
     },
     "pumpkin" = {
       team = github_team.pumpkin.id,
-      role = "member"
+      role = "maintainer"
     }
   }
 }
