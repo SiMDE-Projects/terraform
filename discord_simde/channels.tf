@@ -129,12 +129,23 @@ module "private-emploidut" {
   roles       = local.roles
 }
 
+module "private-pumpkin" {
+  source      = "./channels"
+  name        = "private-pumpkin"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-emploidut.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module "private-integfev" {
   source      = "./channels"
   name        = "private-integfev"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-emploidut.position + 1
+  position    = module.private-pumpkin.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
