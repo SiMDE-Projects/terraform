@@ -506,6 +506,7 @@ module "tom_jumel" {
     (discord_role.curieux.id) = true
     (discord_role.gesasso.id) = true
     (discord_role.integfev.id) = true #resp info A22
+    (discord_role.bde.id) = true
   }
 }
 
