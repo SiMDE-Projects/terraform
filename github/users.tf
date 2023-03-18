@@ -162,6 +162,10 @@ module "mael_belval" {
       team = github_team.sparkle.id,
       role = "member"
     }
+    "pumpkin" = {
+      team = github_team.pumpkin.id,
+      role = "member"
+    }
   }
 }
 
