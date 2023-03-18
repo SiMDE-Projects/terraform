@@ -211,6 +211,7 @@ module "mael_belval" {
     (discord_role.curieux.id) = true
     (discord_role.treso.id)   = true
     (discord_role.sparkle.id) = true
+    (discord_role.pumpkin.id) = true
   }
 }
 
