@@ -174,7 +174,7 @@ module "rayan_doudech" {
   server_id = discord_server.server.id
   user_id   = "760802280621473793"
   roles     = {
-    (discord_role.respinfo.id) = true
+    (discord_role.respinfo.id) = false
     (discord_role.etuville.id) = false
     (discord_role.integfev.id) = false #integfev p22
     (discord_role.sparkle.id) = true
