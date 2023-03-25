@@ -27,7 +27,7 @@ module "victor_ronfaut" {
   server_id = discord_server.server.id
   user_id   = "166621029412765696"
   roles     = {
-    (discord_role.admin.id)  = true
+    (discord_role.admin.id)  = false
     (discord_role.payutc.id) = true
   }
 }
@@ -40,7 +40,7 @@ module "maxime_vaillant" {
   roles     = {
     (discord_role.member.id)  = true
     (discord_role.payutc.id)  = true
-    (discord_role.integ.id)   = true
+    (discord_role.integ.id)   = false
   }
 }
 
@@ -62,7 +62,7 @@ module "anton42" {
   user_id   = "301703000508989440"
   roles     = {
     (discord_role.member.id)  = true
-    (discord_role.bde.id)     = true
+    (discord_role.bde.id)     = false
   }
 }
 
@@ -174,8 +174,8 @@ module "rayan_doudech" {
   server_id = discord_server.server.id
   user_id   = "760802280621473793"
   roles     = {
-    (discord_role.respinfo.id) = true
-    (discord_role.etuville.id) = true
+    (discord_role.respinfo.id) = false
+    (discord_role.etuville.id) = false
     (discord_role.integfev.id) = false #integfev p22
     (discord_role.sparkle.id) = true
     (discord_role.payutc.id) = true
@@ -563,18 +563,9 @@ module "alexandru_ghitu" {
   server_id = discord_server.server.id
   user_id   = "511964755305562127"
   roles     = {
-    (discord_role.bde.id)     = true
-    (discord_role.member.id) = true
-    (discord_role.woolly.id) = true
-    (discord_role.curieux.id) = true
-    (discord_role.comet.id)    = true
-    (discord_role.sparkle.id)  = true
-    (discord_role.gesasso.id) = true
-    (discord_role.integfev.id) = true
+    (discord_role.admin.id)     = true
     (discord_role.payutc.id) = true
-    (discord_role.uvweb.id)    = true
-    (discord_role.integ.id) = true
-    (discord_role.pumpkin.id) = true
+
   }
 
 }

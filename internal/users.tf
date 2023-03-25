@@ -36,5 +36,5 @@ resource "mysql_grant" "lchappui" {
   user       = mysql_user.lchappui.user
   host       = mysql_user.lchappui.host
   database   = "*"
-  privileges = ["SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
+  privileges = ["GRANT","SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
 }
