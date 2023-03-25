@@ -271,16 +271,6 @@ module "thomas_guegan" {
   }
 }
 
-module "gabriel_francez" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "358722945813708800"
-  roles     = {
-    (discord_role.curieux.id) = true
-  }
-}
-
 module "theo_chazeaud" {
   source    = "./member"
   api_token = var.api_token
