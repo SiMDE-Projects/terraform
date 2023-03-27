@@ -44,14 +44,14 @@ resource "mysql_grant" "lchappui" {
 
 ## BOT pr clean les billets générés en trop par woolly
 
-resource "mysql_user" "woollycacacleaner" {
+resource "mysql_user" "woolly" {
   user = "woollycacacleaner"
   host = "%.mde.utc"
 }
 
-resource "mysql_grant" "woollycacacleaner" {
-  user       = mysql_user.woollycacacleaner.user
-  host       = mysql_user.woollycacacleaner.host
+resource "mysql_grant" "woolly" {
+  user       = mysql_user.woolly.user
+  host       = mysql_user.woolly.host
   database   = "woolly"
   privileges = ["SELECT","DELETE"]
 }
