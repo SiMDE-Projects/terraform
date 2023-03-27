@@ -42,7 +42,7 @@ resource "mysql_grant" "lchappui" {
 
 
 
-## BOT pr clean les billets générés en trop par woolly
+## BOT pour clean les billets générés en trop par woolly
 
 resource "mysql_user" "woolly" {
   user = "woollycacacleaner"
