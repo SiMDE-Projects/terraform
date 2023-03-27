@@ -38,3 +38,20 @@ resource "mysql_grant" "lchappui" {
   database   = "*"
   privileges = ["GRANT","SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
 }
+
+
+
+
+## BOT pr clean les billets générés en trop par woolly
+
+resource "mysql_user" "woollycacacleaner" {
+  user = "woollycacacleaner"
+  host = "%.mde.utc"
+}
+
+resource "mysql_grant" "woollycacacleaner" {
+  user       = mysql_user.woollycacacleaner.user
+  host       = mysql_user.woollycacacleaner.host
+  database   = "woolly"
+  privileges = ["SELECT","DELETE"]
+}
