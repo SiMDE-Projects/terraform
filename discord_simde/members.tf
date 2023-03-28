@@ -6,7 +6,6 @@ module "cesar_richard" {
   roles     = {
     (discord_role.admin.id)  = true
     (discord_role.payutc.id) = true
-    (discord_role.member.id) = false
   }
 }
 
@@ -27,7 +26,6 @@ module "victor_ronfaut" {
   server_id = discord_server.server.id
   user_id   = "166621029412765696"
   roles     = {
-    (discord_role.admin.id)  = false
     (discord_role.payutc.id) = true
   }
 }
@@ -40,17 +38,6 @@ module "maxime_vaillant" {
   roles     = {
     (discord_role.member.id)  = true
     (discord_role.payutc.id)  = true
-    (discord_role.integ.id)   = false
-  }
-}
-
-module "antoine_cet" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "621730232365482004"
-  roles     = {
-    (discord_role.respinfo.id) = false
   }
 }
 
@@ -62,17 +49,6 @@ module "anton42" {
   user_id   = "301703000508989440"
   roles     = {
     (discord_role.member.id)  = true
-    (discord_role.bde.id)     = false
-  }
-}
-
-module "BWRCat" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "273139242614652938"
-  roles     = {
-    (discord_role.respinfo.id) = false
   }
 }
 
@@ -140,10 +116,7 @@ module "pierre_adorni" {
   server_id = discord_server.server.id
   user_id   = "322379809776861185"
   roles     = {
-    (discord_role.integ.id)    = false
-    (discord_role.respinfo.id) = false #Team info integ 21
     (discord_role.treso.id)    = true
-    (discord_role.bde.id)     = false
   }
 }
 
@@ -165,20 +138,6 @@ module "mathias_deroubaix" {
   roles     = {
     (discord_role.member.id) = true
     (discord_role.uvweb.id)  = true
-  }
-}
-
-module "rayan_doudech" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "760802280621473793"
-  roles     = {
-    (discord_role.respinfo.id) = false
-    (discord_role.etuville.id) = false
-    (discord_role.integfev.id) = false #integfev p22
-    (discord_role.sparkle.id) = true
-    (discord_role.payutc.id) = true
   }
 }
 
@@ -255,19 +214,6 @@ module "victor_moreliere" {
   user_id   = "205355406011138048"
   roles     = {
     (discord_role.curieux.id)  = true
-    (discord_role.respinfo.id) = false
-  }
-}
-
-module "thomas_guegan" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "177800818576064512"
-  roles     = {
-    (discord_role.respinfo.id) = false #UTSea P21
-    (discord_role.integ.id)    = false  #integ A21
-    (discord_role.comet.id)    = false  #comet A21
   }
 }
 
@@ -288,7 +234,6 @@ module "nasser_chaouchi" {
   server_id = discord_server.server.id
   user_id   = "243412317214212126"
   roles     = {
-    (discord_role.integ.id) = false #Team info integ A21
     (discord_role.payutc.id) = true #Team payutc A22
   }
 }
@@ -389,17 +334,6 @@ module "simon_vital" {
   }
 }
 
-module "marie_maraval" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "728278579858636900"
-  roles     = {
-    (discord_role.comet.id)    = false # P22
-    (discord_role.respinfo.id)    = false #Comet P22
-  }
-}
-
 module "charles_bricout" {
   source    = "./member"
   api_token = var.api_token
@@ -416,7 +350,6 @@ module "ambroise_thibault" {
   server_id = discord_server.server.id
   user_id   = 689105176778637328
   roles     = {
-    (discord_role.etuville.id) = false
     (discord_role.sparkle.id)  = true
   }
 }
@@ -433,24 +366,12 @@ module "nicolas_scheidler" {
   }
 }
 
-module "garance_delabrosse" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = 731991059814678688
-  roles     = {
-    (discord_role.sparkle.id)  = true # P22
-    (discord_role.etuville.id) = false
-  }
-}
-
 module "antoine_gajan" {
   source    = "./member"
   api_token = var.api_token
   server_id = discord_server.server.id
   user_id   = 341190261575254020
   roles     = {
-    (discord_role.etuville.id)  = false # P22
     (discord_role.sparkle.id)  = true # P22
   }
 }
@@ -472,7 +393,6 @@ module "alexia_rolland" {
   user_id   = "689494793834725441"
   roles     = {
     (discord_role.pacha_com.id)    = true
-    (discord_role.payutc.id) = false #Team payutc A22
   }
 }
 
@@ -498,17 +418,6 @@ module "tom_jumel" {
     (discord_role.gesasso.id) = true
     (discord_role.integfev.id) = true #resp info A22
     (discord_role.bde.id) = true
-  }
-}
-
-module "louis_levasseur" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "538384095256772612"
-  roles     = {
-    (discord_role.comet.id)    = false  #comet A22
-    (discord_role.sparkle.id)  = false # A22
   }
 }
 
@@ -555,7 +464,6 @@ module "alexandru_ghitu" {
   roles     = {
     (discord_role.admin.id)     = true
     (discord_role.payutc.id) = true
-
   }
 
 }

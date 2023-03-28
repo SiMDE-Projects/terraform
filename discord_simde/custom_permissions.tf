@@ -168,31 +168,6 @@ resource "discord_channel_permission" "bde_notifications" {
   deny         = local.permissions.readonly.deny_bits
 }
 
-### Emploid'ut
-resource "discord_channel_permission" "emploidut_general" {
-  channel_id   = module.general.category.id
-  type         = "role"
-  overwrite_id = local.roles.emploidut.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "emploidut_emploidut" {
-  channel_id   = module.private-emploidut.category.id
-  type         = "role"
-  overwrite_id = local.roles.emploidut.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "emploidut_notifications" {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.emploidut.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
 ### Treso
 resource "discord_channel_permission" "treso_general" {
   channel_id   = module.general.category.id
@@ -247,39 +222,6 @@ resource "discord_channel_permission" "gesasso_spam" {
   channel_id   = discord_text_channel.spam.id
   type         = "role"
   overwrite_id = local.roles.gesasso.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-### Comet
-resource "discord_channel_permission" "comet_general" {
-  channel_id   = module.general.category.id
-  type         = "role"
-  overwrite_id = local.roles.comet.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "comet_comet" {
-  channel_id   = module.private-comet.category.id
-  type         = "role"
-  overwrite_id = local.roles.comet.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "comet_notifications" {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.comet.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-resource "discord_channel_permission" "comet_spam" {
-  channel_id   = discord_text_channel.spam.id
-  type         = "role"
-  overwrite_id = local.roles.comet.id
   allow        = local.permissions.allow.allow_bits
   deny         = local.permissions.allow.deny_bits
 }
@@ -346,39 +288,6 @@ resource "discord_channel_permission" "sparkle_spam" {
   channel_id   = discord_text_channel.spam.id
   type         = "role"
   overwrite_id = local.roles.sparkle.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-### UVWeb
-resource "discord_channel_permission" "uvweb_general" {
-  channel_id   = module.general.category.id
-  type         = "role"
-  overwrite_id = local.roles.uvweb.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "uvweb_uvweb" {
-  channel_id   = module.private-uvweb.category.id
-  type         = "role"
-  overwrite_id = local.roles.uvweb.id
-  allow        = local.permissions.allow.allow_bits
-  deny         = local.permissions.allow.deny_bits
-}
-
-resource "discord_channel_permission" "uvweb_notifications" {
-  channel_id   = discord_text_channel.notifications.id
-  type         = "role"
-  overwrite_id = local.roles.uvweb.id
-  allow        = local.permissions.readonly.allow_bits
-  deny         = local.permissions.readonly.deny_bits
-}
-
-resource "discord_channel_permission" "uvweb_spam" {
-  channel_id   = discord_text_channel.spam.id
-  type         = "role"
-  overwrite_id = local.roles.uvweb.id
   allow        = local.permissions.allow.allow_bits
   deny         = local.permissions.allow.deny_bits
 }
