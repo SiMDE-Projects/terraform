@@ -4,7 +4,7 @@ resource "discord_text_channel" "questions-techniques" {
   server_id                = discord_server.server.id
   category                 = module.general.category.id
   position                 = 2
-  sync_perms_with_category = true
+  sync_perms_with_category = false
 }
 
 ### Spam
