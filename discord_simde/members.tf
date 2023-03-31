@@ -467,3 +467,28 @@ module "alexandru_ghitu" {
   }
 
 }
+
+module "paul_wacquet" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "340547318824828929"
+  roles     = {
+      (discord_role.member.id) = true
+      (discord_role.curieux.id) = true
+  }
+
+}
+
+module "louis_berges" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "688830477582336001"
+  roles     = {
+      (discord_role.member.id) = true
+      (discord_role.curieux.id) = true
+      (discord_role.uvweb.id)    = true
+  }
+
+}
