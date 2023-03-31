@@ -38,3 +38,4 @@ resource "mysql_grant" "lchappui" {
   database   = "*"
   privileges = ["GRANT","SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
 }
+
