@@ -492,3 +492,15 @@ module "louis_berges" {
   }
 
 }
+
+module "ilana_cahingt" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "802461596202958858"
+  roles     = {
+      (discord_role.member.id) = true
+      (discord_role.curieux.id) = true
+      (discord_role.payutc.id) = true
+  }
+}
