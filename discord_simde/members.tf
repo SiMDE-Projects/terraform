@@ -382,6 +382,7 @@ module "leo_mullier" {
   server_id = discord_server.server.id
   user_id   = "691966765219053678"
   roles     = {
+    (discord_role.member.id)   = true
     (discord_role.uvweb.id)    = true
   }
 }
