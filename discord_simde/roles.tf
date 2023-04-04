@@ -4,6 +4,7 @@ locals {
     pacha_com = discord_role.pacha_com
     member    = discord_role.member
     treso     = discord_role.treso
+    rhizome   = discord_role.rhizome
     payutc    = discord_role.payutc
     woolly    = discord_role.woolly
     integ     = discord_role.integ
@@ -33,6 +34,10 @@ data "discord_color" "pacha_com" {
 
 data "discord_color" "treso" {
   hex = "#E0E000"
+}
+
+data "discord_color" "rhizome" {
+  hex = "#8ec449"
 }
 
 data "discord_color" "payutc" {
@@ -115,7 +120,16 @@ resource "discord_role" "zapier" {
   server_id   = discord_server.server.id
   name        = "Zapier"
   permissions = data.discord_permission.bot.allow_bits
+  position    = discord_role.rhizome.position + 1
+}
+
+resource "discord_role" "rhizome" {
+  server_id   = discord_server.server.id
+  name        = "Rhizome"
   position    = discord_role.payutc.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.payutc.dec
+  mentionable = true
 }
 
 resource "discord_role" "payutc" {

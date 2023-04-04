@@ -504,3 +504,16 @@ module "ilana_cahingt" {
       (discord_role.payutc.id) = true
   }
 }
+
+
+module "anthony_frere" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "652133856148979712"
+  roles     = {
+      (discord_role.rhizome.id) = true
+      (discord_role.curieux.id) = true
+      (discord_role.member.id) = true
+  }
+}
