@@ -19,6 +19,7 @@ locals {
     respinfo  = discord_role.respinfo
     portail   = discord_role.portail
     curieux   = discord_role.curieux
+    polar   = discord_role.polar
     everyone  = discord_role_everyone.everyone
   }
 }
@@ -93,6 +94,9 @@ data "discord_color" "respinfo" {
 
 data "discord_color" "curieux" {
   hex = "#79ACFF"
+}
+data "discord_color" "polar" {
+  hex = "#33cc33"
 }
 
 resource "discord_role" "admin" {
@@ -190,10 +194,19 @@ resource "discord_role" "emploidut" {
   mentionable = true
 }
 
+resource "discord_role" "polar" {
+  server_id   = discord_server.server.id
+  name        = "Polar"
+  position    = discord_role.sparkle.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.polar.dec
+  mentionable = true
+}
+
 resource "discord_role" "pumpkin" {
   server_id   = discord_server.server.id
   name        = "Pumpkin"
-  position    = discord_role.sparkle.position + 1
+  position    = discord_role.polar.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.pumpkin.dec
   mentionable = true
@@ -267,6 +280,7 @@ resource "discord_role" "curieux" {
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.curieux.dec
 }
+
 
 resource "discord_role_everyone" "everyone" {
   server_id   = discord_server.server.id
