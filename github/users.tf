@@ -247,3 +247,13 @@ module "tom_jumel" {
   }
 }
 
+module "alexandre_eberhardt" {
+  source = "./users"
+  username = "alexandreeberhardt"
+  teams    = {
+    "simde" = {
+      team = github_team.simde.id,
+      role = "member"
+    }
+  }
+}
