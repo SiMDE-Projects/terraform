@@ -489,7 +489,8 @@ module "louis_berges" {
   roles     = {
       (discord_role.member.id) = true
       (discord_role.curieux.id) = true
-      (discord_role.uvweb.id)    = true
+      (discord_role.uvweb.id) = true
+      (discord_role.polar.id) = true
   }
 
 }

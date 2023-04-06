@@ -62,12 +62,23 @@ module "private-woolly" {
   roles       = local.roles
 }
 
+module "private-polar" {
+  source      = "./channels"
+  name        = "private-polar"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.private-woolly.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
 module "private-integ" {
   source      = "./channels"
   name        = "private-integ"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-woolly.position + 1
+  position    = module.private-polar.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
@@ -183,3 +194,4 @@ module "private-admin" {
   permissions = local.permissions
   roles       = local.roles
 }
+
