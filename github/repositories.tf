@@ -978,7 +978,7 @@ resource "github_repository" "terraform_jda" {
   has_downloads          = true
   has_issues             = true
   has_projects           = true
-  has_wiki               = true
+  has_wiki               = false
   name                   = "terraform_jda"
   visibility             = "private"
   vulnerability_alerts   = true

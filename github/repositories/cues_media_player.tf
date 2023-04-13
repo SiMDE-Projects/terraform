@@ -7,11 +7,11 @@ resource "github_repository" "cues_media_player" {
   archived               = false
   auto_init              = true
   delete_branch_on_merge = true
-  description            = "Pour les vidéos de Cues"
+  description            = "Développer un CMP pour les vidéos de Cues. Team Discussions: SiMDE-Projects/terraform"
   has_downloads          = false
   has_issues             = true
   has_projects           = true
-  has_wiki               = true
+  has_wiki               = false
   name                   = "cues_media_player"
   topics                 = []
   visibility             = "private"
@@ -29,12 +29,6 @@ resource "github_branch_protection" "cues_media_player_master" {
     require_code_owner_reviews      = true
     required_approving_review_count = 1
   }
-}
-
-resource "github_team_repository" "simde_cues_media_player" {
-  team_id    = var.teams.simde.id
-  repository = github_repository.cues_media_player.name
-  permission = "maintain"
 }
 
 resource "github_team_repository" "cues_media_player_cues_media_player" {
