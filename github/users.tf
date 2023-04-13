@@ -261,7 +261,7 @@ module "adrien_herve" {
   source = "./users"
   username = "adr4500"
   teams    = {
-    "payutc" = {
+    "cues_media_player" = {
       team = github_team.cues_media_player.id,
       role = "maintainer"
     }
