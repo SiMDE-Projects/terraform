@@ -1042,3 +1042,49 @@ resource "github_branch_protection" "emploidutApi_master" {
     required_approving_review_count = 1
   }
 }
+
+
+### Cues Media Player
+
+resource "github_repository" "cues_media_player" {
+  allow_merge_commit     = true
+  allow_rebase_merge     = true
+  allow_squash_merge     = true
+  archived               = false
+  auto_init              = false
+  delete_branch_on_merge = true
+  description            = "Cues Media Player =)"
+  has_downloads          = false
+  has_issues             = true
+  has_projects           = true
+  has_wiki               = false
+  is_template            = false
+  name                   = "cues-media-player"
+  topics                 = [
+    "ssp",
+    "eggplant",
+    "video",
+  ]
+  visibility             = "private"
+  vulnerability_alerts   = true
+}
+
+data "github_branch" "cues_media_player_master" {
+  repository = "cues_media_player"
+  branch     = "master"
+}
+
+resource "github_branch_default" "cues_media_player" {
+  repository = github_repository.cues_media_player.name
+  branch     = data.github_branch.cues_media_player_master.branch
+}
+
+resource "github_branch_protection" "cues_media_player_master" {
+  repository_id = github_repository.cues_media_player.node_id
+  pattern       = "master"
+  required_pull_request_reviews {
+    dismiss_stale_reviews           = true
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+  }
+}

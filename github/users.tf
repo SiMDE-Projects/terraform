@@ -257,3 +257,13 @@ module "alexandre_eberhardt" {
     }
   }
 }
+module "adrien_herve" {
+  source = "./users"
+  username = "adr4500"
+  teams    = {
+    "payutc" = {
+      team = github_team.cue_media_player.id,
+      role = "maintainer"
+    }
+  }
+}
