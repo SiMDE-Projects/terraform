@@ -262,7 +262,7 @@ module "adrien_herve" {
   username = "adr4500"
   teams    = {
     "payutc" = {
-      team = github_team.cue_media_player.id,
+      team = github_team.cues_media_player.id,
       role = "maintainer"
     }
   }

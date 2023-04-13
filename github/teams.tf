@@ -14,7 +14,7 @@ locals {
     flairsou           = github_team.flairsou
     sparkle            = github_team.sparkle
     pumpkin            = github_team.pumpkin
-    cue_media_player   = github_team.cue_media_player
+    cues_media_player  = github_team.cues_media_player
   }
 }
 
@@ -230,7 +230,7 @@ resource "github_team" "pumpkin" {
 
 ### CuesMediaPlayer
 
-resource "github_team" "cue_media_player" {
+resource "github_team" "cues_media_player" {
   name        = "CuesMediaPlayer"
   description = "Développer un CMP pour les vidéos de Cues"
   privacy     = "closed"
