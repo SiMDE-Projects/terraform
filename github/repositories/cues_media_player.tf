@@ -33,7 +33,7 @@ resource "github_branch_protection" "cues_media_player_master" {
 
 resource "github_team_repository" "simde_cues_media_player" {
   team_id    = var.teams.simde.id
-  repository = github_repository.sparkle.name
+  repository = github_repository.cues_media_player.name
   permission = "maintain"
 }
 
