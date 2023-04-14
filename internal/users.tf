@@ -50,6 +50,6 @@ resource "mysql_grant" "aeberhar" {
   user       = mysql_user.aeberhar.user
   host       = mysql_user.aeberhar.host
   database   = "*"
-  privileges = ["GRANT","SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
+  privileges = ["SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
 }
 
