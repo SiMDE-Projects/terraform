@@ -304,3 +304,14 @@ module "nicolas_taupin" {
     }
   }
 }
+
+module "gabriel_muhl" {
+  source = "./users"
+  username = "gabmiral"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
+    }
+  }
+}
