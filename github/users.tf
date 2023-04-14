@@ -71,6 +71,10 @@ module "romain_maliachauguste" {
     "sparkle" = {
       team = github_team.sparkle.id,
       role = "member"
+    },
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
     }
   }
 }
@@ -264,6 +268,39 @@ module "adrien_herve" {
     "cues_media_player" = {
       team = github_team.cues_media_player.id,
       role = "maintainer"
+    }
+  }
+}
+
+module "dimitri_chaline" {
+  source = "./users"
+  username = "Dimitri-chln"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
+    }
+  }
+}
+
+module "joris_triart" {
+  source = "./users"
+  username = "jberdev1"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
+    }
+  }
+}
+
+module "nicolas_taupin" {
+  source = "./users"
+  username = "nicolas-tpn"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
     }
   }
 }
