@@ -20,6 +20,7 @@ locals {
     portail   = discord_role.portail
     curieux   = discord_role.curieux
     polar   = discord_role.polar
+    AssoCalendar = discord_role.AssoCalendar
     everyone  = discord_role_everyone.everyone
   }
 }
@@ -97,6 +98,9 @@ data "discord_color" "curieux" {
 }
 data "discord_color" "polar" {
   hex = "#33cc33"
+}
+data "discord_color" "AssoCalendar" {
+  hex = "#E0E000"
 }
 
 resource "discord_role" "admin" {
@@ -251,7 +255,7 @@ resource "discord_role" "uvweb" {
 resource "discord_role" "portail" {
   server_id   = discord_server.server.id
   name        = "Projet Portail des assos"
-  position    = discord_role.member.position + 1
+  position    = discord_role.AssoCalendar.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.uvweb.dec
   mentionable = true
@@ -271,6 +275,15 @@ resource "discord_role" "respinfo" {
   position    = discord_role.curieux.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.respinfo.dec
+}
+
+resource "discord_role" "AssoCalendar" {
+  server_id   = discord_server.server.id
+  name        = "Projet AssoCalendar"
+  position    = discord_role.member.position + 1
+  permissions = data.discord_permission.member.allow_bits
+  color       = data.discord_color.uvweb.dec
+  mentionable = true
 }
 
 resource "discord_role" "curieux" {

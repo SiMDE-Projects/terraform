@@ -506,3 +506,15 @@ module "ilana_cahingt" {
       (discord_role.payutc.id) = true
   }
 }
+
+module "marin_luet" {
+  source    = "./member"
+  api_token = var.api_token
+  server_id = discord_server.server.id
+  user_id   = "718055975533281371"
+  roles     = {
+      (discord_role.member.id) = true
+      (discord_role.curieux.id) = true
+      (discord_role.AssosCalendar.id) = true
+  }
+}
