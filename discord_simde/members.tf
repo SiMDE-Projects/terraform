@@ -515,6 +515,6 @@ module "marin_luet" {
   roles     = {
       (discord_role.member.id) = true
       (discord_role.curieux.id) = true
-      (discord_role.AssosCalendar.id) = true
+      (discord_role.AssoCalendar.id) = true
   }
 }
