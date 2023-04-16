@@ -202,6 +202,7 @@ module "armand_ribault" {
 module "leopold_chappuis" {
   source   = "./users"
   username = "leochapp"
+  role     = "admin"
   teams    = {
     "simde" = {
       team = github_team.simde.id,
@@ -254,6 +255,7 @@ module "tom_jumel" {
 module "alexandre_eberhardt" {
   source = "./users"
   username = "alexandreeberhardt"
+  role     = "admin"
   teams    = {
     "simde" = {
       team = github_team.simde.id,

@@ -441,6 +441,7 @@ module "alexandre_eberhardt" {
     (discord_role.payutc.id) = true
     (discord_role.woolly.id) = true
     (discord_role.pumpkin.id) = true
+    (discord_role.admin.id) = true
   }
 
 }
