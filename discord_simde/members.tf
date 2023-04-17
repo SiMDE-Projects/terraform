@@ -20,16 +20,6 @@ module "noe_amiot" {
   }
 }
 
-module "victor_ronfaut" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "166621029412765696"
-  roles     = {
-    (discord_role.payutc.id) = true
-  }
-}
-
 module "maxime_vaillant" {
   source    = "./member"
   api_token = var.api_token
@@ -441,6 +431,7 @@ module "alexandre_eberhardt" {
     (discord_role.payutc.id) = true
     (discord_role.woolly.id) = true
     (discord_role.pumpkin.id) = true
+    (discord_role.admin.id) = true
   }
 
 }
