@@ -71,6 +71,10 @@ module "romain_maliachauguste" {
     "sparkle" = {
       team = github_team.sparkle.id,
       role = "member"
+    },
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
     }
   }
 }
@@ -198,6 +202,7 @@ module "armand_ribault" {
 module "leopold_chappuis" {
   source   = "./users"
   username = "leochapp"
+  role     = "admin"
   teams    = {
     "simde" = {
       team = github_team.simde.id,
@@ -247,3 +252,68 @@ module "tom_jumel" {
   }
 }
 
+module "alexandre_eberhardt" {
+  source = "./users"
+  username = "alexandreeberhardt"
+  role     = "admin"
+  teams    = {
+    "simde" = {
+      team = github_team.simde.id,
+      role = "member"
+    }
+  }
+}
+module "adrien_herve" {
+  source = "./users"
+  username = "adr4500"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "maintainer"
+    }
+  }
+}
+
+module "dimitri_chaline" {
+  source = "./users"
+  username = "Dimitri-chln"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
+    }
+  }
+}
+
+module "joris_triart" {
+  source = "./users"
+  username = "jberdev1"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
+    }
+  }
+}
+
+module "nicolas_taupin" {
+  source = "./users"
+  username = "nicolas-tpn"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
+    }
+  }
+}
+
+module "gabriel_muhl" {
+  source = "./users"
+  username = "gabmiral"
+  teams    = {
+    "cues_media_player" = {
+      team = github_team.cues_media_player.id,
+      role = "member"
+    }
+  }
+}

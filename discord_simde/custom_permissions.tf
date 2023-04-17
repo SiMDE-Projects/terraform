@@ -176,6 +176,31 @@ resource "discord_channel_permission" "pumpkin_notifications" {
   deny         = local.permissions.readonly.deny_bits
 }
 
+###Polar
+resource "discord_channel_permission" "polar_general" {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.polar.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "polar_notifications" {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.polar.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
+resource "discord_channel_permission" "polar_spam" {
+  channel_id   = discord_text_channel.spam.id
+  type         = "role"
+  overwrite_id = local.roles.polar.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
 ### BDE
 resource "discord_channel_permission" "bde_general" {
   channel_id   = module.general.category.id

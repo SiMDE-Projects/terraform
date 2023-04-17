@@ -20,16 +20,6 @@ module "noe_amiot" {
   }
 }
 
-module "victor_ronfaut" {
-  source    = "./member"
-  api_token = var.api_token
-  server_id = discord_server.server.id
-  user_id   = "166621029412765696"
-  roles     = {
-    (discord_role.payutc.id) = true
-  }
-}
-
 module "maxime_vaillant" {
   source    = "./member"
   api_token = var.api_token
@@ -382,6 +372,7 @@ module "leo_mullier" {
   server_id = discord_server.server.id
   user_id   = "691966765219053678"
   roles     = {
+    (discord_role.member.id)   = true
     (discord_role.uvweb.id)    = true
   }
 }
@@ -440,6 +431,7 @@ module "alexandre_eberhardt" {
     (discord_role.payutc.id) = true
     (discord_role.woolly.id) = true
     (discord_role.pumpkin.id) = true
+    (discord_role.admin.id) = true
   }
 
 }
@@ -488,7 +480,8 @@ module "louis_berges" {
   roles     = {
       (discord_role.member.id) = true
       (discord_role.curieux.id) = true
-      (discord_role.uvweb.id)    = true
+      (discord_role.uvweb.id) = true
+      (discord_role.polar.id) = true
   }
 
 }
@@ -504,7 +497,6 @@ module "ilana_cahingt" {
       (discord_role.payutc.id) = true
   }
 }
-
 
 module "anthony_frere" {
   source    = "./member"

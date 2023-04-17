@@ -36,6 +36,20 @@ resource "mysql_grant" "lchappui" {
   user       = mysql_user.lchappui.user
   host       = mysql_user.lchappui.host
   database   = "*"
-  privileges = ["GRANT","SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
+  privileges = ["SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
+}
+
+## aeberhar
+
+resource "mysql_user" "aeberhar" {
+  user = "aeberhar"
+  host = "%.mde.utc"
+}
+
+resource "mysql_grant" "aeberhar" {
+  user       = mysql_user.aeberhar.user
+  host       = mysql_user.aeberhar.host
+  database   = "*"
+  privileges = ["SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
 }
 
