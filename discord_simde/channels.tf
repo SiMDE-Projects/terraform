@@ -40,12 +40,24 @@ module "private-comet" {
   roles       = local.roles
 }
 
+module "private-rhizome" {
+  source      = "./channels"
+  name        = "private-rhizome"
+  api_token   = var.api_token
+  server_id   = discord_server.server.id
+  position    = module.public-comet.position + 1
+  restricted  = true
+  permissions = local.permissions
+  roles       = local.roles
+}
+
+
 module "private-payutc" {
   source      = "./channels"
   name        = "private-payutc"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.private-comet.position + 1
+  position    = module.private-rhizome.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles

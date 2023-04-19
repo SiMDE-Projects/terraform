@@ -40,6 +40,39 @@ resource "discord_channel_permission" "curieux_spam" {
   deny         = local.permissions.allow.deny_bits
 }
 
+### Rhizome
+resource "discord_channel_permission" "rhizome_general" {
+  channel_id   = module.general.category.id
+  type         = "role"
+  overwrite_id = local.roles.rhizome.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "rhizome_rhizome" {
+  channel_id   = module.private-rhizome.category.id
+  type         = "role"
+  overwrite_id = local.roles.rhizome.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "rhizome_payutc" {
+  channel_id   = module.private-payutc.category.id
+  type         = "role"
+  overwrite_id = local.roles.rhizome.id
+  allow        = local.permissions.allow.allow_bits
+  deny         = local.permissions.allow.deny_bits
+}
+
+resource "discord_channel_permission" "rhizome_notifications" {
+  channel_id   = discord_text_channel.notifications.id
+  type         = "role"
+  overwrite_id = local.roles.rhizome.id
+  allow        = local.permissions.readonly.allow_bits
+  deny         = local.permissions.readonly.deny_bits
+}
+
 ### Payutc
 resource "discord_channel_permission" "payutc_general" {
   channel_id   = module.general.category.id
