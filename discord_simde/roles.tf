@@ -202,7 +202,7 @@ resource "discord_role" "bde" {
 resource "discord_role" "emploidut" {
   server_id   = discord_server.server.id
   name        = "Emploi du temps"
-  position    = discord_role.comet.position + 1
+  position    = discord_role.polar.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.emploidut.dec
   mentionable = true
@@ -211,7 +211,7 @@ resource "discord_role" "emploidut" {
 resource "discord_role" "polar" {
   server_id   = discord_server.server.id
   name        = "Polar"
-  position    = discord_role.sparkle.position + 1
+  position    = discord_role.pumpkin.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.polar.dec
   mentionable = true
@@ -220,7 +220,7 @@ resource "discord_role" "polar" {
 resource "discord_role" "pumpkin" {
   server_id   = discord_server.server.id
   name        = "Pumpkin"
-  position    = discord_role.polar.position + 1
+  position    = discord_role.comet.position + 1
   permissions = data.discord_permission.member.allow_bits
   color       = data.discord_color.pumpkin.dec
   mentionable = true

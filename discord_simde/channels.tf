@@ -45,7 +45,7 @@ module "private-rhizome" {
   name        = "private-rhizome"
   api_token   = var.api_token
   server_id   = discord_server.server.id
-  position    = module.public-comet.position + 1
+  position    = module.private-comet.position + 1
   restricted  = true
   permissions = local.permissions
   roles       = local.roles
