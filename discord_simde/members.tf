@@ -396,6 +396,7 @@ module "Lysandre" {
     (discord_role.payutc.id) = true #tim payutc A22
     (discord_role.curieux.id) = true
     (discord_role.woolly.id) = true
+    (discord_role.sparkle.id) = true
   }
 }
 
