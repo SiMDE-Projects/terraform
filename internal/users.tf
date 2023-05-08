@@ -53,3 +53,16 @@ resource "mysql_grant" "aeberhar" {
   privileges = ["SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
 }
 
+#jumeltom
+resource "mysql_user" "jumeltom" {
+  user = "jumeltom"
+  host = "%.mde.utc"
+}
+
+resource "mysql_grant" "jumeltom" {
+  user       = mysql_user.jumeltom.user
+  host       = mysql_user.jumeltom.host
+  database   = "*"
+  privileges = ["SELECT", "UPDATE", "INSERT", "DELETE", "CREATE", "DROP", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "DELETE HISTORY"]
+}
+
