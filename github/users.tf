@@ -252,17 +252,6 @@ module "paco_pompeani" {
   }
 }
 
-module "tom_jumel" {
-  source = "./users"
-  username = "TomJumel"
-  teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
-      role = "member"
-    }
-  }
-}
-
 module "alexandre_eberhardt" {
   source = "./users"
   username = "alexandreeberhardt"
