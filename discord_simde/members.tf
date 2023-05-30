@@ -407,8 +407,8 @@ module "tom_jumel" {
   roles     = {
     (discord_role.curieux.id) = true
     (discord_role.gesasso.id) = true
-    (discord_role.integfev.id) = true #resp info A22
     (discord_role.bde.id) = true
+    (discord_role.admin.id)  = true
   }
 }
 
