@@ -100,6 +100,17 @@ module "guillaume_theunissen" {
     }
   }
 }
+module "tom_jumel" {
+  source = "./users"
+  username = "TomJumel"
+  role     = "admin"
+  teams    = {
+    "payutc" = {
+      team = github_team.payutc.id,
+      role = "member"
+    }
+  }
+}
 
 ###############################
 ###   ORIGINAL ORGANIZATION ###
@@ -236,17 +247,6 @@ module "paco_pompeani" {
   teams    = {
     "sparkle" = {
       team = github_team.sparkle.id,
-      role = "member"
-    }
-  }
-}
-
-module "tom_jumel" {
-  source = "./users"
-  username = "TomJumel"
-  teams    = {
-    "payutc" = {
-      team = github_team.payutc.id,
       role = "member"
     }
   }
